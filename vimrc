@@ -59,7 +59,7 @@ if v:version >= 700
 	" gnupg
 	let g:GPGPreferArmor = 1
 	let g:GPGPreferSigned = 1
-	let g:GPGDefaultRecipients = ['jcmuller']
+	let g:GPGDefaultRecipients = [$USER]
 	"let g:GPGExecutable  = ''
 	"let g:GPGUseAgent    = 1
 	"let g:GPGPreferSymmetric = 1
