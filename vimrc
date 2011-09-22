@@ -1,5 +1,3 @@
-" $Id: vimrc 287 2010-09-23 17:35:42Z sputnik $
-
 " Turn off compatibility with VI.
 set nocompatible
 
