@@ -1,8 +1,8 @@
 [submodule "vim/pathogen"]
 	path = vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "/Users/jcmuller/new_vim_stuff/vim/bundle/YankRing"]
-	path = /Users/jcmuller/new_vim_stuff/vim/bundle/YankRing
+[submodule "vim/bundle/YankRing"]
+  path = vim/bundle/YankRing
 	url = https://github.com/vim-scripts/YankRing.vim.git
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
