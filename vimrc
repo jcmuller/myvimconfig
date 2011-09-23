@@ -15,6 +15,7 @@ set cindent
 set copyindent	"copy the previous indentation on autoindenting
 set expandtab
 "set noexpandtab
+set fileformats=unix,dos,mac
 set shiftwidth=2 tabstop=2
 set hlsearch "highlight search term
 set incsearch "search as you type
@@ -34,6 +35,7 @@ set textwidth=0
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
+
 let mapleader = ","
 
 " Check for version
@@ -131,13 +133,11 @@ runtime! ftplugin/man.vim
 "au BufDelete,BufWritePost .vimrc source ~/.vimrc
 "au BufDelete .vimrc source ~/.vimrc
 
-au BufRead,BufNewFile *.include,*.inc,*.template set filetype=html
-
 au BufRead *.tex makeprg=pdflatex\ %
 
+" Remove any trailing white space on save
 au BufWritePre * :%s/\s\+$//e
 
-au BufWritePost 0.wiki*,wiki*,vimperator-*wiki*,pentadactyl*wiki* w! /tmp/copy_of_last_edited_wiki_topic.wiki
 au BufWritePost *.dot make
 au BufWritePost *tex make
 
@@ -236,33 +236,7 @@ let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
 "let g:SuperTabDefaultCompletionType = "context"
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vsearch.vim
-" Visual mode search
-func! s:VSetSearch()
-	let temp = @@
-	norm! gvy
-	let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-	let @@ = temp
-endf
-
-func! ShowTab()
-	let TabLevel = (indent('.') / &ts )
-	if TabLevel == 0
-		let TabLevel='*'
-	endif
-	return TabLevel
-endf
-
-func! ShowFuncName()
-	let lnum = line(".")
-	let col = col(".")
-	echohl ModeMsg
-	echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
-	echohl None
-	call search("\\%" . lnum . "l" . "\\%" . col . "c")
-endf
-"map <Leader>f :call ShowFuncName() <CR>
+let g:LustyJugglerSuppressRubyWarning = 1
 
 let g:netrw_http_cmd = "wget -q -O"
 
@@ -272,8 +246,8 @@ let perl_extended_vars = 1
 let perl_want_scope_in_variables = 1
 "let perl_fold = 1
 "let perl_fold_blocks = 1
-
-set ffs=unix,dos,mac
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings
 set t_Co=256
@@ -282,7 +256,5 @@ if filereadable($HOME . '/.vim/colors/xoria256.vim')
 else
 	colo default
 endif
-
-let g:LustyJugglerSuppressRubyWarning = 1
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:
