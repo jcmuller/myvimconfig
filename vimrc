@@ -6,13 +6,16 @@ set nocompatible
 filetype off
 call pathogen#infect()
 
+" All nice indent options
 set autoindent
+set cindent
+set copyindent	"copy the previous indentation on autoindenting
+set smartindent
+
 "set background=light
 set background=dark
 set backup "do create backup files
 set backspace=2 "allow backspace to work across inserts and newlines.
-set cindent
-set copyindent	"copy the previous indentation on autoindenting
 set expandtab
 "set noexpandtab
 set fileformats=unix,dos,mac
@@ -25,7 +28,6 @@ set nolinebreak "don't break line after n characters (usually 70 unless otherwis
 set nowrapscan "Only search forward in buffer.
 set number "show line numbers
 set showmatch "highlight matching parenthesis, brace, bracket, etc.
-set smartindent
 set smarttab
 set splitbelow "open help, et al, horizontally below, rather than vertically to the right
 set switchbuf=useopen,usetab
@@ -165,8 +167,8 @@ au FileType objc set noet sw=4 ts=4
 au FileType crontab set nobackup nowritebackup
 au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
 au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
-
 au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
+au FileType vo_base set nolist
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")

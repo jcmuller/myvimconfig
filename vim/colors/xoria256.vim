@@ -55,7 +55,7 @@ hi Search       ctermfg=0   guifg=#000000 ctermbg=223 guibg=#ffdfaf
 hi SignColumn   ctermfg=248 guifg=#a8a8a8
 hi SpecialKey   ctermfg=77  guifg=#5fdf5f
 hi StatusLine                             ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
-hi StatusLineNC                           ctermbg=227 guibg=#2a2a2a cterm=none gui=none
+hi StatusLineNC             guifg=#555555 ctermbg=227 guibg=#2a2a2a cterm=none gui=none
 hi TabLine      ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=underline gui=underline
 hi TabLineFill  ctermfg=fg  guifg=fg      ctermbg=242 guibg=#666666 cterm=underline gui=underline
 hi VertSplit    ctermfg=237 guifg=#3a3a3a ctermbg=237 guibg=#3a3a3a cterm=none gui=none
