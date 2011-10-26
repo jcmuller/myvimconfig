@@ -9,5 +9,8 @@ set noantialias
 
 " Nice font face
 "set guifont=Droid\ Sans\ Mono:h11
-set guifont=Terminus\ Medium:h16
+" Big monitor
+"set guifont=Terminus\ Medium:h16
+" Laptop monitor
+set guifont=Terminus\ Medium:h12
 

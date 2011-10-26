@@ -279,15 +279,17 @@ let perl_want_scope_in_variables = 1
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
-sunmap w
-sunmap b
-sunmap e
+
 omap <silent> iw <Plug>CamelCaseMotion_iw
 xmap <silent> iw <Plug>CamelCaseMotion_iw
 omap <silent> ib <Plug>CamelCaseMotion_ib
 xmap <silent> ib <Plug>CamelCaseMotion_ib
 omap <silent> ie <Plug>CamelCaseMotion_ie
 xmap <silent> ie <Plug>CamelCaseMotion_ie
+
+sunmap w
+sunmap b
+sunmap e
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -298,5 +300,11 @@ if filereadable($HOME . '/.vim/colors/xoria256.vim')
 else
 	colo default
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Common misspellings
+abbr shuold should
+abbr challegne challenge
+abbr challegnes challenges
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:
