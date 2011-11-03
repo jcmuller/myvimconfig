@@ -307,4 +307,7 @@ abbr shuold should
 abbr challegne challenge
 abbr challegnes challenges
 
+"
+noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
+
 " vim:tw=0:ts=4:sw=4:noet:nolist:
