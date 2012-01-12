@@ -136,6 +136,8 @@ runtime! ftplugin/man.vim
 "au BufDelete .vimrc source ~/.vimrc
 
 au BufRead *.tex setl makeprg=pdflatex\ %
+au BufRead,BufNewFile *.pde setfiletype arduino
+au BufRead,BufNewFile *.ino setfiletype arduino
 
 " Remove any trailing white space on save
 au BufWritePre * :%s/\s\+$//e
@@ -162,6 +164,8 @@ autocmd BufWinEnter *.feature setl makeprg=bundle\ exec\ cucumber\ \"%:p\"
 autocmd FileType ruby
       \ if expand('%') =~# '_test\.rb$' |
       \   compiler rubyunit | setl makeprg=bundle\ exec\ testrb\ \"%:p\" |
+      \ elseif expand('%') =~# '\.feature' |
+      \   compiler cucumber | setl makeprg=bundle\ exec\ cucumber\ \"%:p\" |
       \ elseif expand('%') =~# '_spec\.rb$' |
       \   compiler rspec | setl makeprg=bundle\ exec\ rspec\ \"%:p\" |
       \ else |
@@ -173,12 +177,13 @@ au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomple
 au FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 au FileType tex setl makeprg=pdflatex\ %
 "au FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
-au FileType objc setl noet sw=4 ts=4
+au FileType c,cpp,objc setl nolist noet sw=4 ts=4
 au FileType crontab setl nobackup nowritebackup
 au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
 au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
 au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
 au FileType vo_base setl nolist
+
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")
