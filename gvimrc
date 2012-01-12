@@ -5,12 +5,12 @@ set guioptions=
 set fuoptions=maxvert,maxhorz
 
 " Don't anti alias fonts
-set noantialias
+"set noantialias
 
 " Nice font face
-"set guifont=Droid\ Sans\ Mono:h11
+set guifont=Droid\ Sans\ Mono:h12
 " Big monitor
 "set guifont=Terminus\ Medium:h16
 " Laptop monitor
-set guifont=Terminus\ Medium:h12
+" set guifont=Terminus\ Medium:h12
 
