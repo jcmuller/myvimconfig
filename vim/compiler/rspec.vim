@@ -20,7 +20,9 @@ set cpo-=C
 
 CompilerSet makeprg=bundle\ exec\ rspec\ %
 
-CompilerSet errorformat=rspec\ %f:%l\ #\ %m
+"CompilerSet errorformat=rspec\ %f:%l\ #\ %m,%-G%.%#
+CompilerSet errorformat=%A\ %#%n)\ %s,%C\ %#Failure/Error:\ %m,%C\ %#expected:\ %s,
+      \%C\ %#got:%s,%Z\ %##\ %f:%l,%-G%.%#
 
 let &cpo = s:cpo_save
 unlet s:cpo_save
