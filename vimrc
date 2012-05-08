@@ -65,7 +65,7 @@ if v:version >= 700
 	"let g:GPGPreferSymmetric = 1
 
 	if has('statusline')
-		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %c%V\ %r%=File:%n\ %a
+		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
 		"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
 	endif
 else
@@ -138,6 +138,7 @@ runtime! ftplugin/man.vim
 au BufRead *.tex setl makeprg=pdflatex\ %
 au BufRead,BufNewFile *.pde setfiletype arduino
 au BufRead,BufNewFile *.ino setfiletype arduino
+au BufRead,BufWinEnter *.md set ft=markdown
 
 " Remove any trailing white space on save
 au BufWritePre * :%s/\s\+$//e
@@ -324,6 +325,7 @@ endif
 " Common misspellings
 abbr shuold should
 abbr sohuld should
+abbr shoudl should
 abbr challegne challenge
 abbr challegnes challenges
 
