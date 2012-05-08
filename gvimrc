@@ -8,9 +8,10 @@ set fuoptions=maxvert,maxhorz
 "set noantialias
 
 " Nice font face
-set guifont=Droid\ Sans\ Mono:h12
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 " Big monitor
 "set guifont=Terminus\ Medium:h16
 " Laptop monitor
 " set guifont=Terminus\ Medium:h12
 
+let g:Powerline_symbols="fancy"
