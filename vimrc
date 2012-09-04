@@ -33,7 +33,8 @@ set splitbelow "open help, et al, horizontally below, rather than vertically to 
 set switchbuf=useopen,usetab
 set tagbsearch "Binary tag search
 "set term=xterm
-set textwidth=0
+set textwidth=80
+set colorcolumn=80
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
@@ -139,6 +140,8 @@ au BufRead *.tex setl makeprg=pdflatex\ %
 au BufRead,BufNewFile *.pde setfiletype arduino
 au BufRead,BufNewFile *.ino setfiletype arduino
 au BufRead,BufWinEnter *.md set ft=markdown
+au BufRead,BufWinEnter *.jelly set ft=xml
+au BufRead Glossary.md set foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 
 " Remove any trailing white space on save
 au BufWritePre * :%s/\s\+$//e
@@ -174,7 +177,7 @@ autocmd FileType ruby
       \ endif
 
 au FileType dot setl makeprg=dot\ -Tpdf\ -O\ % noet sw=4 ts=4
-au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo noet sw=4 ts=4
+au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
 au FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 au FileType tex setl makeprg=pdflatex\ %
 "au FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
