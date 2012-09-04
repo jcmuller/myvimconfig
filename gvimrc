@@ -13,5 +13,3 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 "set guifont=Terminus\ Medium:h16
 " Laptop monitor
 " set guifont=Terminus\ Medium:h12
-
-let g:Powerline_symbols="fancy"

@@ -328,4 +328,8 @@ endif
 " Find merge diffs
 noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
 
+" Powerline configuration
+let g:Powerline_cache_enabled=1
+let g:Powerline_symbols="fancy"
+
 " vim:tw=0:ts=4:sw=4:noet:nolist:
