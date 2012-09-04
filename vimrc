@@ -16,6 +16,7 @@ set smartindent
 set background=dark
 set backup "do create backup files
 set backspace=2 "allow backspace to work across inserts and newlines.
+set encoding=utf-8
 set expandtab
 "set noexpandtab
 set fileformats=unix,dos,mac
