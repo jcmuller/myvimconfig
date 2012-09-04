@@ -325,13 +325,6 @@ else
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Common misspellings
-abbr shuold should
-abbr sohuld should
-abbr shoudl should
-abbr challegne challenge
-abbr challegnes challenges
-
 "
 noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
 
