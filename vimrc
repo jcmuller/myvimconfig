@@ -344,4 +344,9 @@ let g:Powerline_stl_path_style = "filename"
 let g:Powerline_symbols = "fancy"
 let g:Powerline_theme  =  "default"
 
+" call Pl#Theme#RemoveSegment('fileformat')
+" call Pl#Theme#RemoveSegment('fileencoding')
+" call Pl#Theme#RemoveSegment('filetype')
+" call Pl#Theme#RemoveSegment('lineinfo')
+
 " vim:tw=0:ts=4:sw=4:noet:nolist:
