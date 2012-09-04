@@ -73,6 +73,7 @@ if has('persistent_undo')
 endif
 
 " Statusline
+" Disabled, since I'm using Powerline
 " if v:version >= 700
 " 	if has('statusline')
 " 		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
@@ -333,7 +334,13 @@ endif
 noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
 
 " Powerline configuration
-let g:Powerline_cache_enabled=1
-let g:Powerline_symbols="fancy"
+let g:Powerline_cache_enabled = 1
+let g:Powerline_symbols = "fancy"
+let g:Powerline_mode_n = "N"
+let g:Powerline_mode_i = "I"
+let g:Powerline_mode_v = "V"
+let g:Powerline_theme  =  "default"
+let g:Powerline_colorscheme  =  "default"
+let g:Powerline_stl_path_style = "filename"
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:
