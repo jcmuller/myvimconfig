@@ -65,21 +65,24 @@ if v:version >= 700
 	"let g:GPGExecutable  = ''
 	"let g:GPGUseAgent    = 1
 	"let g:GPGPreferSymmetric = 1
-
-	if has('statusline')
-		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
-		"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-	endif
-else
-	if has('statusline')
-		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-	endif
 endif
 
 if has('persistent_undo')
 	set undofile
 	set undodir=~/.vimundo
 endif
+
+" Statusline
+" if v:version >= 700
+" 	if has('statusline')
+" 		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
+" 		"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+" 	endif
+" else
+" 	if has('statusline')
+" 		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+" 	endif
+" endif
 
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
