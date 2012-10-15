@@ -76,3 +76,6 @@
 [submodule "vim/bundle/snippets.vim"]
 	path = vim/bundle/snippets.vim
 	url = https://github.com/vim-scripts/snippets.vim.git
+[submodule "vim/bundle/vim-handlebars.vim"]
+	path = vim/bundle/vim-handlebars.vim
+	url = https://github.com/nono/vim-handlebars.git
