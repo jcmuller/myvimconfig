@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-handlebars.vim"]
 	path = vim/bundle/vim-handlebars.vim
 	url = https://github.com/nono/vim-handlebars.git
+[submodule "vim/bundle/editorconfig-vim"]
+	path = vim/bundle/editorconfig-vim
+	url = git@github.com:editorconfig/editorconfig-vim.git
