@@ -6,12 +6,13 @@ set fuoptions=maxvert,maxhorz
 
 " Don't anti alias fonts
 "set noantialias
+"set guifont=Terminus\ Medium:h12
 
 " Nice font face
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+" set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+set guifont=Ubuntu\ Mono\ for\ Powerline:h14
 " Big monitor
 "set guifont=Terminus\ Medium:h16
 " Laptop monitor
-" set guifont=Terminus\ Medium:h12
 
 colo Tomorrow-Night
