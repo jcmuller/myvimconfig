@@ -15,7 +15,7 @@ set smartindent
 "set background=light
 set background=dark
 set backup "do create backup files
-set backspace=2 "allow backspace to work across inserts and newlines.
+set backspace=indent,eol,start "allow backspace to work across inserts and newlines.
 set encoding=utf-8
 set expandtab
 "set noexpandtab
@@ -34,8 +34,8 @@ set splitbelow "open help, et al, horizontally below, rather than vertically to 
 set switchbuf=useopen,usetab
 set tagbsearch "Binary tag search
 "set term=xterm
-set textwidth=80
-set colorcolumn=80
+set textwidth=95
+set colorcolumn=95
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
@@ -241,7 +241,7 @@ inoremap {<cr> {<cr>}<ESC>O
 " Normal mode
 nnoremap ;w :w<cr>
 " Insert mode: Ctrl-S
-inoremap <C-S> <Esc>:w<cr>i
+inoremap <C-S> <Esc>:w<cr>
 """"""""""""""""""""""""""""""""""""""""
 func! s:VSetSearch()
 	let temp = @@
@@ -315,10 +315,43 @@ sunmap w
 sunmap b
 sunmap e
 
+" Syntastic
 :sign define SyntasticError text=> linehl=Error texthl=SpecialKey
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
+
+" Powerline configuration
+let g:Powerline_cache_enabled = 1
+let g:Powerline_colorscheme  =  "default"
+let g:Powerline_mode_i = "I"
+let g:Powerline_mode_n = "N"
+let g:Powerline_mode_r = "R"
+let g:Powerline_mode_v = "V"
+let g:Powerline_mode_h = "H"
+let g:Powerline_stl_path_style = "filename"
+let g:Powerline_symbols = "fancy"
+let g:Powerline_theme  =  "default"
+
+call Pl#Theme#RemoveSegment('fileformat')
+"call Pl#Theme#RemoveSegment('fileencoding')
+"call Pl#Theme#RemoveSegment('filetype')
+call Pl#Theme#RemoveSegment('lineinfo')
+
+"
+" Find merge diffs
+noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
+
+" SnipMate config
+let g:snips_trigger_key = '<C-j>'
+
+" Command-T mappings
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>j :CommandTJump<CR>
+nnoremap <silent> <Leader>T :CommandTTag<CR>
+nnoremap <silent> <Leader>f :CommandTFlush<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings
@@ -330,23 +363,5 @@ else
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Find merge diffs
-noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
-
-" Powerline configuration
-let g:Powerline_cache_enabled = 1
-let g:Powerline_colorscheme  =  "default"
-let g:Powerline_mode_i = "I"
-let g:Powerline_mode_n = "N"
-let g:Powerline_mode_r = "R"
-let g:Powerline_mode_v = "V"
-let g:Powerline_stl_path_style = "filename"
-let g:Powerline_symbols = "fancy"
-let g:Powerline_theme  =  "default"
-
-" call Pl#Theme#RemoveSegment('fileformat')
-" call Pl#Theme#RemoveSegment('fileencoding')
-" call Pl#Theme#RemoveSegment('filetype')
-" call Pl#Theme#RemoveSegment('lineinfo')
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:
