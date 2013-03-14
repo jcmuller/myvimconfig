@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/vim-snipmate.git"]
+	path = vim/bundle/vim-snipmate.git
+	url = git@github.com:garbas/vim-snipmate.git
