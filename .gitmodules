@@ -73,9 +73,6 @@
 [submodule "vim/bundle/vim-coffee-script"]
 	path = vim/bundle/vim-coffee-script
 	url = git@github.com:kchmck/vim-coffee-script.git
-[submodule "vim/bundle/snippets.vim"]
-	path = vim/bundle/snippets.vim
-	url = git@github.com:vim-scripts/snippets.vim.git
 [submodule "vim/bundle/vim-handlebars.vim"]
 	path = vim/bundle/vim-handlebars.vim
 	url = git@github.com:nono/vim-handlebars.git
