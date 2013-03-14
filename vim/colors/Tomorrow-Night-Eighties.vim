@@ -1,1 +1,1 @@
-/Users/jcmuller/Development/OSS/vim-colors/vim-tomorrow-theme/colors/Tomorrow-Night-Eighties.vim
+/Users/jcmuller/Development/OSS/vim-colors/tomorrow-theme/vim/colors/Tomorrow-Night-Eighties.vim
