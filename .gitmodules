@@ -85,18 +85,6 @@
 [submodule "vim/bundle/vim-ruby"]
 	path = vim/bundle/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
-[submodule "vim/bundle/vim-snipmate.git"]
-	path = vim/bundle/vim-snipmate.git
-	url = git@github.com:garbas/vim-snipmate.git
-[submodule "vim/bundle/tlib_vim"]
-	path = vim/bundle/tlib_vim
-	url = git@github.com:tomtom/tlib_vim.git
-[submodule "vim/bundle/vim-addon-wm-utils"]
-	path = vim/bundle/vim-addon-wm-utils
-	url = git@github.com:MarcWeber/vim-addon-mw-utils
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = git@github.com:honza/snipmate-snippets
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
