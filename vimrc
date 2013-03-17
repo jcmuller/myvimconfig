@@ -343,8 +343,10 @@ call Pl#Theme#RemoveSegment('lineinfo')
 noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
 
 " SnipMate config
-let g:snips_trigger_key = '<C-j>'
+" let g:snips_trigger_key = '<C-j>'
 
+" Ultisnips config
+let g:UltiSnipsExpandTrigger='<C-j>'
 " Command-T mappings
 nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
