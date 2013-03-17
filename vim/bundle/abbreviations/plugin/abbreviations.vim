@@ -7,6 +7,3 @@ iabbr shuold_not should_not
 iabbr shuold_receive should_receive
 iabbr sohuld should
 iabbr teh the
-
-" Includes
-iabbr pry require 'pry'; binding.pry
