@@ -283,6 +283,7 @@ map <F5> :TlistShowTag<CR>
 let Tlist_Sort_Type = "name"
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
+" Tagbar mappings
 map <F2> :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
 
@@ -342,19 +343,21 @@ call Pl#Theme#RemoveSegment('lineinfo')
 
 "
 " Find merge diffs
-noremap <Leader>fd <Esc>/[<=>]\{3\}<Cr>
-
-" SnipMate config
-" let g:snips_trigger_key = '<C-j>'
+"nnoremap <Leader>fd /[<=>]\{3\}<cr>
 
 " Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
+
 " Command-T mappings
 nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
 nnoremap <silent> <Leader>j :CommandTJump<CR>
 nnoremap <silent> <Leader>T :CommandTTag<CR>
 nnoremap <silent> <Leader>f :CommandTFlush<CR>
+
+" NERDTree
+nnoremap <space><space> :NERDTreeToggle<cr>
+nnoremap <space>f :NERDTreeFind<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
