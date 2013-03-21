@@ -359,6 +359,9 @@ nnoremap <silent> <Leader>f :CommandTFlush<CR>
 nnoremap <space><space> :NERDTreeToggle<cr>
 nnoremap <space>f :NERDTreeFind<cr>
 
+" Block Toggle (blockle)
+let g:blockle_mapping = '<Leader>l'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings
