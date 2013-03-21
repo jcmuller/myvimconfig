@@ -97,3 +97,6 @@
 [submodule "vim/bundle/file-line"]
 	path = vim/bundle/file-line
 	url = git@github.com:bogado/file-line.git
+[submodule "vim/bundle/vim-blockle"]
+	path = vim/bundle/vim-blockle
+	url = git@github.com:jgdavey/vim-blockle.git
