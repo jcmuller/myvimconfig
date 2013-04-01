@@ -372,6 +372,8 @@ nnoremap <silent> <Leader>f :CommandTFlush<CR>
 " NERDTree
 nnoremap <space><space> :NERDTreeToggle<cr>
 nnoremap <space>f :NERDTreeFind<cr>
+" Open NERDtree when no file was specified
+"autocmd vimenter * if !argc() | NERDTree | endif
 
 " Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>l'
