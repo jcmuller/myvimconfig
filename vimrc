@@ -286,7 +286,19 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " Tagbar mappings
 map <F2> :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+"let g:tagbar_foldlevel = 3
+"let g:tagbar_autoshowtag = 1
 
+" let g:tagbar_iconchars = ['▶', '▼']  "(default on Linux and Mac OS X)
+let g:tagbar_iconchars = ['▸', '▾']
+" let g:tagbar_iconchars = ['▷', '◢']
+" let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
+
+" au VimEnter * nested :call tagbar#autoopen(1)
+" au FileType * nested :call tagbar#autoopen(0)
+" au BufEnter * nested :call tagbar#autoopen(0)
 nnoremap <F6> :GundoToggle<CR>
 
 "let g:SuperTabDefaultCompletionType = "context"
