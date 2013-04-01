@@ -283,6 +283,7 @@ map <F5> :TlistShowTag<CR>
 let Tlist_Sort_Type = "name"
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
+
 " Tagbar mappings
 map <F2> :TagbarToggle<CR>
 let g:tagbar_ctags_bin='/usr/local/bin/ctags'
@@ -299,6 +300,8 @@ let g:tagbar_iconchars = ['▸', '▾']
 " au VimEnter * nested :call tagbar#autoopen(1)
 " au FileType * nested :call tagbar#autoopen(0)
 " au BufEnter * nested :call tagbar#autoopen(0)
+
+" Gundo
 nnoremap <F6> :GundoToggle<CR>
 
 "let g:SuperTabDefaultCompletionType = "context"
@@ -353,7 +356,6 @@ call Pl#Theme#RemoveSegment('fileformat')
 "call Pl#Theme#RemoveSegment('filetype')
 call Pl#Theme#RemoveSegment('lineinfo')
 
-"
 " Find merge diffs
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
 
