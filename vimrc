@@ -378,6 +378,11 @@ nnoremap <space>f :NERDTreeFind<cr>
 " Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>l'
 
+" Vim GitGutter
+let g:gitgutter_on_bufenter = 1
+let g:gitgutter_all_on_focusgained = 0
+let g:gitgutter_highlight_lines = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings
