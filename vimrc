@@ -214,7 +214,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 "map <left> <nop>
 "map <right> <nop>
 
-nmap <Leader>a :Ack
+nmap <Leader>a :Ack<space>
 " Run ack against the visually selected text
 nmap <Leader>A vaw"xy:Ack <C-R>x
 
