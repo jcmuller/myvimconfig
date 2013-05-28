@@ -103,3 +103,6 @@
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "vim/bundle/loremipsum"]
+	path = vim/bundle/loremipsum
+	url = git://github.com/vim-scripts/loremipsum.git
