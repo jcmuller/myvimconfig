@@ -146,6 +146,7 @@ au BufRead,BufNewFile *.pde setfiletype arduino
 au BufRead,BufNewFile *.ino setfiletype arduino
 au BufRead,BufWinEnter *.md set ft=markdown
 au BufRead,BufWinEnter *.jelly set ft=xml
+au BufRead,BufWinEnter *.hbs set ft=handlebars
 au BufRead Glossary.md set foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 
 " Remove any trailing white space on save
