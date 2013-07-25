@@ -384,12 +384,16 @@ let g:gitgutter_on_bufenter = 1
 let g:gitgutter_all_on_focusgained = 0
 let g:gitgutter_highlight_lines = 0
 
+" OMG! How did I not know about this earlier?
+"noremap : q:I
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings
 set t_Co=256
 if filereadable($HOME . '/.vim/colors/xoria256.vim')
-	colo xoria256
+	"colo xoria256
+	colo Tomorrow
 else
 	colo default
 endif
