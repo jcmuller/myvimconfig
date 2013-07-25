@@ -106,3 +106,6 @@
 [submodule "vim/bundle/loremipsum"]
 	path = vim/bundle/loremipsum
 	url = git://github.com/vim-scripts/loremipsum.git
+[submodule "vim/bundle/vim-haml"]
+	path = vim/bundle/vim-haml
+	url = git@github.com:tpope/vim-haml.git
