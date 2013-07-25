@@ -1,3 +1,19 @@
-snippet pry "insert pry"
-require 'pry'; binding.pry
+extends rails
+
+snippet end "end (ERB)" !
+<% end %>
+endsnippet
+
+snippet ct "content_tag optionally do block"
+<%= content_tag :${1:tagname} ${2:do %>	$3<% end }%>
+endsnippet
+
+snippet ctd "content_tag do"
+<%= content_tag :${1:tagname} do %>
+  $2
+<% end %>
+endsnippet
+
+snippet cts "content_tag simple"
+<%= content_tag :${1:tagname}${2:, ${3:"$4"}} %>
 endsnippet

@@ -1,0 +1,119 @@
+snippet pry "insert pry"
+require 'pry'; binding.pry
+endsnippet
+
+snippet Enum "Enum"
+include Enumerable
+
+def each(&block)
+	$0
+end
+endsnippet
+
+snippet Comp "Comp"
+include Comparable
+
+def <=>(other)
+	$0
+end
+endsnippet
+
+snippet Forw- "Forw-"
+extend Forwardable
+endsnippet
+
+snippet defs "defs"
+def self.${1:class_method_name}
+	$0
+end
+endsnippet
+
+snippet defmm "def method_missing"
+def method_missing(meth, *args, &blk)
+	$0
+end
+endsnippet
+
+snippet am "am"
+alias_method :${1:new_name}, :${2:old_name}
+endsnippet
+
+snippet array "array.new"
+Array.new(${1:10}) { |${2:i}| ${3} }
+endsnippet
+
+snippet hash "hash.new"
+Hash.new { |h, k| h[k] = ${1} }
+endsnippet
+
+snippet file "File.foreach() { |line| .. }"
+File.foreach(${1:"path/to/file"}) { |${2:line}| ${3} }
+endsnippet
+
+snippet file "File.read()"
+File.read(${1:"path/to/file"})$0
+endsnippet
+
+snippet Dir "Dir.global() { |file| .. }"
+Dir.glob(${1:"dir/glob/*"}) { |${2:file}| ${3} }
+endsnippet
+
+snippet Dir "Dir['..']"
+Dir[${1:"glob/**/*.rb"}]$0
+endsnippet
+
+snippet dir "File.dirname"
+File.dirname(__FILE__)
+endsnippet
+
+snippet deli "delete_if"
+delete_if { |${1:e}| ${2} }
+endsnippet
+
+snippet fil "fill"
+fill(${1:range}) { |${2:i}| ${3} }
+endsnippet
+
+snippet flao "flao"
+inject(Array.new) { |${1:arr}, ${2:a}| $1.push(*$2)}$0
+endsnippet
+
+snippet zip "zip"
+zip(${1:enums}) { |${2:row}| ${3} }
+endsnippet
+
+snippet dow "dow"
+downto(${1:0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet ste "ste"
+step(${1:2}) { |${2:n}| ${3} }
+endsnippet
+
+snippet tim "tim"
+times { |${1:n}| ${2} }
+endsnippet
+
+snippet upt "upt"
+upto(${1:1.0/0.0}) { |${2:n}| ${3} }
+endsnippet
+
+snippet loo "loo"
+loop { ${1} }
+endsnippet
+
+snippet ea "ea"
+each { |${1:e}| ${2} }
+endsnippet
+
+snippet inj "inj"
+inject(${1:init}) { |a, i| ${4} }
+endsnippet
+
+snippet map "map"
+map { |${1:e}| ${2} }
+endsnippet
+
+snippet sor "sor"
+sort { |a, b| ${1} }
+endsnippet
