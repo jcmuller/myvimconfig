@@ -15,4 +15,5 @@ set guifont=Ubuntu\ Mono\ for\ Powerline:h14
 "set guifont=Terminus\ Medium:h16
 " Laptop monitor
 
-colo Tomorrow-Night
+"colo Tomorrow-Night
+colo Tomorrow
