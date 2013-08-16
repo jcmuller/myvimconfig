@@ -115,3 +115,6 @@
 [submodule "vim/bundle/vim-localvimcr"]
 	path = vim/bundle/vim-localvimcr
 	url = git@github.com:embear/vim-localvimrc.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim.git

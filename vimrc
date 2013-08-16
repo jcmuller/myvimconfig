@@ -393,6 +393,10 @@ let g:gitgutter_highlight_lines = 0
 " OMG! How did I not know about this earlier?
 "noremap : q:I
 
+" CTRLP
+let g:ctrlp_map = '<Leader>p'
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
+
 " localvimrc
 let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
