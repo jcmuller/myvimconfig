@@ -336,9 +336,15 @@ sunmap e
 
 " Syntastic
 :sign define SyntasticError text=> linehl=Error texthl=SpecialKey
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_jump=1
-let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_jump = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_error_symbol = '✗>'
+let g:syntastic_warning_symbol = 'W>'
+let g:syntastic_enable_balloons = 1
+let g:syntastic_aggregate_errors = 1
+
+
 
 " Powerline configuration
 let g:Powerline_cache_enabled = 1
