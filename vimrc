@@ -393,6 +393,12 @@ let g:gitgutter_highlight_lines = 0
 " OMG! How did I not know about this earlier?
 "noremap : q:I
 
+" localvimrc
+let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
+let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
+"let g:localvimrc_debug = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Color settings

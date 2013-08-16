@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-dispatch"]
 	path = vim/bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
+[submodule "vim/bundle/vim-localvimcr"]
+	path = vim/bundle/vim-localvimcr
+	url = git@github.com:embear/vim-localvimrc.git
