@@ -112,7 +112,7 @@ set hidden
 
 " Better command-line completion
 set wildmenu
-set wildignore=*.swp,*.bak,*~,*.pyc,*.class
+set wildignore=*.swp,*.bak,*~,*.pyc,*.class,.git/,build/**
 
 " Show partial commands in the last line of the screen
 set showcmd
