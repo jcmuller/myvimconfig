@@ -66,7 +66,7 @@
 	url = git@github.com:Lokaltog/vim-powerline.git
 [submodule "vim/bundle/nginx-vim-syntax"]
 	path = vim/bundle/nginx-vim-syntax
-	url = git@github.com:andersjanmyr/nginx-vim-syntax.git
+	url = git@github.com:thiderman/nginx-vim-syntax.git
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
 	url = git@github.com:tpope/vim-bundler.git
