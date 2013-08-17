@@ -11,9 +11,10 @@ set autoindent
 set cindent
 set copyindent	"copy the previous indentation on autoindenting
 set smartindent
+set cinkeys-=0# " don't force # indentation
 
-"set background=light
-set background=dark
+set background=light
+"set background=dark
 set backup "do create backup files
 set backspace=indent,eol,start "allow backspace to work across inserts and newlines.
 set encoding=utf-8
@@ -29,7 +30,7 @@ set nolinebreak "don't break line after n characters (usually 70 unless otherwis
 set nowrapscan "Only search forward in buffer.
 set number "show line numbers
 set showmatch "highlight matching parenthesis, brace, bracket, etc.
-set smarttab
+set smarttab "use shiftwidth
 set splitbelow "open help, et al, horizontally below, rather than vertically to the right
 set switchbuf=useopen,usetab
 set tagbsearch "Binary tag search
@@ -344,23 +345,6 @@ let g:syntastic_enable_signs = 1
 
 let g:syntastic_error_symbol = '✗>'
 let g:syntastic_warning_symbol = '!>'
-
-" Powerline configuration
-" let g:Powerline_cache_enabled = 1
-" let g:Powerline_colorscheme  =  "default"
-" let g:Powerline_mode_i = "I"
-" let g:Powerline_mode_n = "N"
-" let g:Powerline_mode_r = "R"
-" let g:Powerline_mode_v = "V"
-" let g:Powerline_mode_h = "H"
-" let g:Powerline_stl_path_style = "filename"
-" let g:Powerline_symbols = "fancy"
-" let g:Powerline_theme  =  "default"
-"
-" call Pl#Theme#RemoveSegment('fileformat')
-" "call Pl#Theme#RemoveSegment('fileencoding')
-" "call Pl#Theme#RemoveSegment('filetype')
-" call Pl#Theme#RemoveSegment('lineinfo')
 
 " Find merge diffs
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
