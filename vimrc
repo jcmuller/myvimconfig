@@ -1,6 +1,7 @@
+" {{{ Basics
 " Turn off compatibility with VI.
 set nocompatible
-
+" }}}
 " {{{ Vundle setup
 " Use vundle to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
@@ -79,7 +80,6 @@ Bundle "matchit.zip"
 Bundle "imaps.vim"
 Bundle "gnupg.vim"
 " }}}
-
 " {{{ Settings
 " {{{ Indent
 " All nice indent options
@@ -222,9 +222,6 @@ set t_vb=
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 " }}}
-
-runtime! ftplugin/man.vim
-
 " {{{ Filetype autocmds
 "au BufDelete,BufWritePost .vimrc source ~/.vimrc
 "au BufDelete .vimrc source ~/.vimrc
