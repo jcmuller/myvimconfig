@@ -401,12 +401,7 @@ let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 
 " Color settings
 set t_Co=256
-if filereadable($HOME . '/.vim/colors/xoria256.vim')
-	"colo xoria256
-	colo Tomorrow
-else
-	colo default
-endif
+colo Tomorrow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
