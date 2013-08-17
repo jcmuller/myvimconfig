@@ -7,28 +7,49 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+" Plugin management
 Bundle "gmarik/vundle"
+" Awesome status line
 Bundle "Lokaltog/powerline"
+" Insert mode auto-completion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
+" Snippets for vim
 Bundle "SirVer/ultisnips"
+" Code completion engine
 Bundle "Valloric/YouCompleteMe"
+" Show git diff in the gutter
 Bundle "airblade/vim-gitgutter"
+" CamelCase motion through words
 Bundle "bkad/CamelCaseMotion"
+" Open file in a given line (file:line)
 Bundle "bogado/file-line"
+" Filetype plugin for CSV
 Bundle "chrisbra/csv.vim"
-Bundle "docunext/closetag.vim"
+" Close open HTML/XML tags (Crtl-_)
+" Bundle "docunext/closetag.vim"
+" EditorConfig plugin for vim
 Bundle "editorconfig/editorconfig-vim"
+" Search local vimrc files (.lvimrc)
 Bundle "embear/vim-localvimrc"
+Bundle "gerw/vim-latex-suite"
+" "Go-to-File"
 Bundle "git://git.wincent.com/command-t"
+" Toggle ruby blocks
 Bundle "jgdavey/vim-blockle"
+" Create your own text objects
 Bundle "kana/vim-textobj-user"
+" CoffeeScript support
 Bundle "kchmck/vim-coffee-script"
+" Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Bundle "kien/ctrlp.vim"
-Bundle "majutsushi/tagbar"
+" Displays tags in a window
+" Bundle "majutsushi/tagbar"
 Bundle "mileszs/ack.vim"
 Bundle "msanders/cocoa.vim"
+" A custom text object for selecting ruby blocks (ir, ar)
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "nono/vim-handlebars"
+
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
@@ -50,6 +71,11 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "vim-scripts/argtextobj.vim"
 Bundle "vim-scripts/loremipsum"
 Bundle "vimoutliner/vimoutliner"
+
+" Bundle "taglist.vim"
+Bundle "matchit.zip"
+Bundle "imaps.vim"
+Bundle "gnupg.vim"
 
 " All nice indent options
 set autoindent
@@ -140,7 +166,7 @@ if has('spell')
 	au FileType gitconfig set nospell
 	au FileType man set nospell
 	au FileType netrw set nospell
-	au FileType taglist set nospell
+	" au FileType taglist set nospell
 	au FileType crontab set nospell
 	au FileType gitcommit set nolist
 endif
@@ -334,24 +360,24 @@ endf
 autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
-" Mappings for taglist plugin
-map <F3> :Tlist<CR>
-map <F4> :TlistHighlightTag<CR>
-map <F5> :TlistShowTag<CR>
-let Tlist_Sort_Type = "name"
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-
-
-" Tagbar mappings
-map <F2> :TagbarToggle<CR>
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-"let g:tagbar_foldlevel = 3
-"let g:tagbar_autoshowtag = 1
+" " Mappings for taglist plugin
+" map <F3> :Tlist<CR>
+" map <F4> :TlistHighlightTag<CR>
+" map <F5> :TlistShowTag<CR>
+" let Tlist_Sort_Type = "name"
+" let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+"
+"
+" " Tagbar mappings
+" map <F2> :TagbarToggle<CR>
+" let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+" let g:tagbar_autoclose = 1
+" let g:tagbar_autofocus = 1
+" "let g:tagbar_foldlevel = 3
+" "let g:tagbar_autoshowtag = 1
 
 " let g:tagbar_iconchars = ['▶', '▼']  "(default on Linux and Mac OS X)
-let g:tagbar_iconchars = ['▸', '▾']
+" let g:tagbar_iconchars = ['▸', '▾']
 " let g:tagbar_iconchars = ['▷', '◢']
 " let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
 
@@ -441,6 +467,9 @@ let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
 let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 "let g:localvimrc_debug = 1
+
+" vundle
+let g:vundle_default_git_proto="git"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
