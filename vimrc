@@ -74,17 +74,20 @@ if has('persistent_undo')
 endif
 
 " Statusline
-" Disabled, since I'm using Powerline
-" if v:version >= 700
-" 	if has('statusline')
-" 		set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
-" 		"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-" 	endif
-" else
-" 	if has('statusline')
-" 		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-" 	endif
-" endif
+if v:version >= 700
+	if !has('gui_running')
+		if has('statusline')
+			set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ [%{Tlist_Get_Tagname_By_Line()}]\ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
+			"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+		endif
+	else
+		set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+	endif
+else
+	if has('statusline')
+		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+	endif
+endif
 
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
