@@ -154,7 +154,8 @@ au BufRead,BufWinEnter *.hbs set ft=handlebars
 au BufRead Glossary.md set foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 
 " Remove any trailing white space on save
-au BufWritePre * :%s/\s\+$//e
+au BufWritePre * :call <SID>StripTrailingWhitespace()
+
 
 au BufWritePost *.dot make
 au BufWritePost *tex make
@@ -248,6 +249,13 @@ nnoremap ;w :w<cr>
 " Insert mode: Ctrl-S
 inoremap <C-S> <Esc>:w<cr>
 """"""""""""""""""""""""""""""""""""""""
+func! <SID>StripTrailingWhitespace()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
+endf
+
 func! s:VSetSearch()
 	let temp = @@
 	norm! gvy
