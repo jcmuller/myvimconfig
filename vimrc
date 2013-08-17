@@ -9,10 +9,10 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 let g:vundle_default_git_proto="git"
+" Let vundle manage itself
+Bundle "gmarik/vundle"
 " }}}
 " {{{ Vundle plugins
-" Plugin management
-Bundle "gmarik/vundle"
 " Awesome status line
 Bundle "Lokaltog/powerline"
 " Insert mode auto-completion for quotes, parens, brackets, etc
@@ -46,8 +46,6 @@ Bundle "kana/vim-textobj-user"
 Bundle "kchmck/vim-coffee-script"
 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Bundle "kien/ctrlp.vim"
-" Displays tags in a window
-" Bundle "majutsushi/tagbar"
 " Run ack from vim
 Bundle "mileszs/ack.vim"
 " Cocoa/Objective C
@@ -80,34 +78,38 @@ Bundle "matchit.zip"
 Bundle "imaps.vim"
 Bundle "gnupg.vim"
 " }}}
-" {{{ Settings
-" {{{ Indent
+" {{{ Indent and spacing
 " All nice indent options
 set autoindent
 set cindent
-set copyindent	"copy the previous indentation on autoindenting
-set smartindent
 set cinkeys-=0# " don't force # indentation
+set copyindent	"copy the previous indentation on autoindenting
+set expandtab
+"set noexpandtab
+set shiftwidth=2 "Number of spaces to use for each step of (auto)indent
+set smartindent
+set smarttab "use shiftwidth
+set softtabstop=2 "Number of spaces that a <Tab> counts for while editing
+set tabstop=2 "Number of spaces that a <Tab> in the file counts for
 " }}}
-" {{{ Everything
+" {{{ Search
+set hlsearch "highlight search term
+set incsearch "search as you type
+set nowrapscan "Only search forward in buffer.
+" }}}
+" {{{
 set background=light
 "set background=dark
 set backup "do create backup files
 set backspace=indent,eol,start "allow backspace to work across inserts and newlines.
+"set cmdheight=2 "Number of screen lines to use for the command line
 set encoding=utf-8
-set expandtab
-"set noexpandtab
 set fileformats=unix,dos,mac
-set shiftwidth=2 tabstop=2
-set hlsearch "highlight search term
-set incsearch "search as you type
 set laststatus=2 "don't combine status line with command line
 set mouse=a "n "a all modes, n normal mode, v visual mode
 set nolinebreak "don't break line after n characters (usually 70 unless otherwise spec'd)
-set nowrapscan "Only search forward in buffer.
 set number "show line numbers
 set showmatch "highlight matching parenthesis, brace, bracket, etc.
-set smarttab "use shiftwidth
 set splitbelow "open help, et al, horizontally below, rather than vertically to the right
 set switchbuf=useopen,usetab
 set tagbsearch "Binary tag search
@@ -181,36 +183,40 @@ if has('spell')
 	au FileType gitcommit set nolist
 endif
 " }}}
-
+" {{{ Scroll
 " Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=2
 
 set sidescrolloff=5
 set sidescroll=15
-
-"set cmdheight=2
-
+" }}}
+" {{{ Hidden
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
 " history for multiple files. Vim will complain if you try to quit without
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
-
+" }}}
+" {{{ Wildmenu
 " Better command-line completion
 set wildmenu
 set wildignore=*.swp,*.bak,*~,*.pyc,*.class,.git/,build/**
-
+" }}}
+" {{{ Showcmd
 " Show partial commands in the last line of the screen
 set showcmd
-
+" }}}
+" {{{ Case in search
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
-
+" }}}
+" {{{ Confirm
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
 set confirm
-
+" }}}
+" {{{ Visual bell
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
 
@@ -218,7 +224,8 @@ set visualbell
 " this line is also included, vim will neither flash nor beep.  If visualbell
 " is unset, this does nothing.
 set t_vb=
-
+" }}}
+" {{{ Time outs
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
 " }}}
