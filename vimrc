@@ -30,7 +30,7 @@ Bundle "bogado/file-line"
 " Filetype plugin for CSV
 Bundle "chrisbra/csv.vim"
 " Close open HTML/XML tags (Crtl-_)
-" Bundle "docunext/closetag.vim"
+Bundle "docunext/closetag.vim"
 " EditorConfig plugin for vim
 Bundle "editorconfig/editorconfig-vim"
 " Search local vimrc files (.lvimrc)
