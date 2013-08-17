@@ -4,7 +4,10 @@ set nocompatible
 " Use pathogen to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle "gmarik/vundle"
 
 " All nice indent options
 set autoindent
