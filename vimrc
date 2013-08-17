@@ -295,7 +295,7 @@ if has("autocmd") && exists("+omnifunc")
 				\	endif
 endif
 " }}}
-" {{{ MAPS
+" {{{ Mappings
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -337,6 +337,9 @@ inoremap <C-S> <Esc>:w<cr>
 
 " OMG! How did I not know about this earlier?
 "noremap : q:I
+
+" Find merge diffs
+"nnoremap <Leader>fd /[<=>]\{3\}<cr>
 "}}}
 " {{{ Custom Functions
 func! <SID>StripTrailingWhitespace()
@@ -378,37 +381,8 @@ endf
 autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
-" " Mappings for taglist plugin
-" map <F3> :Tlist<CR>
-" map <F4> :TlistHighlightTag<CR>
-" map <F5> :TlistShowTag<CR>
-" let Tlist_Sort_Type = "name"
-" let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-"
-"
-" " Tagbar mappings
-" map <F2> :TagbarToggle<CR>
-" let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-" let g:tagbar_autoclose = 1
-" let g:tagbar_autofocus = 1
-" "let g:tagbar_foldlevel = 3
-" "let g:tagbar_autoshowtag = 1
-
-" let g:tagbar_iconchars = ['▶', '▼']  "(default on Linux and Mac OS X)
-" let g:tagbar_iconchars = ['▸', '▾']
-" let g:tagbar_iconchars = ['▷', '◢']
-" let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
-
-" au VimEnter * nested :call tagbar#autoopen(1)
-" au FileType * nested :call tagbar#autoopen(0)
-" au BufEnter * nested :call tagbar#autoopen(0)
-
 " Gundo
 nnoremap <F6> :GundoToggle<CR>
-
-"let g:SuperTabDefaultCompletionType = "context"
-
-let g:LustyJugglerSuppressRubyWarning = 1
 
 let g:netrw_http_cmd = "wget -q -O"
 
@@ -437,17 +411,15 @@ sunmap e
 
 " Syntastic
 :sign define SyntasticError text=> linehl=Error texthl=SpecialKey
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_auto_jump = 0
+let g:syntastic_aggregate_errors = 1 " Combine errors form different checkers
+let g:syntastic_auto_jump = 0 " SO important
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_enable_balloons = 1
 let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 1
 
 let g:syntastic_error_symbol = '✗>'
 let g:syntastic_warning_symbol = '!>'
-
-" Find merge diffs
-"nnoremap <Leader>fd /[<=>]\{3\}<cr>
 
 " Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
