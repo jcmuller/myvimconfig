@@ -376,22 +376,8 @@ endf
 
 " }}}
 " {{{ Plugin configuration
-" {{{ closetag
-autocmd FileType html,eruby let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-" }}}
-" {{{ Gundo
-nnoremap <F6> :GundoToggle<CR>
-" }}}
-" {{{ Netrw
-let g:netrw_http_cmd = "wget -q -O"
-" }}}
-" {{{ Perl stuff
-let perl_include_pod = 1
-let perl_extended_vars = 1
-let perl_want_scope_in_variables = 1
-"let perl_fold = 1
-"let perl_fold_blocks = 1
+" {{{ Block Toggle (blockle)
+let g:blockle_mapping = '<Leader>l'
 " }}}
 " {{{ CamelCaseMotion
 map <silent> w <Plug>CamelCaseMotion_w
@@ -409,6 +395,51 @@ sunmap w
 sunmap b
 sunmap e
 " }}}
+" {{{ Closetag
+autocmd FileType html,eruby let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+" }}}
+" {{{ Command-T mappings
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>j :CommandTJump<CR>
+nnoremap <silent> <Leader>T :CommandTTag<CR>
+nnoremap <silent> <Leader>f :CommandTFlush<CR>
+" }}}
+" {{{ CTRLP
+let g:ctrlp_map = '<Leader>p'
+"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
+" }}}
+" {{{ GitGutter
+let g:gitgutter_on_bufenter = 1
+let g:gitgutter_all_on_focusgained = 0
+let g:gitgutter_highlight_lines = 0
+" }}}
+" {{{ Gundo
+nnoremap <F6> :GundoToggle<CR>
+" }}}
+" {{{  localvimrc
+let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
+let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
+"let g:localvimrc_debug = 1
+" }}}
+" {{{ NERDTree
+nnoremap <space><space> :NERDTreeToggle<cr>
+nnoremap <space>f :NERDTreeFind<cr>
+" Open NERDtree when no file was specified
+"autocmd vimenter * if !argc() | NERDTree | endif
+" }}}
+" {{{ Netrw
+let g:netrw_http_cmd = "wget -q -O"
+" }}}
+" {{{ Perl stuff
+let perl_include_pod = 1
+let perl_extended_vars = 1
+let perl_want_scope_in_variables = 1
+"let perl_fold = 1
+"let perl_fold_blocks = 1
+" }}}
 " {{{ Syntastic
 :sign define SyntasticError text=> linehl=Error texthl=SpecialKey
 let g:syntastic_aggregate_errors = 1 " Combine errors form different checkers
@@ -423,37 +454,6 @@ let g:syntastic_warning_symbol = '!>'
 " }}}
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
-" }}}
-" {{{ Command-T mappings
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-nnoremap <silent> <Leader>j :CommandTJump<CR>
-nnoremap <silent> <Leader>T :CommandTTag<CR>
-nnoremap <silent> <Leader>f :CommandTFlush<CR>
-" }}}
-" {{{ NERDTree
-nnoremap <space><space> :NERDTreeToggle<cr>
-nnoremap <space>f :NERDTreeFind<cr>
-" Open NERDtree when no file was specified
-"autocmd vimenter * if !argc() | NERDTree | endif
-" }}}
-" {{{ Block Toggle (blockle)
-let g:blockle_mapping = '<Leader>l'
-" }}}
-" {{{ Vim GitGutter
-let g:gitgutter_on_bufenter = 1
-let g:gitgutter_all_on_focusgained = 0
-let g:gitgutter_highlight_lines = 0
-" }}}
-" {{{ CTRLP
-let g:ctrlp_map = '<Leader>p'
-"let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
-" }}}
-" {{{  localvimrc
-let g:localvimrc_sandbox = 0
-let g:localvimrc_ask = 0
-let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
-"let g:localvimrc_debug = 1
 " }}}
 " }}}
 " {{{ Color settings
