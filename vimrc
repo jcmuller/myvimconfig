@@ -1,12 +1,15 @@
 " Turn off compatibility with VI.
 set nocompatible
 
-" Use pathogen to easily modify the runtime path to include all
+" {{{ Vundle setup
+" Use vundle to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-
+let g:vundle_default_git_proto="git"
+" }}}
+" {{{ Vundle plugins
 " Plugin management
 Bundle "gmarik/vundle"
 " Awesome status line
@@ -44,12 +47,13 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "kien/ctrlp.vim"
 " Displays tags in a window
 " Bundle "majutsushi/tagbar"
+" Run ack from vim
 Bundle "mileszs/ack.vim"
+" Cocoa/Objective C
 Bundle "msanders/cocoa.vim"
 " A custom text object for selecting ruby blocks (ir, ar)
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "nono/vim-handlebars"
-
 Bundle "scrooloose/nerdcommenter"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
@@ -71,19 +75,21 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "vim-scripts/argtextobj.vim"
 Bundle "vim-scripts/loremipsum"
 Bundle "vimoutliner/vimoutliner"
-
-" Bundle "taglist.vim"
 Bundle "matchit.zip"
 Bundle "imaps.vim"
 Bundle "gnupg.vim"
+" }}}
 
+" {{{ Settings
+" {{{ Indent
 " All nice indent options
 set autoindent
 set cindent
 set copyindent	"copy the previous indentation on autoindenting
 set smartindent
 set cinkeys-=0# " don't force # indentation
-
+" }}}
+" {{{ Everything
 set background=light
 "set background=dark
 set backup "do create backup files
@@ -111,9 +117,11 @@ set colorcolumn=95
 set viminfo='10,\"100,:20,%,n~/.viminfo
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
-
+" }}}
+" {{{ mapleader
 let mapleader = ","
-
+" }}}
+" {{{ Syntax
 " Check for version
 if v:version >= 600
 	syntax enable
@@ -124,27 +132,28 @@ if v:version >= 600
 else
 	syntax on
 endif
-
+" "}}}
+" {{{ List and tabline
 if v:version >= 700
 	set list
 	set listchars=tab:\|\-,trail:_,extends:>,precedes:<,nbsp:@
 	set showtabline=2 "always show tab line.
-
-	" gnupg
+endif
+" }}}
+" {{{ GPG
+if v:version >= 700
 	let g:GPGPreferArmor = 1
 	let g:GPGPreferSigned = 1
 	let g:GPGDefaultRecipients = [$USER]
-	"let g:GPGExecutable  = ''
-	"let g:GPGUseAgent    = 1
-	"let g:GPGPreferSymmetric = 1
 endif
-
+" }}}
+" {{{ Persistent undo
 if has('persistent_undo')
 	set undofile
 	set undodir=~/.vimundo
 endif
-
-" Statusline
+" }}}
+" {{{ Statusline... or Powerline
 if v:version >= 700
 	if !has('gui_running')
 		if has('statusline')
@@ -159,7 +168,8 @@ else
 		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
 	endif
 endif
-
+" }}}
+" {{{ Spell
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
 
@@ -170,6 +180,7 @@ if has('spell')
 	au FileType crontab set nospell
 	au FileType gitcommit set nolist
 endif
+" }}}
 
 " Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=2
@@ -210,9 +221,11 @@ set t_vb=
 
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
+" }}}
 
 runtime! ftplugin/man.vim
 
+" {{{ Filetype autocmds
 "au BufDelete,BufWritePost .vimrc source ~/.vimrc
 "au BufDelete .vimrc source ~/.vimrc
 
@@ -226,7 +239,6 @@ au BufRead Glossary.md set foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0
 
 " Remove any trailing white space on save
 au BufWritePre * :call <SID>StripTrailingWhitespace()
-
 
 au BufWritePost *.dot make
 au BufWritePost *tex make
@@ -278,9 +290,8 @@ if has("autocmd") && exists("+omnifunc")
 				\		setlocal omnifunc=syntaxcomplete#Complete |
 				\	endif
 endif
-
-
-"""""""""""""""""""""""" MAPS
+" }}}
+" {{{ MAPS
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -319,7 +330,11 @@ inoremap {<cr> {<cr>}<ESC>O
 nnoremap ;w :w<cr>
 " Insert mode: Ctrl-S
 inoremap <C-S> <Esc>:w<cr>
-""""""""""""""""""""""""""""""""""""""""
+
+" OMG! How did I not know about this earlier?
+"noremap : q:I
+"}}}
+" {{{ Custom Functions
 func! <SID>StripTrailingWhitespace()
 	let l = line(".")
 	let c = col(".")
@@ -352,9 +367,8 @@ func! ShowFuncName()
 endf
 "map <Leader>f :call ShowFuncName() <CR>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins configuration
+" }}}
+" {{{ Plugins configuration
 
 " closetag
 autocmd FileType html,eruby let b:closetag_html_style=1
@@ -455,9 +469,6 @@ let g:gitgutter_on_bufenter = 1
 let g:gitgutter_all_on_focusgained = 0
 let g:gitgutter_highlight_lines = 0
 
-" OMG! How did I not know about this earlier?
-"noremap : q:I
-
 " CTRLP
 let g:ctrlp_map = '<Leader>p'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
@@ -468,15 +479,10 @@ let g:localvimrc_ask = 0
 let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 "let g:localvimrc_debug = 1
 
-" vundle
-let g:vundle_default_git_proto="git"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Color settings
+" }}}
+" {{{ Color settings
 set t_Co=256
 colo Tomorrow
+" }}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" vim:tw=0:ts=4:sw=4:noet:nolist:
+" vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
