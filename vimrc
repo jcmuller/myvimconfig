@@ -336,32 +336,31 @@ sunmap e
 
 " Syntastic
 :sign define SyntasticError text=> linehl=Error texthl=SpecialKey
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_jump = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_error_symbol = '✗>'
-let g:syntastic_warning_symbol = 'W>'
-let g:syntastic_enable_balloons = 1
 let g:syntastic_aggregate_errors = 1
+let g:syntastic_auto_jump = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_enable_balloons = 1
+let g:syntastic_enable_signs = 1
 
-
+let g:syntastic_error_symbol = '✗>'
+let g:syntastic_warning_symbol = '!>'
 
 " Powerline configuration
-let g:Powerline_cache_enabled = 1
-let g:Powerline_colorscheme  =  "default"
-let g:Powerline_mode_i = "I"
-let g:Powerline_mode_n = "N"
-let g:Powerline_mode_r = "R"
-let g:Powerline_mode_v = "V"
-let g:Powerline_mode_h = "H"
-let g:Powerline_stl_path_style = "filename"
-let g:Powerline_symbols = "fancy"
-let g:Powerline_theme  =  "default"
-
-call Pl#Theme#RemoveSegment('fileformat')
-"call Pl#Theme#RemoveSegment('fileencoding')
-"call Pl#Theme#RemoveSegment('filetype')
-call Pl#Theme#RemoveSegment('lineinfo')
+" let g:Powerline_cache_enabled = 1
+" let g:Powerline_colorscheme  =  "default"
+" let g:Powerline_mode_i = "I"
+" let g:Powerline_mode_n = "N"
+" let g:Powerline_mode_r = "R"
+" let g:Powerline_mode_v = "V"
+" let g:Powerline_mode_h = "H"
+" let g:Powerline_stl_path_style = "filename"
+" let g:Powerline_symbols = "fancy"
+" let g:Powerline_theme  =  "default"
+"
+" call Pl#Theme#RemoveSegment('fileformat')
+" "call Pl#Theme#RemoveSegment('fileencoding')
+" "call Pl#Theme#RemoveSegment('filetype')
+" call Pl#Theme#RemoveSegment('lineinfo')
 
 " Find merge diffs
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
