@@ -410,6 +410,18 @@ nnoremap <silent> <Leader>f :CommandTFlush<CR>
 let g:ctrlp_map = '<Leader>p'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
 " }}}
+" {{{ Fugitive
+nnoremap <leader>ga  :Git add -p<CR>
+nnoremap <leader>gb  :Gblame
+nnoremap <leader>gc  :Gcommit -v
+nnoremap <leader>gd  :Gdiff
+nnoremap <leader>gl  :Glog<CR>
+nnoremap <leader>gm  :Gmove<space>
+nnoremap <leader>gpu :Git push<CR>
+nnoremap <leader>gpr :Git pull --rebase<CR>
+nnoremap <leader>gr  :Gremove<CR>
+nnoremap <leader>gs  :Gstatus<CR>
+" }}}
 " {{{ GitGutter
 let g:gitgutter_on_bufenter = 1
 let g:gitgutter_all_on_focusgained = 0
