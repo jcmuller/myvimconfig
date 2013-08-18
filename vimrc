@@ -86,6 +86,7 @@ set cinkeys-=0# " don't force # indentation
 set copyindent	"copy the previous indentation on autoindenting
 set expandtab
 "set noexpandtab
+set shiftround "Round indent to multiple of 'shiftwidth'
 set shiftwidth=2 "Number of spaces to use for each step of (auto)indent
 set smartindent
 set smarttab "use shiftwidth
@@ -98,6 +99,7 @@ set incsearch "search as you type
 set nowrapscan "Only search forward in buffer.
 " }}}
 " {{{
+" set autoread     "refresh file automatically if changed
 set background=light
 "set background=dark
 set backup "do create backup files
@@ -105,12 +107,16 @@ set backspace=indent,eol,start "allow backspace to work across inserts and newli
 "set cmdheight=2 "Number of screen lines to use for the command line
 set encoding=utf-8
 set fileformats=unix,dos,mac
+set history=1000
+"set iskeyword+=_,$,@,%,#                        "not word dividers
 set laststatus=2 "don't combine status line with command line
 set mouse=a "n "a all modes, n normal mode, v visual mode
+set noautowrite "Don't write the contents of the file, if it has been modified, on each
 set nolinebreak "don't break line after n characters (usually 70 unless otherwise spec'd)
+set noshowmode
 set number "show line numbers
-set showmatch "highlight matching parenthesis, brace, bracket, etc.
 set splitbelow "open help, et al, horizontally below, rather than vertically to the right
+set splitright
 set switchbuf=useopen,usetab
 set tagbsearch "Binary tag search
 "set term=xterm
@@ -122,6 +128,10 @@ set diffopt=context:3,iwhite,filler "diff options
 " }}}
 " {{{ mapleader
 let mapleader = ","
+" }}}
+" {{{ match
+set matchpairs+=<:>
+set showmatch "highlight matching parenthesis, brace, bracket, etc.
 " }}}
 " {{{ Syntax
 " Check for version
@@ -296,6 +306,18 @@ if has("autocmd") && exists("+omnifunc")
 endif
 " }}}
 " {{{ Mappings
+" Quickly edit/source .vimrc
+noremap <leader>ve :edit $HOME/.vimrc<CR>
+noremap <leader>vs :source $HOME/.vimrc<CR>
+
+" Yank(copy) to system clipboard
+noremap <leader>y "+y
+
+" We don't need any help!
+inoremap <F1> <nop>
+nnoremap <F1> <nop>
+vnoremap <F1> <nop>
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
