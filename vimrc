@@ -73,9 +73,10 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "vim-scripts/argtextobj.vim"
 Bundle "vim-scripts/loremipsum"
 Bundle "vimoutliner/vimoutliner"
-Bundle "matchit.zip"
-Bundle "imaps.vim"
+Bundle "Tagbar"
 Bundle "gnupg.vim"
+Bundle "imaps.vim"
+Bundle "matchit.zip"
 " }}}
 " {{{ Indent and spacing
 " All nice indent options
@@ -484,6 +485,45 @@ let g:syntastic_always_populate_loc_list = 1
 
 let g:syntastic_error_symbol = '✗>'
 let g:syntastic_warning_symbol = '!>'
+" }}}
+" {{{ Tagbar
+" Tagbar mappings
+map <F2> :TagbarToggle<CR>
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+let g:tagbar_autoclose = 0
+let g:tagbar_autofocus = 1
+"let g:tagbar_foldlevel = 3
+"let g:tagbar_autoshowtag = 0
+
+" let g:tagbar_iconchars = ['▶', '▼']  "(default on Linux and Mac OS X)
+let g:tagbar_iconchars = ['▸', '▾']
+" let g:tagbar_iconchars = ['▷', '◢']
+" let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
+
+" au VimEnter * nested :call tagbar#autoopen(1)
+" au FileType * nested :call tagbar#autoopen(0)
+" au BufEnter * nested :call tagbar#autoopen(0)
+"
+let g:tagbar_type_coffee = {
+	\ 'ctagstype' : 'coffee',
+	\ 'kinds'     : [
+		\ 'c:classes',
+		\ 'm:methods',
+		\ 'f:functions',
+		\ 'v:variables',
+		\ 'f:fields',
+	\ ]
+\ }
+
+let g:tagbar_type_markdown = {
+	\ 'ctagstype' : 'markdown',
+	\ 'kinds' : [
+		\ 'h:Heading_L1',
+		\ 'i:Heading_L2',
+		\ 'k:Heading_L3'
+	\ ]
+\ }
+
 " }}}
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
