@@ -37,7 +37,8 @@ Bundle "editorconfig/editorconfig-vim"
 Bundle "embear/vim-localvimrc"
 Bundle "gerw/vim-latex-suite"
 " "Go-to-File"
-Bundle "git://git.wincent.com/command-t"
+" Bundle "git://git.wincent.com/command-t"
+Bundle "wincent/Command-T"
 " Toggle ruby blocks
 Bundle "jgdavey/vim-blockle"
 " Create your own text objects
@@ -431,6 +432,9 @@ nnoremap <silent> <Leader>f :CommandTFlush<CR>
 " {{{ CTRLP
 let g:ctrlp_map = '<Leader>p'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
+" Extensions
+let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_buftag_ctags_bin = '/usr/local/bin/ctags'
 " }}}
 " {{{ Fugitive
 nnoremap <leader>ga  :Git add -p<CR>
