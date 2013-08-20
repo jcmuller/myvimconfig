@@ -392,8 +392,7 @@ endf
 " }}}
 " {{{ Plugin configuration
 " {{{ Airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme = "molokai"
+let g:airline_theme = "powerlineish"
 let g:airline_mode_map = {
 	\ '__' : '-',
 	\ 'n'  : 'N',
@@ -406,7 +405,18 @@ let g:airline_mode_map = {
 	\ 's'  : 'S',
 	\ 'S'  : 'S',
 	\ '' : 'S',
+	\ 'h'  : 'H'
 	\ }
+
+if !has('gui_running')
+	" unicode symbols
+	let g:airline#extensions#branch#symbol = '⎇ '
+	let g:airline#extensions#whitespace#symbol = 'Ξ'
+	let g:airline_left_sep = '▶'
+	let g:airline_right_sep = '◀'
+	let g:airline_linecolumn_prefix = '␊ '
+	let g:airline_paste_symbol = 'ρ'
+endif
 
 " }}}
 " {{{ Block Toggle (blockle)
