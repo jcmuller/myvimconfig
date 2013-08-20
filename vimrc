@@ -13,8 +13,6 @@ let g:vundle_default_git_proto="git"
 Bundle "gmarik/vundle"
 " }}}
 " {{{ Vundle plugins
-" Awesome status line
-" Bundle "Lokaltog/powerline"
 " Insert mode auto-completion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
 " Snippets for vim
@@ -167,23 +165,6 @@ if has('persistent_undo')
 	set undodir=~/.vimundo
 endif
 " }}}
-" {{{ Statusline... or Powerline [disabled]
-" if v:version >= 700
-" 	if !has('gui_running')
-" 		if has('statusline')
-" 			set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ \ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
-" 			"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-" 		endif
-" 	else
-" 		set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-" 	endif
-" else
-" 	if has('statusline')
-" 		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-" 	endif
-" endif
-" }}}
-
 " {{{ Spell
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
