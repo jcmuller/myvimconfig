@@ -14,7 +14,7 @@ Bundle "gmarik/vundle"
 " }}}
 " {{{ Vundle plugins
 " Awesome status line
-Bundle "Lokaltog/powerline"
+" Bundle "Lokaltog/powerline"
 " Insert mode auto-completion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
 " Snippets for vim
@@ -25,6 +25,7 @@ Bundle "Valloric/YouCompleteMe"
 Bundle "airblade/vim-gitgutter"
 " CamelCase motion through words
 Bundle "bkad/CamelCaseMotion"
+Bundle "bling/vim-airline"
 " Open file in a given line (file:line)
 Bundle "bogado/file-line"
 " Filetype plugin for CSV
@@ -166,22 +167,23 @@ if has('persistent_undo')
 	set undodir=~/.vimundo
 endif
 " }}}
-" {{{ Statusline... or Powerline
-if v:version >= 700
-	if !has('gui_running')
-		if has('statusline')
-			set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ \ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
-			"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-		endif
-	else
-		set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-	endif
-else
-	if has('statusline')
-		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
-	endif
-endif
+" {{{ Statusline... or Powerline [disabled]
+" if v:version >= 700
+" 	if !has('gui_running')
+" 		if has('statusline')
+" 			set statusline=t%{ShowTab()}\ %l/%L\ %P\ %f%M\ %y\ \ %{fugitive#statusline()}\ %c%V\ %r%=File:%n\ %a
+" 			"set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+" 		endif
+" 	else
+" 		set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+" 	endif
+" else
+" 	if has('statusline')
+" 		set statusline=t%{ShowTab()}\ %l\/%L\ %c%V\ %f%M\ \ %y%=F\i\l\e\:%n\ %a
+" 	endif
+" endif
 " }}}
+
 " {{{ Spell
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
@@ -387,18 +389,26 @@ func! ShowTab()
 	return TabLevel
 endf
 
-func! ShowFuncName()
-	let lnum = line(".")
-	let col = col(".")
-	echohl ModeMsg
-	echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
-	echohl None
-	call search("\\%" . lnum . "l" . "\\%" . col . "c")
-endf
-"map <Leader>f :call ShowFuncName() <CR>
-
 " }}}
 " {{{ Plugin configuration
+" {{{ Airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = "molokai"
+let g:airline_mode_map = {
+	\ '__' : '-',
+	\ 'n'  : 'N',
+	\ 'i'  : 'I',
+	\ 'R'  : 'R',
+	\ 'c'  : 'C',
+	\ 'v'  : 'V',
+	\ 'V'  : 'V',
+	\ '' : 'V',
+	\ 's'  : 'S',
+	\ 'S'  : 'S',
+	\ '' : 'S',
+	\ }
+
+" }}}
 " {{{ Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>l'
 " }}}
