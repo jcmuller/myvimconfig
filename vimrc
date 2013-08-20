@@ -39,7 +39,7 @@ Bundle "embear/vim-localvimrc"
 Bundle "gerw/vim-latex-suite"
 " "Go-to-File"
 " Bundle "git://git.wincent.com/command-t"
-Bundle "wincent/Command-T"
+" Bundle "wincent/Command-T"
 " Toggle ruby blocks
 Bundle "jgdavey/vim-blockle"
 " Create your own text objects
@@ -433,11 +433,11 @@ autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 " }}}
 " {{{ Command-T mappings
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-nnoremap <silent> <Leader>j :CommandTJump<CR>
-nnoremap <silent> <Leader>T :CommandTTag<CR>
-nnoremap <silent> <Leader>f :CommandTFlush<CR>
+"nnoremap <silent> <Leader>t :CommandT<CR>
+"nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+"nnoremap <silent> <Leader>j :CommandTJump<CR>
+"nnoremap <silent> <Leader>T :CommandTTag<CR>
+"nnoremap <silent> <Leader>f :CommandTFlush<CR>
 " }}}
 " {{{ CTRLP
 let g:ctrlp_map = '<Leader>p'
@@ -445,6 +445,59 @@ let g:ctrlp_map = '<Leader>p'
 " Extensions
 let g:ctrlp_extensions = ['tag', 'line']
 let g:ctrlp_buftag_ctags_bin = '/usr/local/bin/ctags'
+
+let g:ctrlp_match_window = "bottom,order:ttb,min:1,max:30"
+let g:ctrlp_show_hidden = 1
+
+let g:ctrlp_switch_buffer = 'e'
+  "e - jump when <cr> is pressed, but only to windows in the current tab.
+  "t - jump when <c-t> is pressed, but only to windows in another tab.
+  "v - like "e", but jump when <c-v> is pressed.
+  "h - like "e", but jump when <c-x> is pressed.
+  "E, T, V, H - like "e", "t", "v", and "h", but jump to windows anywhere.
+  "0 or <empty> - disable this feature.
+
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>j :CtrlPJump<CR>
+nnoremap <silent> <Leader>T :CtrlPTag<CR>
+nnoremap <silent> <Leader>f :CtrlPClearAllCaches<CR>
+
+"let g:ctrlp_prompt_mappings = {
+"\ 'PrtBS()':              ['<bs>', '<c-]>'],
+"\ 'PrtDelete()':          ['<del>'],
+"\ 'PrtDeleteWord()':      ['<c-w>'],
+"\ 'PrtClear()':           ['<c-u>'],
+"\ 'PrtSelectMove("j")':   ['<c-j>', '<down>'],
+"\ 'PrtSelectMove("k")':   ['<c-k>', '<up>'],
+"\ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
+"\ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
+"\ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
+"\ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
+"\ 'PrtHistory(-1)':       ['<c-n>'],
+"\ 'PrtHistory(1)':        ['<c-p>'],
+"\ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+"\ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+"\ 'AcceptSelection("t")': ['<c-t>'],
+"\ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
+"\ 'ToggleFocus()':        ['<s-tab>'],
+"\ 'ToggleRegex()':        ['<c-r>'],
+"\ 'ToggleByFname()':      ['<c-d>'],
+"\ 'ToggleType(1)':        ['<c-f>', '<c-up>'],
+"\ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
+"\ 'PrtExpandDir()':       ['<tab>'],
+"\ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
+"\ 'PrtInsert()':          ['<c-\>'],
+"\ 'PrtCurStart()':        ['<c-a>'],
+"\ 'PrtCurEnd()':          ['<c-e>'],
+"\ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
+"\ 'PrtCurRight()':        ['<c-l>', '<right>'],
+"\ 'PrtClearCache()':      ['<F5>'],
+"\ 'PrtDeleteEnt()':       ['<F7>'],
+"\ 'CreateNewFile()':      ['<c-y>'],
+"\ 'MarkToOpen()':         ['<c-z>'],
+"\ 'OpenMulti()':          ['<c-o>'],
+"\ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
+"\ }
 " }}}
 " {{{ Fugitive
 nnoremap <leader>ga  :Git add -p<CR>
