@@ -118,7 +118,7 @@ set noshowmode
 set number "show line numbers
 set splitbelow "open help, et al, horizontally below, rather than vertically to the right
 set splitright
-set switchbuf=useopen,usetab
+set switchbuf=useopen,usetab "control behavior when switching buffers.
 set tagbsearch "Binary tag search
 "set term=xterm
 set textwidth=95
