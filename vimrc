@@ -122,7 +122,7 @@ set tagbsearch "Binary tag search
 "set term=xterm
 set textwidth=95
 set colorcolumn=95
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"100,:20,%,n~/.vim/runtime/info
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
 " }}}
@@ -162,7 +162,7 @@ endif
 " {{{ Persistent undo
 if has('persistent_undo')
 	set undofile
-	set undodir=~/.vimundo
+	set undodir=~/.vim/runtime/undo
 endif
 " }}}
 " {{{ Spell

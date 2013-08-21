@@ -1,3 +1,6 @@
 vim/view/
 vim/bundle/*
 !vim/bundle/vundle
+vim/runtime/info
+vim/runtime/undo/*
+!vim/runtime/undo/.gitkeep
