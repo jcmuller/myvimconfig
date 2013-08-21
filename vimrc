@@ -298,11 +298,6 @@ noremap <leader>vs :source $HOME/.vimrc<CR>
 " Yank(copy) to system clipboard
 noremap <leader>y "+y
 
-" We don't need any help!
-inoremap <F1> <nop>
-nnoremap <F1> <nop>
-vnoremap <F1> <nop>
-
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
