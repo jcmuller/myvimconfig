@@ -2,7 +2,8 @@
 " Turn off compatibility with VI.
 set nocompatible
 " }}}
-" {{{ Vundle setup
+" {{{ Vundle
+" {{{ Setup
 " Use vundle to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off
@@ -12,7 +13,7 @@ let g:vundle_default_git_proto="git"
 " Let vundle manage itself
 Bundle "gmarik/vundle"
 " }}}
-" {{{ Vundle plugins
+" {{{ Plugins
 " Insert mode auto-completion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
 " Snippets for vim
@@ -79,6 +80,7 @@ Bundle "gnupg.vim"
 Bundle "imaps.vim"
 Bundle "matchit.zip"
 " }}}
+" }}}
 " {{{ Indent and spacing
 " All nice indent options
 set autoindent
@@ -99,7 +101,7 @@ set hlsearch "highlight search term
 set incsearch "search as you type
 set nowrapscan "Only search forward in buffer.
 " }}}
-" {{{
+" {{{ Global settings
 " set autoread     "refresh file automatically if changed
 set background=light
 "set background=dark
