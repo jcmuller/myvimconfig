@@ -1,1 +1,0 @@
-/Users/jcmuller/Development/OSS/vim-colors/tomorrow-theme/vim/colors/Tomorrow-Night-Blue.vim
