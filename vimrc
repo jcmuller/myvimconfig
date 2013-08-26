@@ -1,3 +1,4 @@
+" Juan C. Muller's .vimrc
 " {{{ Basics
 " Turn off compatibility with VI.
 set nocompatible
@@ -29,18 +30,18 @@ Bundle "bling/vim-airline"
 Bundle "bogado/file-line"
 " Filetype plugin for CSV
 Bundle "chrisbra/csv.vim"
+Bundle 'christoomey/vim-tmux-navigator'
 " Close open HTML/XML tags (Crtl-_)
 Bundle "docunext/closetag.vim"
 " EditorConfig plugin for vim
 Bundle "editorconfig/editorconfig-vim"
 " Search local vimrc files (.lvimrc)
 Bundle "embear/vim-localvimrc"
-Bundle "gerw/vim-latex-suite"
-" "Go-to-File"
-" Bundle "git://git.wincent.com/command-t"
-" Bundle "wincent/Command-T"
+"Bundle "gerw/vim-latex-suite"
 " Toggle ruby blocks
+Bundle "jgdavey/tslime.vim"
 Bundle "jgdavey/vim-blockle"
+Bundle "jgdavey/vim-turbux"
 " Create your own text objects
 Bundle "kana/vim-textobj-user"
 " CoffeeScript support
@@ -67,6 +68,7 @@ Bundle "tpope/vim-fugitive"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-ragtag"
 Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rbenv"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
 Bundle "vim-ruby/vim-ruby"
@@ -74,11 +76,20 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "vim-scripts/argtextobj.vim"
 Bundle "vim-scripts/loremipsum"
 Bundle "vimoutliner/vimoutliner"
+Bundle "zaiste/tmux.vim"
 Bundle "Tagbar"
 Bundle "bufexplorer.zip"
 Bundle "gnupg.vim"
-Bundle "imaps.vim"
+"Bundle "imaps.vim"
 Bundle "matchit.zip"
+" {{{ Colors
+Bundle "altercation/vim-colors-solarized"
+Bundle "chriskempson/base16-vim"
+Bundle "chriskempson/vim-tomorrow-theme"
+Bundle "wombat256.vim"
+Bundle "Chrysoprase"
+Bundle "xoria256.vim"
+" }}}
 " }}}
 " }}}
 " {{{ Indent and spacing
@@ -124,6 +135,7 @@ set switchbuf=useopen,usetab "control behavior when switching buffers.
 set tagbsearch "Binary tag search
 "set term=xterm
 set textwidth=95
+set ttymouse=xterm2
 set colorcolumn=95
 set viminfo='10,\"100,:20,%,n~/.vim/var/info
 set wrapmargin=0
@@ -151,7 +163,7 @@ endif
 " {{{ List and tabline
 if v:version >= 700
 	set list
-	set listchars=tab:\|\-,trail:_,extends:>,precedes:<,nbsp:@
+	set listchars=tab:\|\-,trail:•,extends:>,precedes:<,nbsp:@
 	set showtabline=2 "always show tab line.
 endif
 " }}}
@@ -231,15 +243,17 @@ set notimeout ttimeout ttimeoutlen=200
 "au BufDelete .vimrc source ~/.vimrc
 
 au BufRead *.tex setl makeprg=pdflatex\ %
-au BufRead,BufNewFile *.pde setfiletype arduino
-au BufRead,BufNewFile *.ino setfiletype arduino
-au BufRead,BufWinEnter *.md set ft=markdown
-au BufRead,BufWinEnter *.jelly set ft=xml
+au BufRead,BufNewFile *.pde setlocal ft=arduino
+au BufRead,BufNewFile *.ino setlocal ft=arduino
+au BufRead,BufWinEnter *.md setlocal ft=markdown
+au BufRead,BufWinEnter *.jelly setlocal ft=xml
 au BufRead,BufWinEnter *.hbs set ft=handlebars
-au BufRead Glossary.md set foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
+au BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
+au BufRead,BufNewFile *.tmux setlocal ft=tmux
 
 " Remove any trailing white space on save
-au BufWritePre * :call <SID>StripTrailingWhitespace()
+"au BufWritePre * :call <SID>StripTrailingWhitespace()
+au BufWritePre * :call StripTrailingWhitespace()
 
 au BufWritePost *.dot make
 au BufWritePost *tex make
@@ -261,15 +275,15 @@ au BufWinEnter *
 
 autocmd BufWinEnter *.feature setl makeprg=bundle\ exec\ cucumber\ \"%:p\"
 autocmd FileType ruby
-      \ if expand('%') =~# '_test\.rb$' |
-      \   compiler rubyunit | setl makeprg=bundle\ exec\ testrb\ \"%:p\" |
-      \ elseif expand('%') =~# '\.feature' |
-      \   compiler cucumber | setl makeprg=bundle\ exec\ cucumber\ \"%:p\" |
-      \ elseif expand('%') =~# '_spec\.rb$' |
-      \   compiler rspec | setl makeprg=bundle\ exec\ rspec\ \"%:p\" |
-      \ else |
-      \   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
-      \ endif
+			\ if expand('%') =~# '_test\.rb$' |
+			\   compiler rubyunit | setl makeprg=bundle\ exec\ testrb\ \"%:p\" |
+			\ elseif expand('%') =~# '\.feature' |
+			\   compiler cucumber | setl makeprg=bundle\ exec\ cucumber\ \"%:p\" |
+			\ elseif expand('%') =~# '_spec\.rb$' |
+			\   compiler rspec | setl makeprg=bundle\ exec\ rspec\ \"%:p\" |
+			\ else |
+			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+			\ endif
 
 au FileType dot setl makeprg=dot\ -Tpdf\ -O\ % noet sw=4 ts=4
 au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
@@ -282,7 +296,6 @@ au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
 au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
 au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
 au FileType vo_base setl nolist
-
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")
@@ -302,7 +315,8 @@ noremap <leader>y "+y
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+" nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <Leader>l :nohl<cr>:redraw!<cr>
 
 "" Don't use arrow keys
 "map <up> <nop>
@@ -346,7 +360,7 @@ inoremap <C-S> <Esc>:w<cr>
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
 "}}}
 " {{{ Custom Functions
-func! <SID>StripTrailingWhitespace()
+func! StripTrailingWhitespace()
 	let l = line(".")
 	let c = col(".")
 	%s/\s\+$//e
@@ -368,38 +382,61 @@ func! ShowTab()
 	return TabLevel
 endf
 
+"func! GetCurrentPath()
+"endf
+
 " }}}
 " {{{ Plugin configuration
 " {{{ Airline
-let g:airline_theme = "powerlineish"
+let g:airline_theme = "tomorrow"
 let g:airline_mode_map = {
-	\ '__' : '-',
-	\ 'n'  : 'N',
-	\ 'i'  : 'I',
-	\ 'R'  : 'R',
-	\ 'c'  : 'C',
-	\ 'v'  : 'V',
-	\ 'V'  : 'V',
-	\ '' : 'V',
-	\ 's'  : 'S',
-	\ 'S'  : 'S',
-	\ '' : 'S',
-	\ 'h'  : 'H'
-	\ }
+			\ '__' : '-',
+			\ 'n'  : 'N',
+			\ 'i'  : 'I',
+			\ 'R'  : 'R',
+			\ 'c'  : 'C',
+			\ 'v'  : 'V',
+			\ 'V'  : 'V',
+			\ '' : 'V',
+			\ 's'  : 'S',
+			\ 'S'  : 'S',
+			\ '' : 'S',
+			\ 'h'  : 'H'
+			\ }
 
-if !has('gui_running')
-	" unicode symbols
-	let g:airline#extensions#branch#symbol = '⎇ '
-	let g:airline#extensions#whitespace#symbol = 'Ξ'
-	let g:airline_left_sep = '▶'
-	let g:airline_right_sep = '◀'
-	let g:airline_linecolumn_prefix = '␊ '
-	let g:airline_paste_symbol = 'ρ'
-endif
+let g:airline_powerline_fonts = 1
+
+"if !has('gui_running')
+"unicode symbols
+"let g:airline#extensions#branch#symbol = '⎇ '
+"let g:airline#extensions#whitespace#symbol = 'Ξ'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '◀'
+"let g:airline_linecolumn_prefix = '␊ '
+"let g:airline_paste_symbol = 'ρ'
+
+"powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline#extensions#branch#symbol = ' '
+"let g:airline#extensions#readonly#symbol = ''
+"let g:airline_linecolumn_prefix = ' '
+"endif
+"let g:airline_section_a       (the mode/paste indicator)
+"let g:airline_section_b       (the fugitive/lawrencium branch indicator)
+"let g:airline_section_c       (bufferline or filename)
+"let g:airline_section_gutter  (readonly, csv)
+"let g:airline_section_x       (tagbar, filetype)
+"let g:airline_section_y       (fileencoding, fileformat)
+"let g:airline_section_z       (percentage, line number, column number)
+"let g:airline_section_warning (syntastic, whitespace)
+"let g:airline_section_z = ""
 
 " }}}
 " {{{ Block Toggle (blockle)
-let g:blockle_mapping = '<Leader>l'
+let g:blockle_mapping = '<Leader>L'
 " }}}
 " {{{ CamelCaseMotion
 map <silent> w <Plug>CamelCaseMotion_w
@@ -448,7 +485,7 @@ let g:ctrlp_switch_buffer = 'e'
 
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>j :CtrlPJump<CR>
-nnoremap <silent> <Leader>T :CtrlPTag<CR>
+"nnoremap <silent> <Leader>T :CtrlPTag<CR>
 nnoremap <silent> <Leader>f :CtrlPClearAllCaches<CR>
 
 "let g:ctrlp_prompt_mappings = {
@@ -580,6 +617,33 @@ let g:tagbar_type_markdown = {
 	\ ]
 \ }
 
+" }}}
+" {{{ tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+
+" }}}
+" {{{ tslime
+vmap <C-c><C-c> <Plug>SendSelectionToTmux
+nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+nmap <C-c>r <Plug>SetTmuxVars
+" }}}
+" {{{ turbux
+let g:no_turbux_mappings = 1
+map <Leader>t <Plug>SendTestToTmux
+map <Leader>T <Plug>SendFocusedTestToTmux
+
+let g:turbux_runner  = 'dispatch'      " default: vimux OR tslime OR vim OR dispatch
+let g:turbux_command_prefix = 'bundle exec' " default: (empty)
+"let g:turbux_command_rspec  = 'rspec'        " default: rspec
+"let g:turbux_command_test_unit = 'ruby'     " default: ruby -Itest
+"let g:turbux_command_cucumber = 'cucumber'  " default: cucumber
+"let g:turbux_command_turnip = 'rspec'       " default: rspec -rturnip
 " }}}
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
