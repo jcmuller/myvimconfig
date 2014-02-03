@@ -460,6 +460,24 @@ sunmap w
 sunmap b
 sunmap e
 " }}}
+" " {{{ Clang
+" " Disable auto completion, always <c-x> <c-o> to complete
+" " let g:clang_complete_auto = 0
+" let g:clang_use_library = 1
+" let g:clang_periodic_quickfix = 0
+" let g:clang_close_preview = 1
+"
+" " For Objective-C, this needs to be active, otherwise multi-parameter methods won't be completed correctly
+" let g:clang_snippets = 1
+"
+" " Snipmate does not work anymore, ultisnips is the recommended plugin
+" let g:clang_snippets_engine = 'ultisnips'
+"
+" " This might change depending on your installation
+" let g:clang_exec = '/usr/local/Cellar/llvm33/3.3/bin/clang-3.3'
+" let g:clang_library_path = '/usr/local/Cellar/llvm33/3.3/lib/llvm-3.3/lib/libclang.dylib'
+"
+" " }}}
 " {{{ Closetag
 autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
