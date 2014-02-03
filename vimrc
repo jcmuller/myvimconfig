@@ -39,6 +39,7 @@ Bundle "docunext/closetag.vim"
 Bundle "editorconfig/editorconfig-vim"
 " Search local vimrc files (.lvimrc)
 Bundle "embear/vim-localvimrc"
+Bundle "eraserhd/vim-ios"
 "Bundle "gerw/vim-latex-suite"
 " Toggle ruby blocks
 Bundle "jgdavey/tslime.vim"
