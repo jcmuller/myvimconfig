@@ -330,6 +330,7 @@ nnoremap <Leader>l :nohl<cr>:redraw!<cr>
 nmap <Leader>a :Ack<space>
 " Run ack against the visually selected text
 nmap <Leader>A vaw"xy:Ack <C-R>x
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Search visually selected text
 vmap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
