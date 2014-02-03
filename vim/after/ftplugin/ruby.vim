@@ -1,3 +1,7 @@
+if v:version >= 704
+	set regexpengine=1
+endif
+
 if !exists( "*RubyEndToken" )
 
   function RubyEndToken()
