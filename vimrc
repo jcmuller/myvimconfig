@@ -24,6 +24,7 @@ Bundle "SirVer/ultisnips"
 Bundle "Valloric/YouCompleteMe"
 " Show git diff in the gutter
 Bundle "airblade/vim-gitgutter"
+Bundle "austintaylor/vim-choosecolor"
 " CamelCase motion through words
 Bundle "bkad/CamelCaseMotion"
 Bundle "bling/vim-airline"
