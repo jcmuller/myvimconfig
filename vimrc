@@ -256,7 +256,7 @@ au BufRead,BufNewFile *.tmux setlocal ft=tmux
 
 " Remove any trailing white space on save
 "au BufWritePre * :call <SID>StripTrailingWhitespace()
-au BufWritePre * :call StripTrailingWhitespace()
+au BufWritePre * :silent call StripTrailingWhitespace()
 
 au BufWritePost *.dot make
 au BufWritePost *tex make
@@ -366,7 +366,9 @@ inoremap <C-S> <Esc>:w<cr>
 func! StripTrailingWhitespace()
 	let l = line(".")
 	let c = col(".")
-	%s/\s\+$//e
+	%s/\s\+$//e          " Remove trailing white space
+	%s/\n\{3,}/\r\r/e    " Condense multiple empty lines into one
+	" %s#\($\n\s*\)\+\%$## " Only one newline char at EOF
 	call cursor(l, c)
 endf
 
