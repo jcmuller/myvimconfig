@@ -15,6 +15,7 @@ let g:vundle_default_git_proto="git"
 Bundle "gmarik/vundle"
 " }}}
 " {{{ Plugins
+Bundle "b4winckler/vim-objc"
 " Insert mode auto-completion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
 " Snippets for vim
