@@ -679,6 +679,9 @@ let g:turbux_command_prefix = 'bundle exec' " default: (empty)
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
 " }}}
+" {{{ YouCompleteMe
+let g:ycm_register_as_syntastic_checker = 0
+" }}}
 " }}}
 " {{{ Color settings
 set t_Co=256
