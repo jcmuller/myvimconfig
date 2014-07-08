@@ -145,10 +145,10 @@ set viminfo='10,\"100,:20,%,n~/.vim/var/info
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
 " }}}
-" {{{ mapleader
+" {{{ Mapleader
 let mapleader = ","
 " }}}
-" {{{ match
+" {{{ Match
 set matchpairs+=<:>
 set showmatch "highlight matching parenthesis, brace, bracket, etc.
 " }}}
