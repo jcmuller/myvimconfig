@@ -85,6 +85,7 @@ Bundle "bufexplorer.zip"
 Bundle "gnupg.vim"
 "Bundle "imaps.vim"
 Bundle "matchit.zip"
+Bundle "Align"
 " {{{ Colors
 Bundle "altercation/vim-colors-solarized"
 Bundle "chriskempson/base16-vim"
