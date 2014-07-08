@@ -667,6 +667,7 @@ nmap <C-c>r <Plug>SetTmuxVars
 " }}}
 " {{{ turbux
 let g:no_turbux_mappings = 1
+"map <Enter> <Plug>SendTestToTmux
 map <Leader>t <Plug>SendTestToTmux
 map <Leader>T <Plug>SendFocusedTestToTmux
 
