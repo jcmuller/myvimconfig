@@ -370,7 +370,7 @@ func! StripTrailingWhitespace()
 	let c = col(".")
 	%s/\s\+$//e          " Remove trailing white space
 	%s/\n\{3,}/\r\r/e    " Condense multiple empty lines into one
-	" %s#\($\n\s*\)\+\%$## " Only one newline char at EOF
+	v/\_s*\S/d        " Only one \n at EOF
 	call cursor(l, c)
 endf
 
