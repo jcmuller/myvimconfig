@@ -52,8 +52,8 @@ Bundle "kana/vim-textobj-user"
 Bundle "kchmck/vim-coffee-script"
 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Bundle "kien/ctrlp.vim"
-" Run ack from vim
-Bundle "mileszs/ack.vim"
+" Run ag from vim
+Bundle "rking/ag.vim"
 " Cocoa/Objective C
 Bundle "msanders/cocoa.vim"
 " A custom text object for selecting ruby blocks (ir, ar)
@@ -327,10 +327,10 @@ nnoremap <Leader>l :nohl<cr>:redraw!<cr>
 "map <left> <nop>
 "map <right> <nop>
 
-nmap <Leader>a :Ack<space>
-" Run ack against the visually selected text
-nmap <Leader>A vaw"xy:Ack <C-R>x
-let g:ackprg = 'ag --nogroup --nocolor --column'
+nmap <Leader>a :Ag<space>
+" Run ag against the visually selected text
+nmap <Leader>A vaw"xy:Ag <C-R>x
+" let g:agprg = 'ag --nogroup --nocolor --column'
 
 " Search visually selected text
 vmap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
