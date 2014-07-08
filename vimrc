@@ -368,8 +368,8 @@ inoremap <C-S> <Esc>:w<cr>
 func! StripTrailingWhitespace()
 	let l = line(".")
 	let c = col(".")
-	%s/\s\+$//e          " Remove trailing white space
-	%s/\n\{3,}/\r\r/e    " Condense multiple empty lines into one
+	%s/\s\+$//e       " Remove trailing white space
+	%s/\n\{3,}/\r\r/e " Condense multiple empty lines into one
 	v/\_s*\S/d        " Only one \n at EOF
 	call cursor(l, c)
 endf
