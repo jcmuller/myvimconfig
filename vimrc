@@ -12,87 +12,68 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 let g:vundle_default_git_proto="git"
 " Let vundle manage itself
-Bundle "gmarik/vundle"
+Plugin "gmarik/vundle"
 " }}}
 " {{{ Plugins
-Bundle "b4winckler/vim-objc"
-" Insert mode auto-completion for quotes, parens, brackets, etc
-Bundle "Raimondi/delimitMate"
-" Snippets for vim
-Bundle "SirVer/ultisnips"
-" Code completion engine
-Bundle "Valloric/YouCompleteMe"
-" Show git diff in the gutter
-Bundle "airblade/vim-gitgutter"
-Bundle "austintaylor/vim-choosecolor"
-" CamelCase motion through words
-Bundle "bkad/CamelCaseMotion"
-Bundle "bling/vim-airline"
-" Open file in a given line (file:line)
-Bundle "bogado/file-line"
-" Filetype plugin for CSV
-Bundle "chrisbra/csv.vim"
-Bundle 'christoomey/vim-tmux-navigator'
-" Close open HTML/XML tags (Crtl-_)
-Bundle "docunext/closetag.vim"
-" EditorConfig plugin for vim
-Bundle "editorconfig/editorconfig-vim"
-" Search local vimrc files (.lvimrc)
-Bundle "embear/vim-localvimrc"
-Bundle "eraserhd/vim-ios"
-Bundle "evanmiller/nginx-vim-syntax"
-"Bundle "gerw/vim-latex-suite"
-" Toggle ruby blocks
-Bundle "jgdavey/tslime.vim"
-Bundle "jgdavey/vim-blockle"
-Bundle "jgdavey/vim-turbux"
-" Create your own text objects
-Bundle "kana/vim-textobj-user"
-" CoffeeScript support
-Bundle "kchmck/vim-coffee-script"
-" Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-Bundle "kien/ctrlp.vim"
-" Run ag from vim
-Bundle "rking/ag.vim"
-" Cocoa/Objective C
-Bundle "msanders/cocoa.vim"
-" A custom text object for selecting ruby blocks (ir, ar)
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "nono/vim-handlebars"
-Bundle "scrooloose/nerdcommenter"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/syntastic"
-Bundle "sjl/gundo.vim"
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-cucumber"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-ragtag"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-rbenv"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-surround"
-Bundle "vim-ruby/vim-ruby"
-Bundle "vim-scripts/YankRing.vim"
-Bundle "vim-scripts/argtextobj.vim"
-Bundle "vim-scripts/loremipsum"
-Bundle "vimoutliner/vimoutliner"
-Bundle "zaiste/tmux.vim"
-"Bundle "Tagbar"
-Bundle "bufexplorer.zip"
-Bundle "gnupg.vim"
-"Bundle "imaps.vim"
-Bundle "matchit.zip"
-Bundle "Align"
+Plugin 'b4winckler/vim-objc'
+Plugin 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
+Plugin 'SirVer/ultisnips'               " Snippets for vim
+Plugin 'Valloric/YouCompleteMe'         " Code completion engine
+Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
+Plugin 'austintaylor/vim-choosecolor'
+Plugin 'bkad/CamelCaseMotion'           " CamelCase motion through words
+Plugin 'bling/vim-airline'
+Plugin 'bogado/file-line'               " Open file in a given line (file:line)
+Plugin 'chrisbra/csv.vim'               " Filetype plugin for CSV
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
+Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
+Plugin 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-blockle'            " Toggle ruby blocks
+Plugin 'jgdavey/vim-turbux'
+Plugin 'kana/vim-textobj-user'          " Create your own text objects
+Plugin 'kchmck/vim-coffee-script'       " CoffeeScript support
+Plugin 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
+Plugin 'rking/ag.vim'                   " Run ag from vim
+Plugin 'msanders/cocoa.vim'             " Cocoa/Objective C
+Plugin 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
+Plugin 'nono/vim-handlebars'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rbenv'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/YankRing.vim'
+Plugin 'vim-scripts/argtextobj.vim'
+Plugin 'vim-scripts/loremipsum'
+Plugin 'vimoutliner/vimoutliner'
+Plugin 'zaiste/tmux.vim'
+"Plugin 'Tagbar'
+Plugin 'bufexplorer.zip'
+Plugin 'gnupg.vim'
+"Plugin 'imaps.vim'
+Plugin 'matchit.zip'
+Plugin 'Align'
 " {{{ Colors
-Bundle "altercation/vim-colors-solarized"
-Bundle "chriskempson/base16-vim"
-Bundle "chriskempson/vim-tomorrow-theme"
-Bundle "wombat256.vim"
-Bundle "Chrysoprase"
-Bundle "xoria256.vim"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'wombat256.vim'
+Plugin 'Chrysoprase'
+Plugin 'xoria256.vim'
 " }}}
 " }}}
 " }}}
