@@ -15,31 +15,40 @@ let g:vundle_default_git_proto="git"
 Plugin "gmarik/vundle"
 " }}}
 " {{{ Plugins
-Plugin 'b4winckler/vim-objc'
+Plugin 'Align'
 Plugin 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
 Plugin 'SirVer/ultisnips'               " Snippets for vim
 Plugin 'Valloric/YouCompleteMe'         " Code completion engine
 Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
 Plugin 'austintaylor/vim-choosecolor'
+Plugin 'b4winckler/vim-objc'
 Plugin 'bkad/CamelCaseMotion'           " CamelCase motion through words
 Plugin 'bling/vim-airline'
 Plugin 'bogado/file-line'               " Open file in a given line (file:line)
+Plugin 'bufexplorer.zip'
 Plugin 'chrisbra/csv.vim'               " Filetype plugin for CSV
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'cyphactor/vim-open-alternate'   " Open spec files
 Plugin 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
 Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
+Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elzr/vim-json'
 Plugin 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
 Plugin 'evanmiller/nginx-vim-syntax'
+"Plugin 'gerw/vim-latex-suite'
+Plugin 'gnupg.vim'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-blockle'            " Toggle ruby blocks
 Plugin 'jgdavey/vim-turbux'
 Plugin 'kana/vim-textobj-user'          " Create your own text objects
 Plugin 'kchmck/vim-coffee-script'       " CoffeeScript support
 Plugin 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-Plugin 'rking/ag.vim'                   " Run ag from vim
+Plugin 'matchit.zip'
 Plugin 'msanders/cocoa.vim'             " Cocoa/Objective C
 Plugin 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
+Plugin 'ngmy/vim-rubocop'
 Plugin 'nono/vim-handlebars'
+Plugin 'rking/ag.vim'                   " Run ag from vim
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -60,13 +69,9 @@ Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/argtextobj.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'vimoutliner/vimoutliner'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 Plugin 'zaiste/tmux.vim'
-"Plugin 'Tagbar'
-Plugin 'bufexplorer.zip'
-Plugin 'gnupg.vim'
-"Plugin 'imaps.vim'
-Plugin 'matchit.zip'
-Plugin 'Align'
 " {{{ Colors
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/base16-vim'
@@ -235,10 +240,11 @@ au BufRead,BufWinEnter *.jelly setlocal ft=xml
 au BufRead,BufWinEnter *.hbs set ft=handlebars
 au BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 au BufRead,BufNewFile *.tmux setlocal ft=tmux
+au BufRead,BufNewFile *.amethyst,amethyst set ft=json
 
 " Remove any trailing white space on save
 "au BufWritePre * :call <SID>StripTrailingWhitespace()
-au BufWritePre * :silent call StripTrailingWhitespace()
+"au BufWritePre * :silent call StripTrailingWhitespace()
 
 au BufWritePost *.dot make
 au BufWritePost *tex make
@@ -338,6 +344,9 @@ inoremap {<cr> {<cr>}<ESC>O
 nnoremap ;w :w<cr>
 " Insert mode: Ctrl-S
 inoremap <C-S> <Esc>:w<cr>
+
+" Remove trailing white space, dup empty lines, etc
+nnoremap <Leader>w :call StripTrailingWhitespace()<cr>
 
 " OMG! How did I not know about this earlier?
 "noremap : q:I
@@ -665,10 +674,18 @@ let g:UltiSnipsExpandTrigger='<C-j>'
 " {{{ YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 0
 " }}}
+" {{{ vim-notes
+let g:notes_directories = ['/Users/jcmuller/Documents/Notes']
+let g:notes_suffix = '.txt'
+let g:notes_smart_quotes = 0
 " }}}
 " {{{ Color settings
 set t_Co=256
-colo Tomorrow
+colo Tomorrow-Night
+" }}}
+" {{{ Highlight text that overflows
+" highlight OverLength ctermbg=red ctermfg=white guibg=#d6d6d6
+" match OverLength /\%81v.\+/
 " }}}
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
