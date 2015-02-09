@@ -12,7 +12,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 let g:vundle_default_git_proto="git"
 " Let vundle manage itself
-Plugin "gmarik/vundle"
+Plugin 'gmarik/vundle'
 " }}}
 " {{{ Plugins
 Plugin 'Align'
