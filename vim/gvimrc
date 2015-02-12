@@ -7,7 +7,7 @@ if has("mac")
   set fuoptions=maxvert,maxhorz
   set guifont=Ubuntu\ Mono\ for\ Powerline\ for\ Powerline:h14
 else
-  set guifont=Terminus\ 9
+  set guifont=Ubuntu\ Mono\ for\ Powerline\ for\ Powerline\ 12
 endi
 
 set antialias

@@ -682,13 +682,13 @@ let g:UltiSnipsExpandTrigger='<C-j>'
 let g:ycm_register_as_syntastic_checker = 0
 " }}}
 " {{{ vim-notes
-let g:notes_directories = ['/Users/jcmuller/Documents/Notes']
+let g:notes_directories = ['~/Documents/Notes']
 let g:notes_suffix = '.txt'
 let g:notes_smart_quotes = 0
 " }}}
 " {{{ Color settings
 set t_Co=256
-colo Tomorrow-Night
+colo Tomorrow-Night-Bright
 " }}}
 " {{{ Highlight text that overflows
 " highlight OverLength ctermbg=red ctermfg=white guibg=#d6d6d6
