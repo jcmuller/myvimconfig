@@ -1,8 +1,13 @@
 " No GUI elements. At all. okthxbai
-set guioptions=a
+set t_Co=256
+set guioptions=ai
 
 " Maximize to full width and height
-set fuoptions=maxvert,maxhorz
+if has("mac")
+  set fuoptions=maxvert,maxhorz
+  set guifont=Ubuntu\ Mono\ for\ Powerline\ for\ Powerline:h14
+else
+  set guifont=Terminus\ 9
+endi
 
 set antialias
-set guifont=Ubuntu\ Mono\ for\ Powerline\ for\ Powerline:h14

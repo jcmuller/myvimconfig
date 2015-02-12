@@ -16,8 +16,10 @@ Plugin 'gmarik/vundle'
 " }}}
 " {{{ Plugins
 Plugin 'Align'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
 Plugin 'SirVer/ultisnips'               " Snippets for vim
+Plugin 'Tagbar'
 Plugin 'Valloric/YouCompleteMe'         " Code completion engine
 Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
 Plugin 'austintaylor/vim-choosecolor'
@@ -35,6 +37,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elzr/vim-json'
 Plugin 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
 Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'fatih/vim-go'
 "Plugin 'gerw/vim-latex-suite'
 Plugin 'gnupg.vim'
 Plugin 'jgdavey/tslime.vim'
@@ -228,6 +231,9 @@ set t_vb=
 " {{{ Time outs
 " Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
+" }}}
+" {{{ Man pages
+source $VIMRUNTIME/ftplugin/man.vim
 " }}}
 " {{{ Filetype autocmds
 "au BufDelete,BufWritePost .vimrc source ~/.vimrc
