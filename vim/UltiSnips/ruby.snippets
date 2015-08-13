@@ -33,8 +33,22 @@ end
 endsnippet
 
 snippet defmm "def method_missing"
-def method_missing(meth, *args, &blk)
+def method_missing(method_name, *args, &block)
 	$0
+end
+
+def respond_to_missing?(method_name, *args)
+	$1
+end
+endsnippet
+
+snippet method_missing "def method_missing"
+def method_missing(method_name, *args, &block)
+	$0
+end
+
+def respond_to_missing?(method_name, *args)
+	$1
 end
 endsnippet
 
