@@ -19,7 +19,7 @@ Plugin 'Align'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
 Plugin 'SirVer/ultisnips'               " Snippets for vim
-Plugin 'Tagbar'
+"Plugin 'Tagbar'
 Plugin 'Valloric/YouCompleteMe'         " Code completion engine
 Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
 Plugin 'austintaylor/vim-choosecolor'
@@ -47,6 +47,7 @@ Plugin 'junegunn/goyo.vim'              " Distraction-free writing
 Plugin 'kana/vim-textobj-user'          " Create your own text objects
 Plugin 'kchmck/vim-coffee-script'       " CoffeeScript support
 Plugin 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'matchit.zip'
 Plugin 'msanders/cocoa.vim'             " Cocoa/Objective C
 Plugin 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
@@ -56,7 +57,9 @@ Plugin 'rking/ag.vim'                   " Run ag from vim
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'shime/vim-livedown'
 Plugin 'sjl/gundo.vim'
+Plugin 'thoughtbot/pick.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-cucumber'
@@ -254,6 +257,7 @@ au BufRead,BufNewFile *.amethyst,amethyst set ft=json
 "au BufWritePre * :silent call StripTrailingWhitespace()
 
 au BufWritePost *.dot make
+au BufWritePost *.msc make
 au BufWritePost *tex make
 
 au BufReadPost *
@@ -284,6 +288,7 @@ autocmd FileType ruby
 			\ endif
 
 au FileType dot setl makeprg=dot\ -Tpdf\ -O\ % noet sw=4 ts=4
+au FileType msc setl makeprg=mscgen\ -Tpng\ % noet sw=4 ts=4
 au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
 au FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 au FileType tex setl makeprg=pdflatex\ %
@@ -688,11 +693,15 @@ let g:notes_smart_quotes = 0
 " }}}
 " {{{ Color settings
 set t_Co=256
-colo Tomorrow-Night-Bright
+colo Tomorrow
 " }}}
 " {{{ Highlight text that overflows
 " highlight OverLength ctermbg=red ctermfg=white guibg=#d6d6d6
 " match OverLength /\%81v.\+/
+" }}}
+" {{{ Pick.vim
+nnoremap <Leader>e :call PickFile()<cr>
+" }}}
 " }}}
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
