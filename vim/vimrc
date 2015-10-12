@@ -40,6 +40,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'fatih/vim-go'
 "Plugin 'gerw/vim-latex-suite'
 Plugin 'gnupg.vim'
+Plugin 'int3/vim-extradite'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-blockle'            " Toggle ruby blocks
 Plugin 'jgdavey/vim-turbux'
