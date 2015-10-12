@@ -246,7 +246,7 @@ source $VIMRUNTIME/ftplugin/man.vim
 au BufRead *.tex setl makeprg=pdflatex\ %
 au BufRead,BufNewFile *.pde setlocal ft=arduino
 au BufRead,BufNewFile *.ino setlocal ft=arduino
-au BufRead,BufWinEnter *.md setlocal ft=markdown
+au BufRead,BufWinEnter *.md setlocal ft=markdown tw=72
 au BufRead,BufWinEnter *.jelly setlocal ft=xml
 au BufRead,BufWinEnter *.hbs set ft=handlebars
 au BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
