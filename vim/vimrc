@@ -25,7 +25,6 @@ Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
 Plugin 'austintaylor/vim-choosecolor'
 Plugin 'b4winckler/vim-objc'
 Plugin 'bkad/CamelCaseMotion'           " CamelCase motion through words
-Plugin 'bling/vim-airline'
 Plugin 'bogado/file-line'               " Open file in a given line (file:line)
 Plugin 'bufexplorer.zip'
 Plugin 'chrisbra/csv.vim'               " Filetype plugin for CSV
@@ -34,6 +33,7 @@ Plugin 'cyphactor/vim-open-alternate'   " Open spec files
 Plugin 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
 Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
 Plugin 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
 Plugin 'evanmiller/nginx-vim-syntax'
@@ -72,6 +72,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rbenv'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/YankRing.vim'
 Plugin 'vim-scripts/argtextobj.vim'
