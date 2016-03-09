@@ -291,8 +291,8 @@ autocmd FileType ruby
 			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
 			\ endif
 
-au FileType dot setl makeprg=dot\ -Tpdf\ -O\ % noet sw=4 ts=4
-au FileType msc setl makeprg=mscgen\ -Tpng\ % noet sw=4 ts=4
+au FileType dot setl makeprg=make noet sw=4 ts=4
+au FileType msc setl makeprg=make noet sw=4 ts=4
 au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
 au FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 au FileType tex setl makeprg=pdflatex\ %
