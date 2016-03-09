@@ -369,6 +369,10 @@ nnoremap <Leader>w :call StripTrailingWhitespace()<cr>
 
 " Find merge diffs
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
+
+" Toggle theme
+nnoremap <F5> :call ToggleTheme()<cr>
+
 "}}}
 " {{{ Custom Functions
 func! StripTrailingWhitespace()
@@ -393,6 +397,14 @@ func! ShowTab()
 		let TabLevel='*'
 	endif
 	return TabLevel
+endf
+
+func! ToggleTheme()
+  if g:colors_name == "Tomorrow"
+    :colo Tomorrow-Night
+  elseif g:colors_name == "Tomorrow-Night"
+    :colo Tomorrow
+  endi
 endf
 
 "func! GetCurrentPath()
