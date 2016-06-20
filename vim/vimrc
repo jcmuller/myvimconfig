@@ -30,6 +30,7 @@ Plugin 'bufexplorer.zip'
 Plugin 'chrisbra/csv.vim'               " Filetype plugin for CSV
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'cyphactor/vim-open-alternate'   " Open spec files
+Plugin 'derekwyatt/vim-scala'
 Plugin 'dhruvasagar/vim-dotoo'          " org-mode for vim
 Plugin 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
 Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
