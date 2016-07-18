@@ -7,8 +7,8 @@ if has("mac")
   set fuoptions=maxvert,maxhorz
   set guifont=Ubuntu\ Mono\ for\ Powerline\ for\ Powerline:h14
 else
-  set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-  "set guifont=Terminus\ 9
+  "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+  set guifont=Terminus\ 9
 endi
 
 nnoremap <F2> :set guifont=Terminus\ 9<CR>
