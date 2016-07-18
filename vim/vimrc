@@ -53,6 +53,8 @@ Plugin 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc find
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'matchit.zip'
 Plugin 'msanders/cocoa.vim'             " Cocoa/Objective C
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
 Plugin 'ngmy/vim-rubocop'
 Plugin 'nono/vim-handlebars'
