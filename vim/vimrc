@@ -24,7 +24,6 @@ endif
 " plugins under the ~/.vim/bundle directory
 filetype off
 
-let s:editor_root=expand("~/.vim")
 let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
 if !filereadable(vundle_readme)
     echo "Installing Vundle.."
