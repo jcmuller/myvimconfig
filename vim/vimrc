@@ -3,6 +3,21 @@
 " Turn off compatibility with VI.
 set nocompatible
 " }}}
+" {{{ NeoVim vs Vim
+if has('nvim')
+	let s:editor_root=expand("~/.nvim")
+
+	set shada='10,\"100,:20,%,n~/.nvim/var/info
+	set termguicolors
+	set nottimeout
+	tnoremap <Esc> <C-\><C-n>
+else
+	let s:editor_root=expand("~/.vim")
+
+	set ttymouse=xterm2
+	set viminfo='10,\"100,:20,%,n~/.vim/var/info
+endif
+" }}}
 " {{{ Vundle
 " {{{ Setup
 " Use vundle to easily modify the runtime path to include all
@@ -149,9 +164,7 @@ set switchbuf=useopen,usetab "control behavior when switching buffers.
 set tagbsearch "Binary tag search
 "set term=xterm
 set textwidth=95
-set ttymouse=xterm2
 set colorcolumn=95
-set viminfo='10,\"100,:20,%,n~/.vim/var/info
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
 " }}}
