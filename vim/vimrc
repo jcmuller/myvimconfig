@@ -16,6 +16,7 @@ endif
 " {{{ Plugins
 source ~/.vim/include/plug.vim
 " }}}
+" }}}
 " {{{ Indent and spacing
 " All nice indent options
 set autoindent
