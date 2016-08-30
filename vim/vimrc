@@ -8,8 +8,17 @@ set nocompatible
 " Use vundle to easily modify the runtime path to include all
 " plugins under the ~/.vim/bundle directory
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+
+let s:editor_root=expand("~/.vim")
+let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent call mkdir(s:editor_root . '/bundle', "p")
+    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/vundle"
+endif
+let &rtp = &rtp . ',' . s:editor_root . '/bundle/vundle'
+call vundle#rc(s:editor_root . '/bundle')
 let g:vundle_default_git_proto="git"
 " Let vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
