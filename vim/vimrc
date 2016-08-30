@@ -43,6 +43,7 @@ Plugin 'fatih/vim-go'
 "Plugin 'gerw/vim-latex-suite'
 Plugin 'gnupg.vim'
 Plugin 'int3/vim-extradite'
+Plugin 'janko-m/vim-test'               " Vim wrapper for running tests on different granularities
 Plugin 'jgdavey/tslime.vim'
 Plugin 'jgdavey/vim-blockle'            " Toggle ruby blocks
 Plugin 'jgdavey/vim-turbux'
@@ -720,6 +721,11 @@ colo Tomorrow
 " }}}
 " {{{ Pick.vim
 nnoremap <Leader>e :call PickFile()<cr>
+" }}}
+" {{{ vim-test
+let test#strategy = "neoterm"
+"let test#strategy = "dispatch"
+"let test#strategy = "tslime"
 " }}}
 " }}}
 
