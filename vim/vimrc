@@ -5,15 +5,11 @@ set nocompatible
 " }}}
 " {{{ NeoVim vs Vim
 if has('nvim')
-	let s:editor_root=expand("~/.nvim")
-
 	set shada='10,\"100,:20,%,n~/.nvim/var/info
 	set termguicolors         " Understand gui color configuration
 	set nottimeout            " No terminal UI timeouts (ESC works right away)
 	tnoremap <Esc> <C-\><C-n> " Use ESC in terminal to go to normal mode
 else
-	let s:editor_root=expand("~/.vim")
-
 	set ttymouse=xterm2
 	set viminfo='10,\"100,:20,%,n~/.vim/var/info
 endif
@@ -30,7 +26,7 @@ endif
 " }}}
 " {{{ Plugins
 let g:plug_timeout = 120
-call plug#begin(s:editor_root . '/plugged')
+call plug#begin('~/.vim/plugged')
 Plug 'Align'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
