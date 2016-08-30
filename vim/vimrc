@@ -18,106 +18,111 @@ else
 	set viminfo='10,\"100,:20,%,n~/.vim/var/info
 endif
 " }}}
-" {{{ Vundle
+" {{{ Plugins
 " {{{ Setup
-" Use vundle to easily modify the runtime path to include all
-" plugins under the ~/.vim/bundle directory
-filetype off
-
-let vundle_readme=s:editor_root . '/bundle/vundle/README.md'
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent call mkdir(s:editor_root . '/bundle', "p")
-    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/vundle"
+" Use vim-plug to easily modify the runtime path to include all
+" plugins under the ~/.vim/plugged directory
+if empty(glob(s:editor_root . '/autoload/plug.vim'))
+	if has('nvim')
+		silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
+					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		autocmd VimEnter * PlugInstall | source ~/.vim/init.vim
+	else
+		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		autocmd VimEnter * PlugInstall | source ~/.vim/vimrc
+	endif
 endif
-let &rtp = &rtp . ',' . s:editor_root . '/bundle/vundle'
-call vundle#rc(s:editor_root . '/bundle')
-let g:vundle_default_git_proto="git"
-" Let vundle manage itself
-Plugin 'VundleVim/Vundle.vim'
 " }}}
 " {{{ Plugins
-Plugin 'Align'
-Plugin 'PotatoesMaster/i3-vim-syntax'
-Plugin 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
-Plugin 'SirVer/ultisnips'               " Snippets for vim
-"Plugin 'Tagbar'
-Plugin 'Valloric/YouCompleteMe'         " Code completion engine
-Plugin 'airblade/vim-gitgutter'         " Show git diff in the gutter
-Plugin 'austintaylor/vim-choosecolor'
-Plugin 'b4winckler/vim-objc'
-Plugin 'bkad/CamelCaseMotion'           " CamelCase motion through words
-Plugin 'bogado/file-line'               " Open file in a given line (file:line)
-Plugin 'bufexplorer.zip'
-Plugin 'chrisbra/csv.vim'               " Filetype plugin for CSV
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'cyphactor/vim-open-alternate'   " Open spec files
-Plugin 'derekwyatt/vim-scala'
-Plugin 'dhruvasagar/vim-dotoo'          " org-mode for vim
-Plugin 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
-Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'elzr/vim-json'
-Plugin 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'fatih/vim-go'
-"Plugin 'gerw/vim-latex-suite'
-Plugin 'gnupg.vim'
-Plugin 'int3/vim-extradite'
-Plugin 'janko-m/vim-test'               " Vim wrapper for running tests on different granularities
-Plugin 'jgdavey/tslime.vim'
-Plugin 'jgdavey/vim-blockle'            " Toggle ruby blocks
-Plugin 'jgdavey/vim-turbux'
-Plugin 'junegunn/goyo.vim'              " Distraction-free writing
-Plugin 'kana/vim-textobj-user'          " Create your own text objects
-Plugin 'kassio/neoterm'                 " Use the same terminal for everything
-Plugin 'kchmck/vim-coffee-script'       " CoffeeScript support
-Plugin 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'matchit.zip'
-Plugin 'msanders/cocoa.vim'             " Cocoa/Objective C
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
-Plugin 'ngmy/vim-rubocop'
-Plugin 'nono/vim-handlebars'
-Plugin 'rking/ag.vim'                   " Run ag from vim
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'shime/vim-livedown'
-Plugin 'sjl/gundo.vim'
-Plugin 'thoughtbot/pick.vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/YankRing.vim'
-Plugin 'vim-scripts/argtextobj.vim'
-Plugin 'vim-scripts/loremipsum'
-Plugin 'vimoutliner/vimoutliner'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'zaiste/tmux.vim'
+let g:plug_timeout = 120
+call plug#begin(s:editor_root . '/plugged')
+Plug 'Align'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
+Plug 'SirVer/ultisnips'               " Snippets for vim
+"Plug 'Tagbar'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }  " Code completion engine
+Plug 'airblade/vim-gitgutter'         " Show git diff in the gutter
+Plug 'austintaylor/vim-choosecolor'
+Plug 'b4winckler/vim-objc'
+Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words
+Plug 'bogado/file-line'               " Open file in a given line (file:line)
+Plug 'bufexplorer.zip'
+Plug 'chrisbra/csv.vim'               " Filetype plugin for CSV
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'cyphactor/vim-open-alternate'   " Open spec files
+Plug 'derekwyatt/vim-scala'
+Plug 'dhruvasagar/vim-dotoo'          " org-mode for vim
+Plug 'docunext/closetag.vim'          " Close open HTML/XML tags (Crtl-_)
+Plug 'editorconfig/editorconfig-vim'  " EditorConfig plugin for vim
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'elzr/vim-json'
+Plug 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'fatih/vim-go'
+"Plug 'gerw/vim-latex-suite'
+Plug 'gnupg.vim'
+Plug 'int3/vim-extradite'
+Plug 'janko-m/vim-test'               " Vim wrapper for running tests on different granularities
+Plug 'jgdavey/tslime.vim'
+Plug 'jgdavey/vim-blockle'            " Toggle ruby blocks
+Plug 'jgdavey/vim-turbux'
+Plug 'junegunn/goyo.vim'              " Distraction-free writing
+Plug 'kana/vim-textobj-user'          " Create your own text objects
+Plug 'kchmck/vim-coffee-script'       " CoffeeScript support
+Plug 'kien/ctrlp.vim'                 " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'matchit.zip'
+Plug 'msanders/cocoa.vim'             " Cocoa/Objective C
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'nelstrom/vim-textobj-rubyblock' " A custom text object for selecting ruby blocks (ir, ar)
+Plug 'ngmy/vim-rubocop'
+Plug 'nono/vim-handlebars'
+Plug 'rking/ag.vim'                   " Run ag from vim
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'shime/vim-livedown'
+Plug 'sjl/gundo.vim'
+Plug 'thoughtbot/pick.vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'vim-scripts/loremipsum'
+Plug 'vimoutliner/vimoutliner'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+Plug 'zaiste/tmux.vim'
+
+if has('nvim')
+	Plug 'neomake/neomake'            " Asynchronous make
+	Plug 'kassio/neoterm'                 " Use the same terminal for everything
+endif
 " {{{ Colors
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'wombat256.vim'
-Plugin 'Chrysoprase'
-Plugin 'xoria256.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'wombat256.vim'
+Plug 'Chrysoprase'
+Plug 'xoria256.vim'
+
+call plug#end()
 " }}}
 " }}}
 " }}}
@@ -185,8 +190,6 @@ if v:version >= 600
 	filetype indent on
 	filetype plugin on
 	filetype plugin indent on
-else
-	syntax on
 endif
 " "}}}
 " {{{ List and tabline
