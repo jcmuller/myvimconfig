@@ -175,6 +175,8 @@ let mapleader = ","
 " {{{ Match
 set matchpairs+=<:>
 set showmatch "highlight matching parenthesis, brace, bracket, etc.
+set titlestring=%t\ (%f)
+set title " Set window title
 " }}}
 " {{{ Syntax
 " Check for version
