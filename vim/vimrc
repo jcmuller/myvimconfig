@@ -22,16 +22,10 @@ endif
 " {{{ Setup
 " Use vim-plug to easily modify the runtime path to include all
 " plugins under the ~/.vim/plugged directory
-if empty(glob(s:editor_root . '/autoload/plug.vim'))
-	if has('nvim')
-		silent !curl -fLo ~/.nvim/autoload/plug.vim --create-dirs
-					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		autocmd VimEnter * PlugInstall | source ~/.vim/init.vim
-	else
-		silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-					\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		autocmd VimEnter * PlugInstall | source ~/.vim/vimrc
-	endif
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall | source ~/.vim/vimrc
 endif
 " }}}
 " {{{ Plugins
@@ -530,7 +524,7 @@ sunmap e
 " " }}}
 " {{{ Closetag
 autocmd FileType html,eruby let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,eruby source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,eruby source ~/.vim/plugged/closetag.vim/plugin/closetag.vim
 " }}}
 " {{{ Command-T mappings
 "nnoremap <silent> <Leader>t :CommandT<CR>
