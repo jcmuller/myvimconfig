@@ -165,7 +165,7 @@ set switchbuf=useopen,usetab "control behavior when switching buffers.
 set tagbsearch "Binary tag search
 "set term=xterm
 set textwidth=95
-set colorcolumn=95
+set colorcolumn=80,95,120
 set wrapmargin=0
 set diffopt=context:3,iwhite,filler "diff options
 " }}}
