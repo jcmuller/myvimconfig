@@ -2,5 +2,6 @@ vim/view/
 vim/autoload
 vim/plugged
 vim/var/info
+vim/var/shada
 vim/var/undo/*
 !vim/var/undo/.gitkeep
