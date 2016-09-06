@@ -45,6 +45,7 @@ set backup "do create backup files
 set backspace=indent,eol,start "allow backspace to work across inserts and newlines.
 "set cmdheight=2 "Number of screen lines to use for the command line
 set encoding=utf-8
+set termencoding=utf-8
 set fileformats=unix,dos,mac
 set history=1000
 "set iskeyword+=_,$,@,%,#                        "not word dividers
