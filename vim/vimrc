@@ -430,7 +430,7 @@ sunmap e
 " " }}}
 " {{{ Closetag
 autocmd FileType html,eruby let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,eruby source ~/.vim/plugged/closetag.vim/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,eruby,eelixir source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 " }}}
 " {{{ Command-T mappings
 "nnoremap <silent> <Leader>t :CommandT<CR>
