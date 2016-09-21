@@ -185,7 +185,6 @@ au BufRead,BufWinEnter *.hbs set ft=handlebars
 au BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 au BufRead,BufNewFile *.tmux setlocal ft=tmux
 au BufRead,BufNewFile *.amethyst,amethyst set ft=json
-au BufRead,BufNewFile Makefile set noet
 
 " Remove any trailing white space on save
 "au BufWritePre * :call <SID>StripTrailingWhitespace()
@@ -234,6 +233,7 @@ au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
 au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
 au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
 au FileType vo_base setl nolist
+au Filetype make setl noet
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")
