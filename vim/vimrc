@@ -36,6 +36,11 @@ set tabstop=2 "Number of spaces that a <Tab> in the file counts for
 set hlsearch "highlight search term
 set incsearch "search as you type
 set nowrapscan "Only search forward in buffer.
+
+if executable('rg')
+	set grepprg="rg --vimgrep --no-heading"
+	set grepformat=%f:%l:%c:%m
+endif
 " }}}
 " {{{ Global settings
 " set autoread     "refresh file automatically if changed
