@@ -14,5 +14,31 @@ endi
 nnoremap <F2> :set guifont=Terminus\ Bold\ 9<CR>
 nnoremap <F3> :set guifont=Terminus\ Bold\ 11<CR>
 nnoremap <F4> :set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12<CR>
+nnoremap <F6> :call CycleFont()<CR>
+
+func! CycleFont()
+  let fonts = [
+        \"Terminus Bold 9",
+        \"Terminus Bold 11",
+        \"Ubuntu Mono derivative Powerline 12",
+        \"Hack 9"
+        \]
+
+  let current_font = &guifont
+
+  for font in fonts
+    if current_font == font
+      let idx = index(fonts, font) + 1
+
+      if idx > (len(fonts) - 1)
+        let idx = 0
+      end
+
+      execute ':set guifont=' . substitute(fonts[idx], ' ', '\\ ', 'g')
+      redraw " Force redraw so that echoed text is left in the status line
+      echo 'Current ' . font . '. Changing to ' . fonts[idx]
+    endi
+  endfor
+endf
 
 set antialias
