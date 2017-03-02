@@ -399,22 +399,6 @@ let g:airline_powerline_fonts = 1
 " {{{ Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>L'
 " }}}
-" {{{ CamelCaseMotion
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-
-omap <silent> iw <Plug>CamelCaseMotion_iw
-xmap <silent> iw <Plug>CamelCaseMotion_iw
-omap <silent> ib <Plug>CamelCaseMotion_ib
-xmap <silent> ib <Plug>CamelCaseMotion_ib
-omap <silent> ie <Plug>CamelCaseMotion_ie
-xmap <silent> ie <Plug>CamelCaseMotion_ie
-
-sunmap w
-sunmap b
-sunmap e
-" }}}
 " " {{{ Clang
 " " Disable auto completion, always <c-x> <c-o> to complete
 " " let g:clang_complete_auto = 0
