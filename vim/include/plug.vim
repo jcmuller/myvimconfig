@@ -1,15 +1,19 @@
 let g:plug_timeout = 120
 call plug#begin('~/.vim/plugged')
+"Plug 'Tagbar'
+"Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words " BUGGY
+"Plug 'gerw/vim-latex-suite'
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'              " Distraction-free writing
+"Plug 'vim-scripts/YankRing.vim'    " Disabled cause random nvim crashes
 Plug 'Align'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'           " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'SirVer/ultisnips'               " Snippets for vim
-"Plug 'Tagbar'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }  " Code completion engine
 Plug 'airblade/vim-gitgutter'         " Show git diff in the gutter
 Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
-Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words
 Plug 'bogado/file-line'               " Open file in a given line (file:line)
 Plug 'bufexplorer.zip'
 Plug 'chrisbra/csv.vim'               " Filetype plugin for CSV
@@ -25,7 +29,6 @@ Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'          " Search local vimrc files (.lvimrc)
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'fatih/vim-go'
-"Plug 'gerw/vim-latex-suite'
 Plug 'gnupg.vim'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'               " Vim wrapper for running tests on different granularities
@@ -65,7 +68,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/YankRing.vim'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'vimoutliner/vimoutliner'
