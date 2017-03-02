@@ -35,8 +35,9 @@ func! CycleFont()
       end
 
       execute ':set guifont=' . substitute(fonts[idx], ' ', '\\ ', 'g')
+      echo system('i3-msg fullscreen; i3-msg fullscreen')
       redraw " Force redraw so that echoed text is left in the status line
-      echo 'Current ' . font . '. Changing to ' . fonts[idx]
+      echo 'Changing to [' . fonts[idx] . '] from [' . font . ']'
     endi
   endfor
 endf
