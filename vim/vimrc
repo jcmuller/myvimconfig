@@ -660,5 +660,9 @@ let test#strategy = "neoterm"
 "let test#strategy = "tslime"
 " }}}
 " }}}
+" {{{ vimagit
+let g:magit_default_fold_level=2
+let g:magit_discard_untracked_do_delete=1
+" }}}
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker

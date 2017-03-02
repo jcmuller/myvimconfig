@@ -40,6 +40,7 @@ Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on dif
 Plug 'jgdavey/tslime.vim'
 Plug 'jgdavey/vim-blockle'                " Toggle ruby blocks
 Plug 'jgdavey/vim-turbux'
+Plug 'jreybert/vimagit'                   " Magit comes to vim
 Plug 'junegunn/goyo.vim'                  " Distraction-free writing
 Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
