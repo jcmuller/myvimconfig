@@ -70,6 +70,7 @@ Plug 'tpope/vim-haml'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-rhubarb'  " Github support for Fugitive"
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
