@@ -48,7 +48,7 @@ Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc fi
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'matchit.zip'
 Plug 'mhinz/vim-grepper'
-Plug 'mileszs/ack.vim'                    " Ack plugin
+"Plug 'mileszs/ack.vim'                    " Ack plugin
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
