@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words " BUGGY
 "Plug 'gerw/vim-latex-suite'
 "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"Plug 'junegunn/fzf.vim'              " Distraction-free writing
+"Plug 'junegunn/fzf.vim'              " Fuzzy finder
 "Plug 'vim-scripts/YankRing.vim'    " Disabled cause random nvim crashes
 Plug 'Align'
 Plug 'PotatoesMaster/i3-vim-syntax'
