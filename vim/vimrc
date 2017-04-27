@@ -38,7 +38,7 @@ set incsearch "search as you type
 set nowrapscan "Only search forward in buffer.
 
 if executable('rg')
-	set grepprg="rg --vimgrep --no-heading"
+	set grepprg="rg --vimgrep --no-heading -T~"
 	set grepformat=%f:%l:%c:%m
 endif
 " }}}
