@@ -234,6 +234,7 @@ au FileType tex setl makeprg=pdflatex\ %
 "au FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
 au FileType c,cpp,objc setl nolist noet sw=4 ts=4
 au FileType crontab setl nobackup nowritebackup
+au FileType magit setl nobackup nowritebackup noswapfile
 au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
 au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
 au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
