@@ -658,6 +658,18 @@ nmap     <leader>fl <Plug>CtrlSFQuickfixPrompt
 vmap     <leader>fl <Plug>CtrlSFQuickfixVwordPath
 vmap     <leader>fL <Plug>CtrlSFQuickfixVwordExec
 " }}}
+" {{{ Grepper
+nnoremap <Leader>G :Grepper -tool git<cr>
+nnoremap <Leader>g :Grepper -tool rg<cr>
+
+nmap gs <Plug>(GrepperOperator)
+xmap gs <Plug>(GrepperOperator)
+
+let g:grepper = {}
+let g:grepper.tools = ['git', 'rg']
+let g:grepper.jump = 1
+let g:grepper.next_tool = '<Leader>g'
+" }}}
 " }}}
 " {{{ vimagit
 let g:magit_default_fold_level=2
