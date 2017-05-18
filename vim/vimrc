@@ -544,6 +544,12 @@ let g:syntastic_eruby_checker = ''
 "let g:syntastic_objc_config_file = '.clang_complete'
 "let g:syntastic_objc_checker = 'clang'
 
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
+
+noremap [l :lprevious<CR>
+noremap ]l :lnext<CR>
+
 " }}}
 " " {{{ Tagbar
 " " Tagbar mappings
