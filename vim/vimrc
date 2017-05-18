@@ -645,6 +645,19 @@ let test#strategy = "neoterm"
 "let test#strategy = "dispatch"
 "let test#strategy = "tslime"
 " }}}
+" {{{ CtrlSF
+nmap     <Leader>ff <Plug>CtrlSFPrompt
+vmap     <Leader>ff <Plug>CtrlSFVwordPath
+vmap     <Leader>fF <Plug>CtrlSFVwordExec
+nmap     <Leader>fn <Plug>CtrlSFCwordPath
+nmap     <Leader>fp <Plug>CtrlSFPwordPath
+nnoremap <leader>fo :CtrlSFOpen<CR>
+nnoremap <leader>ft :CtrlSFToggle<CR>
+inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
+nmap     <leader>fl <Plug>CtrlSFQuickfixPrompt
+vmap     <leader>fl <Plug>CtrlSFQuickfixVwordPath
+vmap     <leader>fL <Plug>CtrlSFQuickfixVwordExec
+" }}}
 " }}}
 " {{{ vimagit
 let g:magit_default_fold_level=2
