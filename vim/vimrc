@@ -268,11 +268,6 @@ nnoremap <Leader>l :nohl<cr>:redraw!<cr>
 "map <left> <nop>
 "map <right> <nop>
 
-nmap <Leader>a :Ag<space>
-" Run ag against the visually selected text
-nmap <Leader>A vaw"xy:Ag <C-R>x
-" let g:agprg = 'ag --nogroup --nocolor --column'
-
 " Search visually selected text
 vmap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
 vmap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
