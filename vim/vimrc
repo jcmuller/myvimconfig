@@ -444,7 +444,7 @@ let g:ctrlp_switch_buffer = 'e'
 
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>j :CtrlPJump<CR>
-"nnoremap <silent> <Leader>T :CtrlPTag<CR>
+nnoremap <silent> <Leader>t :CtrlPTag<CR>
 nnoremap <silent> <Leader>f :CtrlPClearAllCaches<CR>
 
 "let g:ctrlp_prompt_mappings = {
