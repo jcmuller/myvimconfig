@@ -306,6 +306,9 @@ nnoremap <Leader>w :call StripTrailingWhitespace()<cr>
 nnoremap <F5> :call ToggleTheme()<cr>
 
 "}}}
+"{{{ Commands
+command Scratch call ScratchBuffer()
+"}}}
 " {{{ Custom Functions
 func! StripTrailingWhitespace()
 	let l = line(".")
@@ -332,11 +335,18 @@ func! ShowTab()
 endf
 
 func! ToggleTheme()
-  if g:colors_name == "Tomorrow"
-    :colo Tomorrow-Night
-  elseif g:colors_name == "Tomorrow-Night"
-    :colo Tomorrow
-  endi
+	if g:colors_name == "Tomorrow"
+		:colo Tomorrow-Night
+	elseif g:colors_name == "Tomorrow-Night"
+		:colo Tomorrow
+	endi
+endf
+
+func! ScratchBuffer()
+	new
+	setl buftype=nofile
+	setl bufhidden=hide
+	setl noswapfile
 endf
 
 "func! GetCurrentPath()
