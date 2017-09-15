@@ -550,6 +550,7 @@ let g:syntastic_warning_symbol = '!>'
 
 let g:syntastic_disabled_filetypes = ['eruby']
 let g:syntastic_eruby_checker = ''
+let g:syntastic_rust_checker = ['rustc']
 
 "let g:syntastic_objc_config_file = '.clang_complete'
 "let g:syntastic_objc_checker = 'clang'
