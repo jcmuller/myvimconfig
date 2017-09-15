@@ -308,6 +308,7 @@ nnoremap <F5> :call ToggleTheme()<cr>
 "}}}
 "{{{ Commands
 command Scratch call ScratchBuffer()
+command MakeScratch call MakeScratchBuffer()
 "}}}
 " {{{ Custom Functions
 func! StripTrailingWhitespace()
@@ -344,6 +345,10 @@ endf
 
 func! ScratchBuffer()
 	new
+	call MakeScratchBuffer()
+endf
+
+func! MakeScratchBuffer()
 	setl buftype=nofile
 	setl bufhidden=hide
 	setl noswapfile
