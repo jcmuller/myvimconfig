@@ -617,13 +617,20 @@ nmap <C-c><C-c> <Plug>NormalModeSendToTmux
 nmap <C-c>r <Plug>SetTmuxVars
 " }}}
 " {{{ turbux
+
+func! TurbuxRunWithNeoTerm(command)
+	:execute ":T" a:command
+endf
+
 let g:no_turbux_mappings = 1
 "map <Enter> <Plug>SendTestToTmux
-"map <Leader>t <Plug>SendTestToTmux
+map <Leader>t <Plug>SendTestToTmux
 map <Leader>T <Plug>SendFocusedTestToTmux
 
-let g:turbux_runner  = 'dispatch'      " default: vimux OR tslime OR vim OR dispatch
-let g:turbux_command_prefix = 'bundle exec' " default: (empty)
+let g:turbux_custom_runner = 'TurbuxRunWithNeoTerm'
+"let g:turbux_runner  = 'dispatch'      " default: vimux OR tslime OR vim OR dispatch
+"let g:turbux_runner  = 'vim'      " default: vimux OR tslime OR vim OR dispatch
+let g:turbux_command_prefix = 'ze' " default: (empty)
 "let g:turbux_command_rspec  = 'rspec'        " default: rspec
 "let g:turbux_command_test_unit = 'ruby'     " default: ruby -Itest
 "let g:turbux_command_cucumber = 'cucumber'  " default: cucumber
