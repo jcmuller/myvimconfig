@@ -693,6 +693,11 @@ let g:grepper.next_tool = '<Leader>g'
 let g:magit_default_fold_level=2
 let g:magit_discard_untracked_do_delete=1
 " }}}
+" {{{ vim-go
+let g:go_fmt_command = "goimports"
+
+noremap ,tg :T go test .<Enter>
+" }}}
 source ~/.vim/include/abbr.vim
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
