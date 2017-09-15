@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
 Plug 'bogado/file-line'                   " Open file in a given line (file:line)
+Plug 'cespare/vim-toml'
 Plug 'chrisbra/csv.vim'                   " Filetype plugin for CSV
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cyphactor/vim-open-alternate'       " Open spec files
@@ -47,12 +48,14 @@ Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mhinz/vim-grepper'
+Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
 Plug 'ngmy/vim-rubocop'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
@@ -71,6 +74,7 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'  " Github support for Fugitive"
 Plug 'tpope/vim-surround'
+Plug 'vektorlab/slackcat', { 'rtp': 'contrib/vim-slackcat' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
