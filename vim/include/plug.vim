@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'SirVer/ultisnips'                   " Snippets for vim
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }  " Code completion engine
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --racer-completer' }  " Code completion engine
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
