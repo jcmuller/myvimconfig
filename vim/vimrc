@@ -438,7 +438,7 @@ autocmd FileType html,xhtml,xml,eruby,eelixir source ~/.vim/bundle/closetag.vim/
 let g:ctrlp_map = '<Leader>p'
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
 " Extensions
-let g:ctrlp_extensions = ['tag', 'line']
+let g:ctrlp_extensions = ['tag', 'line', 'buffertag', 'changes', 'quickfix', 'undo']
 let g:ctrlp_buftag_ctags_bin = '/usr/bin/ctags'
 
 let g:ctrlp_match_window = "bottom,order:ttb,min:1,max:30"
@@ -454,7 +454,7 @@ let g:ctrlp_switch_buffer = 'e'
 
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>j :CtrlPJump<CR>
-nnoremap <silent> <Leader>t :CtrlPTag<CR>
+"nnoremap <silent> <Leader>t :CtrlPTag<CR>
 nnoremap <silent> <Leader>f :CtrlPClearAllCaches<CR>
 
 "let g:ctrlp_prompt_mappings = {
