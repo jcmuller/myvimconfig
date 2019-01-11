@@ -113,12 +113,12 @@ endif
 if has('spell')
 	set spell spelllang=en_us "spell checking enabled
 
-	au FileType gitconfig set nospell
-	au FileType man set nospell
-	au FileType netrw set nospell
-	" au FileType taglist set nospell
-	au FileType crontab set nospell
-	au FileType gitcommit set nolist
+	autocmd FileType gitconfig set nospell
+	autocmd FileType man set nospell
+	autocmd FileType netrw set nospell
+	" autocmd FileType taglist set nospell
+	autocmd FileType crontab set nospell
+	autocmd FileType gitcommit set nolist
 endif
 " }}}
 " {{{ Scroll
@@ -178,28 +178,28 @@ else
 endif
 " }}}
 " {{{ Filetype autocmds
-"au BufDelete,BufWritePost .vimrc source ~/.vimrc
-"au BufDelete .vimrc source ~/.vimrc
+"autocmd BufDelete,BufWritePost .vimrc source ~/.vimrc
+"autocmd BufDelete .vimrc source ~/.vimrc
 
-au BufRead *.tex setl makeprg=pdflatex\ %
-au BufRead,BufNewFile *.pde setlocal ft=arduino
-au BufRead,BufNewFile *.ino setlocal ft=arduino
-au BufRead,BufWinEnter *.md setlocal ft=markdown tw=72
-au BufRead,BufWinEnter *.jelly setlocal ft=xml
-au BufRead,BufWinEnter *.hbs set ft=handlebars
-au BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
-au BufRead,BufNewFile *.tmux setlocal ft=tmux
-au BufRead,BufNewFile *.amethyst,amethyst set ft=json
+autocmd BufRead *.tex setl makeprg=pdflatex\ %
+autocmd BufRead,BufNewFile *.pde setlocal ft=arduino
+autocmd BufRead,BufNewFile *.ino setlocal ft=arduino
+autocmd BufRead,BufWinEnter *.md setlocal ft=markdown tw=72
+autocmd BufRead,BufWinEnter *.jelly setlocal ft=xml
+autocmd BufRead,BufWinEnter *.hbs set ft=handlebars
+autocmd BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
+autocmd BufRead,BufNewFile *.tmux setlocal ft=tmux
+autocmd BufRead,BufNewFile *.amethyst,amethyst set ft=json
 
 " Remove any trailing white space on save
-"au BufWritePre * :call <SID>StripTrailingWhitespace()
-"au BufWritePre * :silent call StripTrailingWhitespace()
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
+"autocmd BufWritePre * :silent call StripTrailingWhitespace()
 
-au BufWritePost *.dot make
-au BufWritePost *.msc make
-au BufWritePost *tex make
+autocmd BufWritePost *.dot make
+autocmd BufWritePost *.msc make
+autocmd BufWritePost *tex make
 
-au BufReadPost *
+autocmd BufReadPost *
 			\ if expand("<afile>:p:h") !=? $TEMP |
 			\   if line("'\"") > 0 && line("'\"") <= line("$") |
 			\     exe "normal g`\"" |
@@ -208,7 +208,7 @@ au BufReadPost *
 			\ endif
 
 " Need to postpone using "zv" until after reading the modelines.
-au BufWinEnter *
+autocmd BufWinEnter *
 			\ if exists("b:doopenfold") |
 			\   unlet b:doopenfold |
 			\   exe "normal zv" |
@@ -226,24 +226,24 @@ autocmd FileType ruby
 			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
 			\ endif
 
-au FileType dot setl makeprg=make noet sw=4 ts=4
-au FileType msc setl makeprg=make noet sw=4 ts=4
-au FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
-au FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
-au FileType tex setl makeprg=pdflatex\ %
-"au FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
-au FileType c,cpp,objc setl nolist noet sw=4 ts=4
-au FileType crontab setl nobackup nowritebackup
-au FileType magit setl nobackup nowritebackup noswapfile
-au FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
-au FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
-au FileType html inoremap <buffer> <Leader>r :!open %<Cr>
-au FileType vo_base setl nolist
-au Filetype make setl noet
+autocmd FileType dot setl makeprg=make noet sw=4 ts=4
+autocmd FileType msc setl makeprg=make noet sw=4 ts=4
+autocmd FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
+autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
+autocmd FileType tex setl makeprg=pdflatex\ %
+"autocmd FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
+autocmd FileType c,cpp,objc setl nolist noet sw=4 ts=4
+autocmd FileType crontab setl nobackup nowritebackup
+autocmd FileType magit setl nobackup nowritebackup noswapfile
+autocmd FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
+autocmd FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
+autocmd FileType html inoremap <buffer> <Leader>r :!open %<Cr>
+autocmd FileType vo_base setl nolist
+autocmd Filetype make setl noet
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")
-	au Filetype *
+	autocmd Filetype *
 				\	if &omnifunc == "" |
 				\		setlocal omnifunc=syntaxcomplete#Complete |
 				\	endif
@@ -361,6 +361,7 @@ endf
 " {{{ Plugin configuration
 " {{{ Airline
 let g:airline_theme = "tomorrow"
+
 let g:airline_mode_map = {
 			\ '__' : '-',
 			\ 'n'  : 'N',
@@ -377,6 +378,9 @@ let g:airline_mode_map = {
 			\ }
 
 let g:airline_powerline_fonts = 1
+let g:airline_detect_spell = 0
+let g:airline#extensions#neomake#enabled = 1
+let g:airline_extensions = []
 
 "if !has('gui_running')
 "unicode symbols
@@ -441,6 +445,7 @@ autocmd FileType html,xhtml,xml,eruby,eelixir source ~/.vim/bundle/closetag.vim/
 " }}}
 " {{{ CTRLP
 let g:ctrlp_map = '<Leader>p'
+noremap <Leader>P :CtrlPLine<cr>
 "let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux"
 " Extensions
 let g:ctrlp_extensions = ['tag', 'line', 'buffertag', 'changes', 'quickfix', 'undo']
@@ -581,9 +586,9 @@ noremap ]l :lnext<CR>
 " " let g:tagbar_iconchars = ['▷', '◢']
 " " let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
 "
-" " au VimEnter * nested :call tagbar#autoopen(1)
-" " au FileType * nested :call tagbar#autoopen(0)
-" " au BufEnter * nested :call tagbar#autoopen(0)
+" " autocmd VimEnter * nested :call tagbar#autoopen(1)
+" " autocmd FileType * nested :call tagbar#autoopen(0)
+" " autocmd BufEnter * nested :call tagbar#autoopen(0)
 " "
 " let g:tagbar_type_coffee = {
 " 	\ 'ctagstype' : 'coffee',
@@ -654,7 +659,7 @@ let g:notes_smart_quotes = 0
 " }}}
 " {{{ Color settings
 set t_Co=256
-colo Tomorrow
+colo Tomorrow-Night
 " }}}
 " {{{ Highlight text that overflows
 " highlight OverLength ctermbg=red ctermfg=white guibg=#d6d6d6
@@ -703,6 +708,16 @@ let g:go_fmt_command = "goimports"
 
 noremap ,tg :T go test .<Enter>
 " }}}
+" {{{ Colorizer
+let g:colorizer_auto_filetype = 'html,css,i3,config'
+" }}}
+" {{{ vim-jsx
+let g:jsx_ext_required = 0
+let g:jsx_pragma_required = 0
+let g:xml_syntax_folding = 0
+" }}}
 source ~/.vim/include/abbr.vim
+
+let g:go_version_warning=0
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
