@@ -21,7 +21,9 @@ Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
 Plug 'bogado/file-line'                   " Open file in a given line (file:line)
 Plug 'cespare/vim-toml'
+Plug 'chr4/nginx.vim'
 Plug 'chrisbra/csv.vim'                   " Filetype plugin for CSV
+Plug 'chrisbra/Colorizer'              " color colornames and codes
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cyphactor/vim-open-alternate'       " Open spec files
 Plug 'derekwyatt/vim-scala'
@@ -34,7 +36,6 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
-Plug 'evanmiller/nginx-vim-syntax'
 Plug 'fatih/vim-go'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
@@ -47,6 +48,7 @@ Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'merlinrebrovic/focus.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
@@ -55,12 +57,15 @@ Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting r
 Plug 'ngmy/vim-rubocop'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'reedes/vim-pencil'
+Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'shime/vim-livedown'
 Plug 'sjl/gundo.vim'
+Plug 'slim-template/vim-slim'
 Plug 'thoughtbot/pick.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
@@ -86,6 +91,7 @@ Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret'
+"Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
@@ -95,7 +101,7 @@ Plug 'zimbatm/haproxy.vim'
 Plug 'rhysd/nyaovim-popup-tooltip'
 
 if has('nvim')
-	Plug 'neomake/neomake'            " Asynchronous make
+	"Plug 'neomake/neomake'            " Asynchronous make
 	Plug 'kassio/neoterm'                 " Use the same terminal for everything
 endif
 
