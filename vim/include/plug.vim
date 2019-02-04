@@ -96,6 +96,7 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
 Plug 'zimbatm/haproxy.vim'
+Plug 'leafgarland/typescript-vim'
 
 " UI Plugins
 Plug 'rhysd/nyaovim-popup-tooltip'
