@@ -533,6 +533,8 @@ let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 " {{{ NERDTree
 nnoremap <space><space> :NERDTreeToggle<cr>
 nnoremap <space>f :NERDTreeFind<cr>
+" Don't show temp files, swap files
+let NERDTreeIgnore = ['\~$', '\..*\.sw\w$']
 " Open NERDtree when no file was specified
 "autocmd vimenter * if !argc() | NERDTree | endif
 " }}}
