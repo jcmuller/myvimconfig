@@ -58,6 +58,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting r
 Plug 'ngmy/vim-rubocop'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
+Plug 'phb1/gtd.vim'                       " Getting Things Done
 Plug 'reedes/vim-pencil'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'

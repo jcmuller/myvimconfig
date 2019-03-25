@@ -700,6 +700,26 @@ let g:grepper.tools = ['git', 'rg']
 let g:grepper.jump = 1
 let g:grepper.next_tool = '<Leader>g'
 " }}}
+" Gtd {{{
+let g:gtd#dir = '~/gtd/'
+"let g:gtd#default_context = 'work'
+let g:gtd#default_action = 'inbox'
+let g:gtd#folding = 1
+let g:gtd#map_refresh = 'r'
+let g:gtd#review = [
+			\ '(!inbox + !scheduled-'.strftime("%Y%m%d").')',
+			\ '!todo',
+			\ '!waiting',
+			\ ]
+nmap <Leader>Ge <Plug>GtdExplore
+nmap <Leader>Gn <Plug>GtdNew
+vmap <Leader>Gn <Plug>GtdNew
+nmap <Leader>Gd <Plug>GtdDisplay
+nmap <Leader>Gr :Gtd (!inbox + !scheduled-<C-R>=strftime("%Y%m%d")<CR>)<CR>
+nmap <Leader>Gt :Gtd !todo<CR>
+nmap <Leader>Gw :Gtd !waiting<CR>
+nmap <Leader>GD :Gtd !done<CR>
+nmap <Leader>Gs :Gtd !scheduled<CR>
 " }}}
 " {{{ vimagit
 let g:magit_default_fold_level=2
