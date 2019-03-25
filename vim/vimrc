@@ -725,6 +725,7 @@ nmap <Leader>Gt :Gtd !todo<CR>
 nmap <Leader>Gw :Gtd !waiting<CR>
 nmap <Leader>GD :Gtd !done<CR>
 nmap <Leader>Gs :Gtd !scheduled<CR>
+nmap <Leader>Gf :GtdFiles<CR>
 " }}}
 " {{{ vimagit
 let g:magit_default_fold_level=2
