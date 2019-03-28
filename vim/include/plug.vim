@@ -104,7 +104,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/nyaovim-popup-tooltip'
 
 if has('nvim')
-	"Plug 'neomake/neomake'            " Asynchronous make
+	Plug 'neomake/neomake'            " Asynchronous make
 	Plug 'kassio/neoterm'                 " Use the same terminal for everything
 endif
 
