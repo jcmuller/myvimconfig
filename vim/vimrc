@@ -749,6 +749,12 @@ let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
 let g:xml_syntax_folding = 0
 " }}}
+" Neomake {{{
+" When writing a buffer (no delay), and on normal mode changes (after 750ms).
+call neomake#configure#automake('nrwi', 750, 500)
+let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
+" Default: let g:neomake_ruby_enabled_makers = ['flog', 'reek', 'rubocop', 'mri', 'rubylint']
+" }}}
 " }}}
 source ~/.vim/include/abbr.vim
 
