@@ -715,14 +715,17 @@ let g:gtd#folding = 1
 let g:gtd#map_refresh = 'r'
 let g:gtd#review = [
 			\ '(!inbox + !scheduled-'.strftime("%Y%m%d").')',
+			\ '!next',
 			\ '!todo',
 			\ '!waiting',
+			\ '!done',
 			\ ]
 nmap <Leader>Ge <Plug>GtdExplore
 nmap <Leader>Gn <Plug>GtdNew
 vmap <Leader>Gn <Plug>GtdNew
 nmap <Leader>Gd <Plug>GtdDisplay
-nmap <Leader>Gr :Gtd (!inbox + !scheduled-<C-R>=strftime("%Y%m%d")<CR>)<CR>
+"nmap <Leader>Gr :Gtd (!inbox + !scheduled-<C-R>=strftime("%Y%m%d")<CR>)<CR>
+nmap <Leader>Gr :GtdReview<CR>
 nmap <Leader>Gt :Gtd !todo<CR>
 nmap <Leader>Gw :Gtd !waiting<CR>
 nmap <Leader>GD :Gtd !done<CR>
