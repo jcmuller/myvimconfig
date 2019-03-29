@@ -751,9 +751,43 @@ let g:xml_syntax_folding = 0
 " }}}
 " Neomake {{{
 " When writing a buffer (no delay), and on normal mode changes (after 750ms).
-call neomake#configure#automake('nrwi', 750, 500)
-let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
+"  call neomake#configure#automake('nrwi', 750, 500)
+"  let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
 " Default: let g:neomake_ruby_enabled_makers = ['flog', 'reek', 'rubocop', 'mri', 'rubylint']
+" }}}
+" ALE {{{
+let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
+let g:ale_linters = { 'ruby': ['solargrapgh', 'rubocop'], 'javascript.jsx': ['eslint'] }
+let g:ale_fixers = {
+			\   'ruby': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'rubocop',
+			\     'rufo',
+			\     'standardrb',
+			\   ],
+			\   'javascript': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'eslint',
+			\     'prettier',
+			\     'standard',
+			\   ]
+			\ }
+set completeopt=menu,menuone,preview,noselect,noinsert
+let g:ale_ruby_solargraph_executable = '~/.rbenv/shims/solargrapgh'
+" }}}
+" deoplete{{{
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option({
+			\ 'auto_complete_delay': 200,
+			\ 'smart_case': v:true,
+			\ })
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " }}}
 " }}}
 source ~/.vim/include/abbr.vim

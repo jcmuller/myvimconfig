@@ -15,11 +15,12 @@ call plug#begin('~/.vim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'SirVer/ultisnips'                   " Snippets for vim
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --racer-completer' }  " Code completion engine
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --racer-completer' }  " Code completion engine
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
 Plug 'bogado/file-line'                   " Open file in a given line (file:line)
+Plug 'castwide/solargraph'
 Plug 'cespare/vim-toml'
 Plug 'chiel92/vim-autoformat'
 Plug 'chr4/nginx.vim'
@@ -55,7 +56,7 @@ Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
-Plug 'ngmy/vim-rubocop'
+"Plug 'ngmy/vim-rubocop'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
@@ -64,7 +65,7 @@ Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'shime/vim-livedown'
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
@@ -93,7 +94,7 @@ Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret'
-"Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
+Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
@@ -104,8 +105,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rhysd/nyaovim-popup-tooltip'
 
 if has('nvim')
-	Plug 'neomake/neomake'            " Asynchronous make
-	Plug 'kassio/neoterm'                 " Use the same terminal for everything
+  "Plug 'neomake/neomake'            " Asynchronous make
+  Plug 'kassio/neoterm'                 " Use the same terminal for everything
+  Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 endif
 
 " Colors
