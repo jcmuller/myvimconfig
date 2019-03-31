@@ -766,12 +766,11 @@ let g:ale_linters = {
 			\   'go': ['bingo', 'staticcheck', 'govet'],
 			\ }
 let g:ale_fixers = {
-			\   'ruby': [
+			\   'go': [
+			\     'gofmt',
+			\     'goimports',
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
-			\     'rubocop',
-			\     'rufo',
-			\     'standardrb',
 			\   ],
 			\   'javascript': [
 			\     'remove_trailing_lines',
@@ -780,11 +779,18 @@ let g:ale_fixers = {
 			\     'prettier',
 			\     'standard',
 			\   ],
+			\   'ruby': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'rubocop',
+			\     'rufo',
+			\     'standardrb',
+			\   ],
 			\   'yaml': [
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
 			\     'prettier',
-			\   ]
+			\   ],
 			\ }
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_ruby_solargraph_executable = '~/.rbenv/shims/solargrapgh'
