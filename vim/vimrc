@@ -760,7 +760,11 @@ let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
-let g:ale_linters = { 'ruby': ['solargrapgh', 'rubocop'], 'javascript.jsx': ['eslint'] }
+let g:ale_linters = {
+			\   'ruby': ['solargrapgh', 'rubocop'],
+			\   'javascript.jsx': ['eslint'],
+			\   'go': ['bingo', 'staticcheck', 'govet'],
+			\ }
 let g:ale_fixers = {
 			\   'ruby': [
 			\     'remove_trailing_lines',
