@@ -798,7 +798,10 @@ let g:ale_go_bingo_executable = '~/go/1.12.1/bin/gopls'
 let g:ale_go_goimports_executable = '~/go/1.12.1/bin/goimports'
 " }}}
 " deoplete{{{
-let g:deoplete#enable_at_startup = 1
+" Enable deoplete when InsertEnter.
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
+
 call deoplete#custom#option({
 			\ 'auto_complete_delay': 200,
 			\ 'smart_case': v:true,
