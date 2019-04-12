@@ -794,6 +794,11 @@ let g:ale_fixers = {
 			\     'trim_whitespace',
 			\     'prettier',
 			\   ],
+			\   'eruby.yaml': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'prettier',
+			\   ],
 			\ }
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_ruby_solargraph_executable = '~/.rbenv/shims/solargrapgh'
