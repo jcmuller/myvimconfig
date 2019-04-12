@@ -717,8 +717,9 @@ let g:gtd#default_action = 'inbox'
 let g:gtd#folding = 1
 let g:gtd#map_refresh = 'r'
 let g:gtd#review = [
-			\ '(!inbox + !scheduled-'.strftime("%Y%m%d").')',
+			\ '!working',
 			\ '!next',
+			\ '(!inbox + !scheduled-'.strftime("%Y%m%d").')',
 			\ '!todo',
 			\ '!waiting',
 			\ '!done',
