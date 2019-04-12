@@ -689,6 +689,9 @@ inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
 nmap     <leader>fl <Plug>CtrlSFQuickfixPrompt
 vmap     <leader>fl <Plug>CtrlSFQuickfixVwordPath
 vmap     <leader>fL <Plug>CtrlSFQuickfixVwordExec
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 0
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|npm\|vendor'
 " }}}
 " {{{ Grepper
 nnoremap <Leader>G :Grepper -tool git<cr>
