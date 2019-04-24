@@ -770,6 +770,11 @@ let g:ale_linters = {
 			\   'go': ['bingo', 'staticcheck', 'govet', 'golint'],
 			\ }
 let g:ale_fixers = {
+			\   'eruby.yaml': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'prettier',
+			\   ],
 			\   'go': [
 			\     'gofmt',
 			\     'goimports',
@@ -783,6 +788,10 @@ let g:ale_fixers = {
 			\     'prettier',
 			\     'standard',
 			\   ],
+			\   'make': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\   ],
 			\   'ruby': [
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
@@ -791,11 +800,6 @@ let g:ale_fixers = {
 			\     'standardrb',
 			\   ],
 			\   'yaml': [
-			\     'remove_trailing_lines',
-			\     'trim_whitespace',
-			\     'prettier',
-			\   ],
-			\   'eruby.yaml': [
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
 			\     'prettier',
