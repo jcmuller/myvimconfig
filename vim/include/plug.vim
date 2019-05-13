@@ -97,6 +97,7 @@ Plug 'wincent/ferret'
 Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'zaiste/tmux.vim'
 Plug 'zimbatm/haproxy.vim'
 Plug 'leafgarland/typescript-vim'
