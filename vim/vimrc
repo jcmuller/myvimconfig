@@ -42,6 +42,12 @@ set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m
 "endif
 " }}}
+" {{{ Create directory if it doesn't exist
+autocmd BufWritePre *
+			\ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+			\ call mkdir(expand('<afile>:h'), 'p') |
+			\ endif
+" }}}
 " {{{ Global settings
 " set autoread     "refresh file automatically if changed
 set background=light
