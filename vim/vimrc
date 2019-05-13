@@ -731,7 +731,6 @@ let g:gtd#review = [
 			\ '(!inbox + !scheduled-'.strftime("%Y%m%d").')',
 			\ '!todo',
 			\ '!waiting',
-			\ '!done',
 			\ ]
 nmap <Leader>Ge <Plug>GtdExplore
 nmap <Leader>Gn <Plug>GtdNew
