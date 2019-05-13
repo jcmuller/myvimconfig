@@ -814,7 +814,8 @@ let g:ale_fixers = {
 			\   ],
 			\ }
 set completeopt=menu,menuone,preview,noselect,noinsert
-let g:ale_ruby_solargraph_executable = '~/.rbenv/shims/solargrapgh'
+let g:ale_ruby_solargraph_executable = 'bundle'
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_go_bingo_executable = '~/go/1.12.1/bin/gopls'
 let g:ale_go_goimports_executable = '~/go/1.12.1/bin/goimports'
 " }}}
