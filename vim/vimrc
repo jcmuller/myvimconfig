@@ -150,6 +150,9 @@ set wildignore=*.swp,*.bak,*~,*.pyc,*.class,.git/,build/**
 " Show partial commands in the last line of the screen
 set showcmd
 " }}}
+" {{{ Windows
+set equalalways
+" }}}
 " {{{ Case in search
 " Use case insensitive search, except when using capital letters
 set ignorecase
