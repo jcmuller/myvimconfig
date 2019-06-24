@@ -85,6 +85,7 @@ Plug 'tpope/vim-surround'
 Plug 'vektorlab/slackcat', { 'rtp': 'contrib/vim-slackcat' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/argtextobj.vim'

@@ -812,6 +812,13 @@ let g:ale_fixers = {
 			\     'trim_whitespace',
 			\     'prettier',
 			\   ],
+			\   'python': [
+			\     'add_blank_lines_for_python_control_statements',
+			\     'autopep8',
+			\     'isort',
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\   ],
 			\ }
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_ruby_solargraph_executable = 'bundle'
