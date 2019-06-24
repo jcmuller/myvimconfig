@@ -523,6 +523,8 @@ nnoremap <leader>gpu :Git push<CR>
 nnoremap <leader>gpr :Git pull --rebase<CR>
 nnoremap <leader>gr  :Gremove<CR>
 nnoremap <leader>gs  :Gstatus<CR>
+" :Gshow shows what files a commit changes
+command -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 " }}}
 " {{{ GitGutter
 let g:gitgutter_on_bufenter = 1
