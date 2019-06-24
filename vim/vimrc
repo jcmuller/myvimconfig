@@ -777,6 +777,7 @@ let g:ale_linters = {
 			\   'ruby': ['solargraph', 'rubocop'],
 			\   'javascript.jsx': ['eslint'],
 			\   'go': ['bingo', 'staticcheck', 'govet', 'golint'],
+			\   'diff': [],
 			\ }
 let g:ale_fixers = {
 			\   'eruby.yaml': [
