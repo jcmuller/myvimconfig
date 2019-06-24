@@ -821,12 +821,15 @@ let g:ale_fixers = {
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
 			\   ],
+			\   'diff': [],
 			\ }
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_ruby_solargraph_executable = 'bundle'
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_go_bingo_executable = '~/go/1.12.1/bin/gopls'
 let g:ale_go_goimports_executable = '~/go/1.12.1/bin/goimports'
+
+autocmd BufEnter diff let ale_fix_on_save=0
 " }}}
 " deoplete{{{
 " Enable deoplete when InsertEnter.
