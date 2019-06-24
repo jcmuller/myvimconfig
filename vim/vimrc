@@ -42,12 +42,6 @@ set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m
 "endif
 " }}}
-" {{{ Create directory if it doesn't exist
-autocmd BufWritePre *
-			\ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
-			\ call mkdir(expand('<afile>:h'), 'p') |
-			\ endif
-" }}}
 " {{{ Global settings
 " set autoread     "refresh file automatically if changed
 set background=light
@@ -189,24 +183,56 @@ endif
 " {{{ Filetype autocmds
 "autocmd BufDelete,BufWritePost .vimrc source ~/.vimrc
 "autocmd BufDelete .vimrc source ~/.vimrc
-
-autocmd BufRead *.tex setl makeprg=pdflatex\ %
-autocmd BufRead,BufNewFile *.pde setlocal ft=arduino
-autocmd BufRead,BufNewFile *.ino setlocal ft=arduino
-autocmd BufRead,BufWinEnter *.md setlocal ft=markdown tw=72
-autocmd BufRead,BufWinEnter *.jelly setlocal ft=xml
-autocmd BufRead,BufWinEnter *.hbs set ft=handlebars
-autocmd BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
-autocmd BufRead,BufNewFile *.tmux setlocal ft=tmux
 autocmd BufRead,BufNewFile *.amethyst,amethyst set ft=json
-
-" Remove any trailing white space on save
-"autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
-"autocmd BufWritePre * :silent call StripTrailingWhitespace()
-
+autocmd BufRead,BufNewFile *.ino setlocal ft=arduino
+autocmd BufRead,BufNewFile *.pde setlocal ft=arduino
+autocmd BufRead,BufNewFile *.tmux setlocal ft=tmux
+autocmd BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
+autocmd BufRead,BufWinEnter *.hbs set ft=handlebars
+autocmd BufRead,BufWinEnter *.jelly setlocal ft=xml
+autocmd BufRead,BufWinEnter *.md setlocal ft=markdown tw=72
+autocmd BufRead *.tex setl makeprg=pdflatex\ %
+autocmd BufWinEnter *.feature setl makeprg=bundle\ exec\ cucumber\ \"%:p\"
 autocmd BufWritePost *.dot make
 autocmd BufWritePost *.msc make
 autocmd BufWritePost *tex make
+"autocmd BufWritePre * :call <SID>StripTrailingWhitespace()
+"autocmd BufWritePre * :silent call StripTrailingWhitespace()
+autocmd FileType c,cpp,objc setl nolist noet sw=4 ts=4
+autocmd FileType crontab setl nobackup nowritebackup
+autocmd FileType dot setl makeprg=make noet sw=4 ts=4
+autocmd FileType html inoremap <buffer> <Leader>r :!open %<Cr>
+autocmd FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
+autocmd FileType magit setl nobackup nowritebackup noswapfile
+autocmd Filetype make setl noet
+autocmd FileType msc setl makeprg=make noet sw=4 ts=4
+autocmd FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
+autocmd FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
+autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
+"autocmd FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
+autocmd FileType tex setl makeprg=pdflatex\ %
+autocmd FileType vo_base setl nolist
+" Remove any trailing white space on save
+
+" Set makeprg accordingly to the ruby file being edited
+autocmd FileType ruby
+			\ if expand('%') =~# '_test\.rb$' |
+			\   compiler rubyunit | setl makeprg=bundle\ exec\ testrb\ \"%:p\" |
+			\ elseif expand('%') =~# '\.feature' |
+			\   compiler cucumber | setl makeprg=bundle\ exec\ cucumber\ \"%:p\" |
+			\ elseif expand('%') =~# '_spec\.rb$' |
+			\   compiler rspec | setl makeprg=bundle\ exec\ rspec\ \"%:p\" |
+			\ else |
+			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
+			\ endif
+" }}}
+" {{{ Global autocmds
+" {{{ Create directory if it doesn't exist
+autocmd BufWritePre *
+			\ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+			\ call mkdir(expand('<afile>:h'), 'p') |
+			\ endif
+" }}}
 
 autocmd BufReadPost *
 			\ if expand("<afile>:p:h") !=? $TEMP |
@@ -222,33 +248,6 @@ autocmd BufWinEnter *
 			\   unlet b:doopenfold |
 			\   exe "normal zv" |
 			\ endif
-
-autocmd BufWinEnter *.feature setl makeprg=bundle\ exec\ cucumber\ \"%:p\"
-autocmd FileType ruby
-			\ if expand('%') =~# '_test\.rb$' |
-			\   compiler rubyunit | setl makeprg=bundle\ exec\ testrb\ \"%:p\" |
-			\ elseif expand('%') =~# '\.feature' |
-			\   compiler cucumber | setl makeprg=bundle\ exec\ cucumber\ \"%:p\" |
-			\ elseif expand('%') =~# '_spec\.rb$' |
-			\   compiler rspec | setl makeprg=bundle\ exec\ rspec\ \"%:p\" |
-			\ else |
-			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
-			\ endif
-
-autocmd FileType dot setl makeprg=make noet sw=4 ts=4
-autocmd FileType msc setl makeprg=make noet sw=4 ts=4
-autocmd FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
-autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
-autocmd FileType tex setl makeprg=pdflatex\ %
-"autocmd FileType ruby set tags=./tags,tags,~/Development/ChallengePost/tags
-autocmd FileType c,cpp,objc setl nolist noet sw=4 ts=4
-autocmd FileType crontab setl nobackup nowritebackup
-autocmd FileType magit setl nobackup nowritebackup noswapfile
-autocmd FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
-autocmd FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
-autocmd FileType html inoremap <buffer> <Leader>r :!open %<Cr>
-autocmd FileType vo_base setl nolist
-autocmd Filetype make setl noet
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
 if has("autocmd") && exists("+omnifunc")
