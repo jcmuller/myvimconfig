@@ -3,7 +3,6 @@ let g:plug_timeout = 120
 call plug#begin('~/.vim/plugged')
 
 " Plug 'chaoren/vim-wordmotion'             " word motions
-"Plug 'Tagbar'
 "Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words " BUGGY
 "Plug 'gerw/vim-latex-suite'
 "Plug 'haya14busa/incsearch-easymotion.vim'
@@ -50,6 +49,7 @@ Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'merlinrebrovic/focus.vim'
 Plug 'mhinz/vim-grepper'
 Plug 'maralla/vim-toml-enhance', { 'depends': 'cespare/vim-toml' }
