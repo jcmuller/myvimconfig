@@ -115,7 +115,7 @@ endif
 " Colors
 "Plug 'altercation/vim-colors-solarized'
 "Plug 'chriskempson/base16-vim'
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'jcmuller/vim-tomorrow-theme'
 "Plug 'vim-scripts/Chrysoprase'
 "Plug 'vim-scripts/wombat256.vim'
 "Plug 'vim-scripts/xoria256.vim'
