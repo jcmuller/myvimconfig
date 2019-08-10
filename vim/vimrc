@@ -387,6 +387,7 @@ let g:airline_mode_map = {
 
 let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
+let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#neomake#enabled = 1
 let g:airline_extensions = []
 
