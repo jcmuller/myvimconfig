@@ -772,7 +772,7 @@ let g:xml_syntax_folding = 0
 " Default: let g:neomake_ruby_enabled_makers = ['flog', 'reek', 'rubocop', 'mri', 'rubylint']
 " }}}
 " ALE {{{
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_fix_on_save = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
