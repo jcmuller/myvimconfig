@@ -68,6 +68,7 @@ Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quot
 Plug 'reedes/vim-pencil'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shime/vim-livedown'
