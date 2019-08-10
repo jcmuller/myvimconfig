@@ -557,7 +557,7 @@ let g:NERDTreeDirArrowExpandable = ""
 let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 " Open NERDtree when no file was specified
-"autocmd vimenter * if !argc() | NERDTree | endif
+autocmd vimenter * if !argc() | NERDTree | endif
 " }}}
 " {{{ Netrw
 let g:netrw_http_cmd = "wget -q -O"
