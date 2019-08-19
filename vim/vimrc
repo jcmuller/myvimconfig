@@ -250,12 +250,12 @@ autocmd BufWinEnter *
 			\ endif
 
 " Set omnicomplete to a general thing if plugin doesn't implement it already
-if has("autocmd") && exists("+omnifunc")
-	autocmd Filetype *
-				\	if &omnifunc == "" |
-				\		setlocal omnifunc=syntaxcomplete#Complete |
-				\	endif
-endif
+"  if has("autocmd") && exists("+omnifunc")
+"  	autocmd Filetype *
+"  				\	if &omnifunc == "" |
+"  				\		setlocal omnifunc=syntaxcomplete#Complete |
+"  				\	endif
+"  endif
 " }}}
 " {{{ Mappings
 " Quickly edit/source .vimrc
