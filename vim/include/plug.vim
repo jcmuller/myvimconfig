@@ -66,6 +66,7 @@ Plug 'phb1/gtd.vim'                       " Getting Things Done
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'reedes/vim-pencil'
+Plug 'rhysd/vim-github-actions'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
 Plug 'ryanoasis/vim-devicons'
