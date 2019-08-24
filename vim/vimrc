@@ -758,6 +758,7 @@ let g:magit_discard_untracked_do_delete=1
 " }}}
 " {{{ vim-go
 let g:go_fmt_command = "goimports"
+"autocmd FileType go let omnifunc=go#complete#Complete
 
 noremap ,tg :T go test .<Enter>
 " }}}
