@@ -910,6 +910,14 @@ let g:echodoc#type = 'floating'
 " Gutentags {{{
 let g:gutentags_exclude_project_root = ['/usr/local', '.tox']
 " }}}
+" Pencil {{{
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text call pencil#init()
+  autocmd FileType mail call pencil#init()
+augroup END
+" }}}
 " Lexical {{{
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 
