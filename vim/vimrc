@@ -860,13 +860,19 @@ let g:ale_go_bingo_executable = '~/go/1.12.1/bin/gopls'
 let g:ale_go_goimports_executable = '~/go/1.12.1/bin/goimports'
 let g:ale_sh_shfmt_options = "-i 2 -ci"
 
-autocmd BufEnter diff let ale_fix_on_save=0
+augroup ale
+	autocmd!
+	autocmd BufEnter diff let ale_fix_on_save=0
+augroup END
 set omnifunc=ale#completion#OmniFunc
 " }}}
 " deoplete{{{
 " Enable deoplete when InsertEnter.
 let g:deoplete#enable_at_startup = 0
-autocmd InsertEnter * call deoplete#enable()
+augroup deoplete
+	autocmd!
+	autocmd InsertEnter * call deoplete#enable()
+augroup END
 
 call deoplete#custom#source('ale', 'rank', 999)
 call deoplete#custom#option({
