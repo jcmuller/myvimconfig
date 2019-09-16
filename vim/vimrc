@@ -225,6 +225,13 @@ autocmd FileType ruby
 			\ else |
 			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
 			\ endif
+augroup lexical " {{{
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+  autocmd FileType mail call lexical#init()
+augroup END " }}}
 " }}}
 " {{{ Global autocmds
 " {{{ Create directory if it doesn't exist
@@ -897,6 +904,17 @@ let g:echodoc#type = 'floating'
 " }}}
 " Gutentags {{{
 let g:gutentags_exclude_project_root = ['/usr/local', '.tox']
+" }}}
+" Lexical {{{
+let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
+
+augroup lexical
+  autocmd!
+  autocmd FileType markdown,mkd call lexical#init()
+  autocmd FileType textile call lexical#init()
+  autocmd FileType text call lexical#init({ 'spell': 0 })
+  autocmd FileType mail call lexical#init()
+augroup END
 " }}}
 " }}}
 source ~/.vim/include/abbr.vim
