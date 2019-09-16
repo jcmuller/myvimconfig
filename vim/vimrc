@@ -225,6 +225,13 @@ autocmd FileType ruby
 			\ else |
 			\   compiler ruby | setl makeprg=ruby\ -wc\ \"%:p\" |
 			\ endif
+augroup neomutt " {{{
+	" Add format option 'w' to add trailing white space, indicating that paragraph
+	" continues on next line. This is to be used with mutt's 'text_flowed' option.
+	au BufNewFile,BufRead neomutt-*-\w\+,neomutt[[:alnum:]_-]\\\{6\} setfiletype mail
+	autocmd!
+	autocmd FileType mail setlocal formatoptions+=w tw=72
+augroup END " }}}
 augroup lexical " {{{
   autocmd!
   autocmd FileType markdown,mkd call lexical#init()
