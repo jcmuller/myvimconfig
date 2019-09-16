@@ -73,7 +73,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shime/vim-livedown'
-Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
@@ -116,6 +115,11 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'kassio/neoterm'                 " Use the same terminal for everything
+  Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
 " Colors
