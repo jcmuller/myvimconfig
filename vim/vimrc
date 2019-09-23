@@ -930,6 +930,13 @@ augroup lexical
   autocmd FileType mail call lexical#init()
 augroup END
 " }}}
+" neosnippet{{{
+imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-j>     <Plug>(neosnippet_expand_target)
+
+let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
+" }}}
 " }}}
 source ~/.vim/include/abbr.vim
 
