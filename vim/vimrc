@@ -263,6 +263,7 @@ autocmd BufWinEnter *
 "  				\	endif
 "  endif
 " }}}
+" }}}
 " {{{ Mappings
 " Quickly edit/source .vimrc
 noremap <leader>ve :edit $HOME/.vimrc<CR>
@@ -764,6 +765,7 @@ let g:magit_discard_untracked_do_delete=1
 " }}}
 " {{{ vim-go
 let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
 "autocmd FileType go let omnifunc=go#complete#Complete
 
 noremap ,tg :T go test .<Enter>
@@ -800,7 +802,6 @@ let g:ale_fixers = {
 			\     'prettier',
 			\   ],
 			\   'go': [
-			\     'gofmt',
 			\     'goimports',
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
@@ -818,10 +819,10 @@ let g:ale_fixers = {
 			\   ],
 			\   'ruby': [
 			\     'remove_trailing_lines',
-			\     'trim_whitespace',
 			\     'rubocop',
 			\     'rufo',
 			\     'standardrb',
+			\     'trim_whitespace',
 			\   ],
 			\   'yaml': [
 			\     'remove_trailing_lines',
@@ -848,8 +849,8 @@ let g:ale_fixers = {
 set completeopt=menu,menuone,preview,noselect,noinsert
 let g:ale_ruby_solargraph_executable = 'bundle'
 let g:ale_ruby_rubocop_executable = 'bundle'
-let g:ale_go_bingo_executable = '~/go/1.12.1/bin/gopls'
-let g:ale_go_goimports_executable = '~/go/1.12.1/bin/goimports'
+let g:ale_go_bingo_executable = '~/go/1.13.0/bin/gopls'
+let g:ale_go_goimports_executable = '~/go/bin/goimports'
 let g:ale_sh_shfmt_options = "-i 2 -ci"
 
 augroup ale
