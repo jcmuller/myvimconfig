@@ -883,6 +883,7 @@ let g:ale_sh_shfmt_options = "-i 2 -ci"
 augroup ale
 	autocmd!
 	autocmd BufEnter diff let ale_fix_on_save=0
+	autocmd BufEnter python let ale_fix_on_save=0
 augroup END
 set omnifunc=ale#completion#OmniFunc
 " }}}
