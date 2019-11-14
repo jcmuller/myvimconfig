@@ -866,6 +866,11 @@ let g:ale_fixers = {
 			\     'reorder-python-imports',
 			\     'trim_whitespace',
 			\   ],
+			\   'terraform': [
+			\      'remove_trailing_lines',
+			\      'terraform',
+			\      'trim_whitespace',
+			\   ],
 			\ }
 
 set completeopt=menu,menuone,preview,noselect,noinsert
