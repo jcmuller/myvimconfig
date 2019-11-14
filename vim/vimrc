@@ -328,7 +328,7 @@ inoremap {<cr> {<cr>}<ESC>O
 " Normal mode
 nnoremap ;w :w<cr>
 " Insert mode: Ctrl-S
-inoremap <C-S> <Esc>:w<cr>
+inoremap <C-S> <Esc>:w<cr>a
 
 " Remove trailing white space, dup empty lines, etc
 nnoremap <Leader>w :call StripTrailingWhitespace()<cr>
