@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Konfekt/vim-mutt-aliases'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
+Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
@@ -123,9 +124,7 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'kassio/neoterm'                 " Use the same terminal for everything
-  Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
