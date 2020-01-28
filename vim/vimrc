@@ -944,7 +944,7 @@ augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
   autocmd FileType text call pencil#init()
-  autocmd FileType mail call pencil#init()
+  "autocmd FileType mail call pencil#init()
 augroup END
 " }}}
 " Lexical {{{
@@ -955,7 +955,7 @@ augroup lexical
   autocmd FileType markdown,mkd call lexical#init()
   autocmd FileType textile call lexical#init()
   autocmd FileType text call lexical#init({ 'spell': 0 })
-  autocmd FileType mail call lexical#init()
+  "autocmd FileType mail call lexical#init()
 augroup END
 " }}}
 " neosnippet{{{
