@@ -10,8 +10,16 @@ call plug#begin('~/.vim/plugged')
 "Plug 'haya14busa/incsearch.vim'           " Incremental search
 "Plug 'mileszs/ack.vim'                    " Ack plugin
 "Plug 'ngmy/vim-rubocop'
+"Plug 'ryanoasis/vim-devicons'
 "Plug 'scrooloose/syntastic'
 "Plug 'vim-scripts/YankRing.vim'    " Disabled cause random nvim crashes
+Plug 'Konfekt/vim-mutt-aliases'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
+Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'aklt/plantuml-syntax'
 Plug 'austintaylor/vim-choosecolor'
@@ -37,6 +45,7 @@ Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
 Plug 'fatih/vim-go'
 Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
+Plug 'google/jsonnet'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
 Plug 'jgdavey/tslime.vim'
@@ -50,7 +59,6 @@ Plug 'jvirtanen/vim-hcl'
 Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-Plug 'Konfekt/vim-mutt-aliases'
 Plug 'leafgarland/typescript-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
@@ -64,21 +72,15 @@ Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting r
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-pencil'
 Plug 'rhysd/vim-github-actions'
 Plug 'rhysd/vim-grammarous'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
-"Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'shime/vim-livedown'
-Plug 'Shougo/echodoc.vim'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
 Plug 'slim-template/vim-slim'
 Plug 'thoughtbot/pick.vim'
@@ -97,7 +99,6 @@ Plug 'tpope/vim-surround'
 Plug 'vektorlab/slackcat', { 'rtp': 'contrib/vim-slackcat' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimoutliner/vimoutliner'
 Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/Align'
@@ -107,11 +108,11 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
+Plug 'vimoutliner/vimoutliner'
 Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
 Plug 'wincent/ferret' " Enhanced multi file search
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'zaiste/tmux.vim'
 Plug 'zimbatm/haproxy.vim'
 
