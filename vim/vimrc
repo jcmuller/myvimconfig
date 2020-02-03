@@ -344,8 +344,8 @@ nnoremap <F5> :call ToggleTheme()<cr>
 
 "}}}
 "{{{ Commands
-command Scratch call ScratchBuffer()
-command MakeScratch call MakeScratchBuffer()
+command! Scratch call ScratchBuffer()
+command! MakeScratch call MakeScratchBuffer()
 "}}}
 " {{{ Custom Functions
 func! StripTrailingWhitespace()
@@ -556,9 +556,9 @@ nnoremap <leader>gpr :Git pull --rebase<CR>
 nnoremap <leader>gr  :Gremove<CR>
 nnoremap <leader>gs  :Gstatus<CR>
 " :Gshow shows what files a commit changes
-command -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
+command! -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 " :Gdifffiles shows the files changes since SHA
-command -nargs=? -bar Gdifffiles call setqflist(map(systemlist("git diff --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
+command! -nargs=? -bar Gdifffiles call setqflist(map(systemlist("git diff --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 " }}}
 " {{{ GitGutter
 let g:gitgutter_on_bufenter = 1
