@@ -33,6 +33,7 @@ Plug 'chrisbra/Colorizer'              " color colornames and codes
 Plug 'chrisbra/csv.vim'                   " Filetype plugin for CSV
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cyphactor/vim-open-alternate'       " Open spec files
+Plug 'dense-analysis/ale' " Async syntax highlighting.
 Plug 'derekwyatt/vim-scala'
 Plug 'dhruvasagar/vim-dotoo'              " org-mode for vim
 Plug 'docunext/closetag.vim'              " Close open HTML/XML tags (Crtl-_)
@@ -109,7 +110,6 @@ Plug 'vim-scripts/gnupg.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
-Plug 'w0rp/ale' " Async syntax highlighting. SLOW.
 Plug 'wincent/ferret' " Enhanced multi file search
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
