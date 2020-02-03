@@ -46,7 +46,7 @@ Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
 Plug 'fatih/vim-go'
 Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
-Plug 'google/jsonnet'
+Plug 'google/vim-jsonnet'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
 Plug 'jgdavey/tslime.vim'
