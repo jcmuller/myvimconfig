@@ -60,7 +60,7 @@ Plug 'jvirtanen/vim-hcl'
 Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-Plug 'leafgarland/typescript-vim'
+Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'maralla/vim-toml-enhance',          { 'depends': 'cespare/vim-toml' }
