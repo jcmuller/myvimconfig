@@ -188,7 +188,7 @@ augroup arduino " {{{
 	autocmd BufRead,BufNewFile *.ino setlocal ft=arduino
 	autocmd BufRead,BufNewFile *.pde setlocal ft=arduino
 augroup END "}}}
-augroup tmux " {{{ 
+augroup tmux " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile *.tmux setlocal ft=tmux
 augroup END" }}}
@@ -198,9 +198,9 @@ augroup markdown " {{{
 	autocmd!
 	autocmd BufRead,BufWinEnter Glossary.md setlocal foldmethod=expr foldexpr=getline(v:lnum)=~'^#'?'>1':0&&getline(v:lnum+1)=~'^#'?'<1':1
 	autocmd BufRead,BufNewFile *.md setlocal filetype=markdown
-	autocmd FileType markdown setlocal formatoptions+=w tw=72 
+	autocmd FileType markdown setlocal formatoptions+=w tw=72
 augroup END" }}}
-augroup latex " {{{  
+augroup latex " {{{
 	autocmd!
 	autocmd BufRead *.tex setl filetype=tex
 	autocmd BufWritePost *tex make
@@ -211,7 +211,7 @@ augroup END" }}}
 autocmd FileType c,cpp,objc setl nolist noet sw=4 ts=4
 autocmd FileType crontab setl nobackup nowritebackup
 augroup graphviz " {{{
-	autocmd! 
+	autocmd!
 	autocmd BufWritePost *.dot make
 	autocmd FileType dot setl makeprg=make noet sw=4 ts=4
 
@@ -903,12 +903,21 @@ let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_go_bingo_executable = '~/go/1.13.0/bin/gopls'
 let g:ale_go_goimports_executable = '~/go/bin/goimports'
 let g:ale_sh_shfmt_options = "-i 2 -ci"
+let g:ale_completion_tsserver_autoimport = 1
 
 augroup ale
 	autocmd!
 	autocmd BufEnter diff let ale_fix_on_save=0
 	autocmd BufEnter python let ale_fix_on_save=0
 augroup END
+
+augroup typescript
+	autocmd!
+	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-]> :ALEGoToDefinition<cr>
+	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w><C-]> :ALEGoToDefinitionInSplit<cr>
+	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w>] :ALEGoToDefinitionInSplit<cr>
+augroup END
+
 set omnifunc=ale#completion#OmniFunc
 " }}}
 " deoplete{{{
