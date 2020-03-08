@@ -892,6 +892,9 @@ let g:ale_fixers = {
 			\      'terraform',
 			\      'trim_whitespace',
 			\   ],
+			\   'json': [
+			\     'prettier'
+			\   ],
 			\ }
 
 set completeopt=menu,menuone,preview,noselect,noinsert
