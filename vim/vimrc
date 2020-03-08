@@ -835,6 +835,27 @@ let g:ale_fixers = {
 			\     'prettier',
 			\     'standard',
 			\   ],
+			\   'javascript.tsx': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'eslint',
+			\     'prettier',
+			\     'standard',
+			\   ],
+			\   'typescript': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'eslint',
+			\     'prettier',
+			\     'standard',
+			\   ],
+			\   'typescriptreact': [
+			\     'remove_trailing_lines',
+			\     'trim_whitespace',
+			\     'eslint',
+			\     'prettier',
+			\     'standard',
+			\   ],
 			\   'make': [
 			\     'remove_trailing_lines',
 			\     'trim_whitespace',
