@@ -974,7 +974,7 @@ nmap <Leader><c-p> :GFiles?<cr>
 " - down / up / left / right
 "let g:fzf_layout = { 'down': '~40%' }
 noremap <Leader>P :Lines<cr>
-nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>bb :Buffers<CR>
 nnoremap <silent> <Leader>j :Files<CR>
 nnoremap <silent> <Leader>t :Tags<CR>
 nnoremap <silent> <Leader>f :Files<CR>
