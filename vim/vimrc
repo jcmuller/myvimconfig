@@ -591,6 +591,18 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 " Open NERDtree when no file was specified
 "autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "~",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "d",
+    \ "Dirty"     : "Y",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 " }}}
 " {{{ Netrw
 let g:netrw_http_cmd = "wget -q -O"
