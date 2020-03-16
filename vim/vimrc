@@ -968,7 +968,7 @@ let g:netrw_liststyle=3
 "     \ 'source': 'rg -n ^ --color always',
 "     \ 'options': '--ansi --delimiter : --nth 3..',
 "     \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
-nmap <Leader>p :GFiles<cr>
+nmap <Leader>p :Files<cr>
 nmap <Leader><c-p> :GFiles?<cr>
 " Default fzf layout
 " - down / up / left / right
