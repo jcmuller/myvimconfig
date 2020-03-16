@@ -998,6 +998,10 @@ xmap <C-j>     <Plug>(neosnippet_expand_target)
 
 let g:neosnippet#snippets_directory='~/.vim/plugged/neosnippet-snippets/neosnippets'
 " }}}
+" fzf-preview {{{
+let g:fzf_preview_command = "bat --color=always --theme=base16 --style=grid {-1}"
+let g:fzf_preview_lines_command = "bat --color=always --style=grid --theme=base16 --plain"
+" }}}
 " }}}
 source ~/.vim/include/abbr.vim
 

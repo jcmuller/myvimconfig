@@ -20,6 +20,7 @@ Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neomru.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'aklt/plantuml-syntax'
@@ -114,6 +115,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret' " Enhanced multi file search
+Plug 'yuki-ycino/fzf-preview.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
