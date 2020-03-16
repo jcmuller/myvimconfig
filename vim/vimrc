@@ -247,6 +247,10 @@ augroup ruby " {{{
 
 	autocmd BufWinEnter *.feature setl makeprg=bundle\ exec\ cucumber\ \"%:p\"
 augroup END "}}}
+augroup kubeconfig "{{{
+	autocmd!
+	autocmd BufRead ~/.kube/config setl ft=yaml nowrap
+augroup END"}}}
 augroup neomutt " {{{
 	" Add format option 'w' to add trailing white space, indicating that paragraph
 	" continues on next line. This is to be used with mutt's 'text_flowed' option.
