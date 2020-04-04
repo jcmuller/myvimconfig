@@ -1,7 +1,11 @@
-vim/view/
 vim/autoload
+vim/.netrwhist
 vim/plugged
 vim/var/info
 vim/var/shada
 vim/var/undo/*
 !vim/var/undo/.gitkeep
+vim/view/
+vim/.VimballRecord
+vim/backups/*
+!vim/backups/.gitkeep
