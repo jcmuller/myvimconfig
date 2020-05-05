@@ -1,0 +1,29 @@
+{
+  "solargraph.commandPath": "/home/jcmuller/.asdf/shims/solargraph",
+  "solargraph.hover": true,
+  "solargraph.completion": true,
+  "solargraph.autoformat": true,
+  "solargraph.references": true,
+  "languageserver": {
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": [
+        "css",
+        "csv",
+        "dockerfile",
+        "eruby",
+        "html",
+        "javascript",
+        "json",
+        "make",
+        "markdown",
+        "python",
+        "rst",
+        "sh",
+        "vim",
+        "yaml"
+      ]
+    }
+  }
+}

@@ -35,7 +35,7 @@ Plug 'chrisbra/Colorizer'              " color colornames and codes
 Plug 'chrisbra/csv.vim'                   " Filetype plugin for CSV
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cyphactor/vim-open-alternate'       " Open spec files
-Plug 'dense-analysis/ale' " Async syntax highlighting.
+" Plug 'dense-analysis/ale' " Async syntax highlighting.
 Plug 'derekwyatt/vim-scala'
 Plug 'dhruvasagar/vim-dotoo'              " org-mode for vim
 Plug 'docunext/closetag.vim'              " Close open HTML/XML tags (Crtl-_)
@@ -74,6 +74,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
+Plug 'neoclide/coc.nvim',                 { 'branch': 'release' }
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
