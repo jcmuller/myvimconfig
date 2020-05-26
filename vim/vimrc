@@ -327,7 +327,7 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 noremap! <C-A> <Home>
 noremap! <C-E> <End>
 cnoremap <C-K> <C-U>
-noremap! <C-F> <Right>
+"noremap! <C-F> <Right>
 noremap! <C-B> <Left>
 
 inoremap {<cr> {<cr>}<ESC>O
