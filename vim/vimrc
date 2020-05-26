@@ -1085,6 +1085,7 @@ augroup cocvim
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  set tagfunc=CocTagFunc
 augroup end
 
 " Applying codeAction to the selected region.
