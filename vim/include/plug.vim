@@ -16,6 +16,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Konfekt/vim-mutt-aliases'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
+Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/denite.nvim'
 Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
