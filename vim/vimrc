@@ -783,7 +783,7 @@ let g:dotoo#capture#refile = '~/org/work.org'
 let g:dotoo#capture#clock = 0
 " }}}
 " Gtd {{{
-let g:gtd#dir = '~/gtd/'
+let g:gtd#dir = '~/Nextcloud/gtd/'
 "let g:gtd#default_context = 'work'
 let g:gtd#default_action = 'inbox'
 let g:gtd#folding = 1
