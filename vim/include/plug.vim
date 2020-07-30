@@ -135,6 +135,7 @@ else
 endif
 
 " Colors
-Plug 'jcmuller/vim-tomorrow-theme'
+"Plug 'jcmuller/vim-tomorrow-theme'
+Plug 'jsit/vim-tomorrow-theme'
 
 call plug#end()
