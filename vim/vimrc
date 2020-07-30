@@ -273,7 +273,7 @@ augroup Global " {{{
 				\ endif
 
 	"Format
-	"autocmd BufWritePost * call CocAction('format')
+	autocmd BufWritePost * call CocAction('format')
 
 	autocmd BufReadPost *
 				\ if expand("<afile>:p:h") !=? $TEMP |
