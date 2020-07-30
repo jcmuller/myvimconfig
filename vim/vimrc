@@ -259,6 +259,11 @@ augroup neomutt " {{{
 	autocmd BufNewFile,BufRead neomutt-*-\w\+,neomutt[[:alnum:]_-]\\\{6\} setfiletype mail
 	autocmd FileType mail setlocal formatoptions+=w tw=72
 augroup END " }}}
+augroup dajoku "{{{
+	autocmd!
+	autocmd BufNewFile,BufRead .dajoku,.release-pipeline setfiletype yaml
+augroup END
+"}}}
 augroup Global " {{{
 	autocmd!
 	"Create directory if it doesn't exist
