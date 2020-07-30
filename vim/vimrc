@@ -818,6 +818,11 @@ let g:go_rename_command = 'gopls'
 "autocmd FileType go let omnifunc=go#complete#Complete
 
 noremap ,tg :T go test .<Enter>
+
+augroup templates " {{{
+	autocmd!
+	autocmd BufRead,BufNewFile *.tmpl setlocal ft=gotexttmpl
+augroup END " }}}
 " }}}
 " {{{ Colorizer
 let g:colorizer_auto_filetype = 'html,css,i3,config'
