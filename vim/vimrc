@@ -984,11 +984,11 @@ let g:netrw_liststyle=3
 "let g:fzf_layout = { 'down': '~40%' }
 nnoremap <silent> <Leader>bb :FzfPreviewBuffers<CR>
 nnoremap <silent> <Leader><c-p> :FzfPreviewGitStatus<cr>
-"nnoremap <silent> <Leader>g :FzfPreviewProjectGrep 
-nnoremap <silent> <Leader>m :FzfPreviewMruFiles<CR>
+nnoremap <silent> <Leader>mr :FzfPreviewMruFiles<CR>
 nnoremap <silent> <Leader>L :FzfPreviewLines<cr>
 nnoremap <silent> <Leader>p :FzfPreviewProjectFiles<cr>
 nnoremap <silent> <Leader>t :FzfPreviewCtags<CR>
+"nnoremap <silent> <Leader>g :FzfPreviewProjectGrep 
 " }}}
 " fzf-quickfix {{{
 nmap <Leader>q <Plug>(fzf-quickfix)
