@@ -54,9 +54,9 @@ Plug 'google/vim-jsonnet'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
-Plug 'jgdavey/tslime.vim'
+Plug 'jgdavey/tslime.vim',                 { 'branch': 'main' }
 Plug 'jgdavey/vim-blockle'                " Toggle ruby blocks
-Plug 'jgdavey/vim-turbux'
+Plug 'jgdavey/vim-turbux',                 { 'branch': 'main' }
 Plug 'jreybert/vimagit'                   " Magit comes to vim
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                   " Fuzzy finder
@@ -117,7 +117,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret' " Enhanced multi file search
-Plug 'yuki-ycino/fzf-preview.vim'
+Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
