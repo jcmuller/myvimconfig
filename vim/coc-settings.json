@@ -21,6 +21,8 @@
         "python",
         "rst",
         "sh",
+        "hcl",
+        "tf",
         "vim",
         "yaml"
       ]
