@@ -18,14 +18,26 @@
         "json",
         "make",
         "markdown",
+        "terraform",
         "python",
         "rst",
         "sh",
-        "hcl",
-        "tf",
         "vim",
         "yaml"
       ]
+    },
+    "terraform-lsp": {
+      "command": "terraform-lsp",
+      "filetypes": ["tf", "terraform"],
+      "initializationOptions": {},
+      "settings": {}
+    },
+    "terraform-ls": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["tf", "terraform"],
+      "initializationOptions": {},
+      "settings": {}
     }
   }
 }

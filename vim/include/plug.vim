@@ -51,6 +51,7 @@ Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
 Plug 'fatih/vim-go'
 Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
+Plug 'hashivim/vim-terraform'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
