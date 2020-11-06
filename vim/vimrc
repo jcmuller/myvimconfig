@@ -812,7 +812,7 @@ let g:magit_default_fold_level=2
 let g:magit_discard_untracked_do_delete=1
 " }}}
 " {{{ vim-go
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "gofumports"
 let g:go_fmt_fail_silently = 1
 let g:go_rename_command = 'gopls'
 "autocmd FileType go let omnifunc=go#complete#Complete
