@@ -1159,6 +1159,10 @@ augroup terraform
 	autocmd BufRead,BufNewFile *.tf setlocal ft=terraform
 augroup END
 
+augroup gopass
+	autocmd!
+	autocmd BufRead,BufNewFile /dev/shm/gopass-edit*/secret setlocal ft=yaml nospell
+augroup END
 " }}}
 " solargraph {{{
 " }}}
