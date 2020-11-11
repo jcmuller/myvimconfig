@@ -231,6 +231,10 @@ augroup perl " {{{
 	autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 augroup END " }}}
 autocmd FileType vo_base setl nolist
+augroup IOS " {{{
+	autocmd!
+	autocmd BufRead,BufNewFile,BufWinEnter apple-app-site-association setlocal ft=json
+augroup END " }}}
 " Remove any trailing white space on save
 
 augroup ruby " {{{
@@ -1093,12 +1097,20 @@ nmap <leader>sf  <Plug>(coc-format-selected)
 
 augroup cocvim
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd BufWritePost * call CocAction('format')
   set tagfunc=CocTagFunc
 augroup end
+
+augroup typescript
+	autocmd!
+	" Setup formatexpr specified filetype(s).
+	autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-]>      <Plug>(coc-definition)
+	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-W><C-]> call CocAction('jumpDefinition', 'split')
+	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-W>]     call CocAction('jumpDefinition', 'split')
+augroup END
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
