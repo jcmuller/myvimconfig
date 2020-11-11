@@ -222,6 +222,7 @@ augroup graphviz " {{{
 augroup END" }}}
 autocmd FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
 autocmd FileType magit setl nobackup nowritebackup noswapfile
+autocmd FileType man setl nobackup nowritebackup noswapfile
 autocmd Filetype make setl noet
 augroup perl " {{{
 	autocmd!
