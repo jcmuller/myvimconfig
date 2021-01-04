@@ -1,9 +1,11 @@
 {
-  "solargraph.commandPath": "/home/jcmuller/.asdf/shims/solargraph",
-  "solargraph.hover": true,
-  "solargraph.completion": true,
-  "solargraph.autoformat": true,
-  "solargraph.references": true,
+  "solargraph": {
+    "commandPath": "/home/jcmuller/.asdf/shims/solargraph",
+    "hover": true,
+    "completion": true,
+    "autoformat": true,
+    "references": true
+  },
   "languageserver": {
     "efm": {
       "command": "efm-langserver",
