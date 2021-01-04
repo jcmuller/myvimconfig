@@ -106,6 +106,7 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'  " Github support for Fugitive"
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vektorlab/slackcat', { 'rtp': 'contrib/vim-slackcat' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
