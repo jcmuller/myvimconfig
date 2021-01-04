@@ -621,7 +621,99 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ }
 " }}}
 " {{{ Netrw
-let g:netrw_http_cmd = "wget -q -O"
+"  command! ExploreFind let @/=expand("%:t") | execute 'Explore' expand("%:h") | normal n
+"
+"  let g:netrw_http_cmd  = "wget -q -O"
+"  let g:netrw_liststyle = 3
+"  let g:netrw_list_hide = '.*\.swp$'
+"  "let g:netrw_list_hide = netrw_gitignore#Hide().'.*\.swp$'
+"  let g:netrw_banner    = 0
+"
+"  nnoremap <space><space> :Rexplore<cr>
+"  nnoremap <space>f :ExploreFind<cr>
+" }}}
+" {{{ vim-dirvish
+" augroup VimStartup
+" 	au!
+" 	au VimEnter * if expand("%") == "" | e . | endif
+" augroup END
+" }}}
+" {{{ lua-tree
+"  "let g:lua_tree_side = 'right' | 'left' "left by default
+"  let g:lua_tree_width = 40                                    " 30 by default
+"  let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ] " empty by default
+"  let g:lua_tree_auto_open = 1                                 " 0 by default, opens the tree when typing `vim $DIR` or `vim`
+"  "let g:lua_tree_auto_close = 1                                " 0 by default, closes the tree when it's the last window
+"  let g:lua_tree_quit_on_open = 1                              " 0 by default, closes the tree when you open a file
+"  let g:lua_tree_follow = 1                                    " 0 by default, this option allows the cursor to be updated when entering a buffer
+"  let g:lua_tree_indent_markers = 1                            " 0 by default, this option shows indent markers when folders are open
+"  let g:lua_tree_hide_dotfiles = 1                             " 0 by default, this option hides files and folders starting with a dot `.`
+"  let g:lua_tree_git_hl = 1                                    " 0 by default, will enable file highlight for git attributes (can be used without the icons).
+"  let g:lua_tree_root_folder_modifier = ':~'                   " This is the default. See :help filename-modifiers for more options
+"  let g:lua_tree_tab_open = 1                                  " 0 by default, will open the tree when entering a new tab and the tree was previously open
+"  let g:lua_tree_allow_resize = 1                              " 0 by default, will not resize the tree when opening a file
+"  let g:lua_tree_show_icons = {
+"      \ 'git': 1,
+"      \ 'folders': 0,
+"      \ 'files': 0,
+"      \ }
+"  "If 0, do not show the icons for one of 'git' 'folder' and 'files'
+"  "1 by default, notice that if 'files' is 1, it will only display
+"  "if nvim-web-devicons is installed and on your runtimepath
+"  
+"  " You can edit keybindings be defining this variable
+"  " You don't have to define all keys.
+"  " NOTE: the 'edit' key will wrap/unwrap a folder and open a file
+"  let g:lua_tree_bindings = {
+"      \ 'edit':            ['<CR>', 'o'],
+"      \ 'edit_vsplit':     '<C-v>',
+"      \ 'edit_split':      '<C-x>',
+"      \ 'edit_tab':        '<C-t>',
+"      \ 'toggle_ignored':  'I',
+"      \ 'toggle_dotfiles': 'H',
+"      \ 'refresh':         'R',
+"      \ 'preview':         '<Tab>',
+"      \ 'cd':              '<C-]>',
+"      \ 'create':          'a',
+"      \ 'remove':          'd',
+"      \ 'rename':          'r',
+"      \ 'cut':             'x',
+"      \ 'copy':            'c',
+"      \ 'paste':           'p',
+"      \ 'prev_git_item':   '[c',
+"      \ 'next_git_item':   ']c',
+"      \ }
+"  
+"  " Disable default mappings by plugin
+"  " Bindings are enable by default, disabled on any non-zero value
+"  " let lua_tree_disable_keybindings=1
+"  
+"  " default will show icon by default if no icon is provided
+"  " default shows no icon by default
+"  let g:lua_tree_icons = {
+"      \ 'default': '',
+"      \ 'symlink': '',
+"      \ 'git': {
+"      \   'unstaged': "✗",
+"      \   'staged': "✓",
+"      \   'unmerged': "",
+"      \   'renamed': "➜",
+"      \   'untracked': "★"
+"      \   },
+"      \ 'folder': {
+"      \   'default': "",
+"      \   'open': ""
+"      \   }
+"      \ }
+"  
+"  set termguicolors " this variable must be enabled for colors to be applied properly
+"  
+"  " a list of groups can be found at `:help lua_tree_highlight`
+"  highlight LuaTreeFolderIcon guibg=blue
+"  
+"  nnoremap <space>r :LuaTreeRefresh<CR>
+"  nnoremap <space><space> :LuaTreeToggle<cr>
+"  nnoremap <space>f       :LuaTreeFindFile<cr>
 " }}}
 " {{{ Perl stuff
 let perl_include_pod = 1
@@ -931,7 +1023,7 @@ let g:xml_syntax_folding = 0
 "  			\     'prettier'
 "  			\   ],
 "  			\ }
-"  
+"
 "  set completeopt=menu,menuone,preview,noselect,noinsert
 "  let g:ale_ruby_solargraph_executable = 'bundle'
 "  "let g:ale_ruby_rubocop_executable = 'bundle'
@@ -939,20 +1031,20 @@ let g:xml_syntax_folding = 0
 "  let g:ale_sh_shfmt_options = "-i 2 -ci -bn"
 "  let g:ale_completion_tsserver_autoimport = 1
 "  let g:ale_go_golangci_lint_options = ''
-"  
+"
 "  augroup ale
 "  	autocmd!
 "  	autocmd BufEnter diff let ale_fix_on_save=0
 "  	autocmd BufEnter python let ale_fix_on_save=0
 "  augroup END
-"  
+"
 "  augroup typescript
 "  	autocmd!
 "  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-]> :ALEGoToDefinition<cr>
 "  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w><C-]> :ALEGoToDefinitionInSplit<cr>
 "  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w>] :ALEGoToDefinitionInSplit<cr>
 "  augroup END
-"  
+"
 "  set omnifunc=ale#completion#OmniFunc
 " }}}
 " deoplete{{{
@@ -962,21 +1054,16 @@ let g:xml_syntax_folding = 0
 "  	autocmd!
 "  	autocmd InsertEnter * call deoplete#enable()
 "  augroup END
-"  
+"
 "  " call deoplete#custom#source('ale', 'rank', 999)
 "  call deoplete#custom#option({
 "  			\ 'auto_complete_delay': 200,
 "  			\ 'smart_case': v:true,
 "  			\ })
 "  " call deoplete#custom#option('sources', {'_': ['ale','buffer','around']})
-"  
+"
 "  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-" }}}
-" {{{ Netrw
-nnoremap \| :execute 'Lexplore' expand('%:h')<cr>
-let g:netrw_winsize=25
-let g:netrw_liststyle=3
 " }}}
 " FZF {{{
 "   " Global line completion (not just open buffers. ripgrep required.)
