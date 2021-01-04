@@ -989,13 +989,12 @@ let g:netrw_liststyle=3
 " Default fzf layout
 " - down / up / left / right
 "let g:fzf_layout = { 'down': '~40%' }
-nnoremap <silent> <Leader>bb :FzfPreviewBuffers<CR>
-nnoremap <silent> <Leader><c-p> :FzfPreviewGitStatus<cr>
-nnoremap <silent> <Leader>mr :FzfPreviewMruFiles<CR>
-nnoremap <silent> <Leader>L :FzfPreviewLines<cr>
-nnoremap <silent> <Leader>p :FzfPreviewProjectFiles<cr>
-nnoremap <silent> <Leader>t :FzfPreviewCtags<CR>
-"nnoremap <silent> <Leader>g :FzfPreviewProjectGrep 
+nnoremap <silent> <Leader>bb :FzfPreviewBuffersRpc<CR>
+nnoremap <silent> <Leader><c-p> :FzfPreviewGitStatusRpc<cr>
+nnoremap <silent> <Leader>mr :FzfPreviewMruFilesRpc<CR>
+nnoremap <silent> <Leader>L :FzfPreviewLinesRpc<cr>
+nnoremap <silent> <Leader>p :FzfPreviewProjectFilesRpc<cr>
+nnoremap <silent> <Leader>t :FzfPreviewCtagsRpc<CR>
 nnoremap <silent> <Leader>g :FzfPreviewProjectGrepRpc<space>
 " }}}
 " fzf-quickfix {{{
