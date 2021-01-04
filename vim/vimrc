@@ -774,7 +774,7 @@ vmap     <leader>fL <Plug>CtrlSFQuickfixVwordExec
 " }}}
 " {{{ Grepper
 nnoremap <Leader>G :Grepper -tool git<cr>
-nnoremap <Leader>g :Grepper -tool rg<cr>
+"nnoremap <Leader>g :Grepper -tool rg<cr>
 
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
@@ -996,6 +996,7 @@ nnoremap <silent> <Leader>L :FzfPreviewLines<cr>
 nnoremap <silent> <Leader>p :FzfPreviewProjectFiles<cr>
 nnoremap <silent> <Leader>t :FzfPreviewCtags<CR>
 "nnoremap <silent> <Leader>g :FzfPreviewProjectGrep 
+nnoremap <silent> <Leader>g :FzfPreviewProjectGrepRpc<space>
 " }}}
 " fzf-quickfix {{{
 nmap <Leader>q <Plug>(fzf-quickfix)
