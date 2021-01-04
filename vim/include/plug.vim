@@ -121,7 +121,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret' " Enhanced multi file search
-Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release', 'do': ':UpdateRemotePlugins' }
+Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
