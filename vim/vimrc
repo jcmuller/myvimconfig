@@ -1168,17 +1168,20 @@ nnoremap <silent> <leader>cj  :<C-u>CocNext<CR>
 nnoremap <silent> <leader>ck  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>cp  :<C-u>CocListResume<CR>
-
-augroup terraform
+" }}}
+" markdownlint {{{
+augroup markdownlint " {{{
+	autocmd!
+	autocmd BufRead,BufNewFile .markdownlintrc setlocal ft=json
+augroup END "}}}
+augroup terraform " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile *.tf setlocal ft=terraform
-augroup END
-
-augroup gopass
+augroup END "}}}
+augroup gopass " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile /dev/shm/gopass-edit*/secret setlocal ft=yaml nospell
-augroup END
-" }}}
+augroup END "}}}
 " solargraph {{{
 " }}}
 " }}}
