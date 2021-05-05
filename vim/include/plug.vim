@@ -76,7 +76,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
-Plug 'neoclide/coc.nvim',                 { 'branch': 'release' }
+Plug 'neoclide/coc.nvim',                 { 'branch': 'release', 'do': ':call coc#util#install()' }
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
