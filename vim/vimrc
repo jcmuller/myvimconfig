@@ -220,6 +220,11 @@ augroup graphviz " {{{
 	autocmd BufWritePost *.msc make
 	autocmd FileType msc setl makeprg=make noet sw=4 ts=4
 augroup END" }}}
+augroup plantuml " {{{
+	autocmd!
+	autocmd BufWritePost *.pu make
+	autocmd FileType plantuml setl makeprg=make noet sw=4 ts=4
+augroup END" }}}
 autocmd FileType java setlocal omnifunc=javacomplete#Complete completefunc=javacomplete#CompleteParamsInfo et sw=4 ts=4
 autocmd FileType magit setl nobackup nowritebackup noswapfile
 autocmd FileType man setl nobackup nowritebackup noswapfile
