@@ -283,7 +283,8 @@ augroup Global " {{{
 				\ endif
 
 	"Format
-	autocmd BufWritePost * call CocAction('format')
+	" this is defined also in the cocvim augroup
+	"autocmd BufWritePost * call CocAction('format')
 
 	autocmd BufReadPost *
 				\ if expand("<afile>:p:h") !=? $TEMP |
@@ -1193,7 +1194,7 @@ augroup cocvim
   autocmd!
   " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  autocmd BufWritePost * call CocAction('format')
+  autocmd BufWritePost *.go,*.js,*.ts,*.tsx,*.jsx call CocAction('format')
   set tagfunc=CocTagFunc
 augroup end
 
@@ -1204,6 +1205,13 @@ augroup typescript
 	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-]>      <Plug>(coc-definition)
 	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-W><C-]> call CocAction('jumpDefinition', 'split')
 	"autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <silent> <C-W>]     call CocAction('jumpDefinition', 'split')
+augroup END
+
+augroup coc-ruby
+	autocmd!
+	autocmd BufWritePost *.rb silent! !make fix
+	autocmd BufWritePost *.rb edit
+	autocmd BufWritePost *.rb redraw!
 augroup END
 
 " Applying codeAction to the selected region.
