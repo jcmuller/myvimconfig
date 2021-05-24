@@ -54,6 +54,7 @@ Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
 Plug 'hashivim/vim-terraform'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
+Plug 'hrsh7th/nvim-compe'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
 Plug 'jgdavey/tslime.vim',                 { 'branch': 'main' }
@@ -77,7 +78,8 @@ Plug 'mhinz/vim-grepper'
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
-Plug 'neoclide/coc.nvim',                 { 'branch': 'release', 'do': ':call coc#util#install()' }
+"Plug 'neoclide/coc.nvim',                 { 'branch': 'release', 'do': ':call coc#util#install()' }
+Plug 'neovim/nvim-lspconfig'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
