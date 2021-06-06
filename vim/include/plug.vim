@@ -18,7 +18,6 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/denite.nvim'
-Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
@@ -54,7 +53,6 @@ Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
 Plug 'hashivim/vim-terraform'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
-Plug 'hrsh7th/nvim-compe'
 Plug 'int3/vim-extradite'
 Plug 'janko-m/vim-test'                   " Vim wrapper for running tests on different granularities
 Plug 'jgdavey/tslime.vim',                 { 'branch': 'main' }
@@ -79,7 +77,6 @@ Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
 "Plug 'neoclide/coc.nvim',                 { 'branch': 'release', 'do': ':call coc#util#install()' }
-Plug 'neovim/nvim-lspconfig'
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
@@ -135,8 +132,12 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
+  Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
+  Plug 'hrsh7th/nvim-compe'
   Plug 'kassio/neoterm'                 " Use the same terminal for everything
+  Plug 'neovim/nvim-lspconfig'
 else
+  Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
