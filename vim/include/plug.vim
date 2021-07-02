@@ -141,6 +141,7 @@ else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'Shougo/deoplete.nvim'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc' }
 endif
 
