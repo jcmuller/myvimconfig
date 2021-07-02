@@ -121,7 +121,6 @@ Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vimoutliner/vimoutliner'
 Plug 'wincent/ferret' " Enhanced multi file search
-Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'zaiste/tmux.vim'
@@ -136,10 +135,12 @@ if has('nvim')
   Plug 'hrsh7th/nvim-compe'
   Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
+  Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc' }
 endif
 
 " Colors
