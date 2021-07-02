@@ -48,6 +48,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
+Plug 'eraserhd/vim-ios'
 Plug 'fatih/vim-go'
 Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
