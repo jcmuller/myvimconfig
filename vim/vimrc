@@ -182,6 +182,13 @@ else
 	source ~/.vim/include/vim.vim
 endif
 " }}}
+" Linux vs Darwin {{{ 
+if has("mac")
+	source ~/.vim/include/darwin.vim
+else
+	source ~/.vim/include/linux.vim
+endif
+" }}}
 " {{{ autocmds
 "autocmd BufDelete,BufWritePost .vimrc source ~/.vimrc
 "autocmd BufDelete .vimrc source ~/.vimrc
@@ -759,7 +766,6 @@ noremap ]l :lnext<CR>
 " {{{ Tagbar
 " Tagbar mappings
 map <F2> :TagbarToggle<CR>
-" let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 let g:tagbar_autoclose = 0
 let g:tagbar_autofocus = 1
 "let g:tagbar_foldlevel = 3
