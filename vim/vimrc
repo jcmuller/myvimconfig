@@ -322,7 +322,7 @@ noremap <leader>y "+y
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 " nnoremap <C-L> :nohl<CR><C-L>
-nnoremap <Leader>l :nohl<cr>:redraw!<cr>
+nnoremap <space>l :nohl<cr>:redraw!<cr>
 
 "" Don't use arrow keys
 "map <up> <nop>
@@ -601,8 +601,8 @@ let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 " }}}
 " {{{ NERDTree
 nnoremap <space><space> :NERDTreeToggle<cr>
-nnoremap <space>F :NERDTreeFind<cr>
-"nnoremap <space>F :NERDTreeFocus<cr>
+nnoremap <space>f :NERDTreeFind<cr>
+nnoremap <space>F :NERDTreeFocus<cr>
 " Don't show temp files, swap files
 let NERDTreeIgnore = ['\~$', '\..*\.sw\w$']
 let g:NERDTreeDirArrowCollapsible = "-"
@@ -1082,13 +1082,13 @@ let g:xml_syntax_folding = 0
 " Default fzf layout
 " - down / up / left / right
 "let g:fzf_layout = { 'down': '~40%' }
-nnoremap <silent> <Leader>bb :FzfPreviewBuffersRpc<CR>
-nnoremap <silent> <Leader><c-p> :FzfPreviewGitStatusRpc<cr>
-nnoremap <silent> <Leader>mr :FzfPreviewMruFilesRpc<CR>
-nnoremap <silent> <Leader>L :FzfPreviewLinesRpc<cr>
-nnoremap <silent> <Leader>p :FzfPreviewProjectFilesRpc<cr>
-nnoremap <silent> <Leader>t :FzfPreviewCtagsRpc<CR>
-nnoremap <silent> <Leader>g :FzfPreviewProjectGrepRpc<space>
+nnoremap <silent> <Leader>pb :FzfPreviewBuffersRpc<CR>
+nnoremap <silent> <Leader>pP :FzfPreviewGitStatusRpc<cr>
+nnoremap <silent> <Leader>pm :FzfPreviewMruFilesRpc<CR>
+nnoremap <silent> <Leader>pl :FzfPreviewLinesRpc<cr>
+nnoremap <silent> <Leader>pp :FzfPreviewProjectFilesRpc<cr>
+nnoremap <silent> <Leader>pt :FzfPreviewCtagsRpc<CR>
+nnoremap <silent> <Leader>pg :FzfPreviewProjectGrepRpc<space>
 " }}}
 " fzf-quickfix {{{
 nmap <Leader>q <Plug>(fzf-quickfix)
