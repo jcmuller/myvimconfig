@@ -29,7 +29,7 @@ Plug 'austintaylor/vim-choosecolor'
 Plug 'b4winckler/vim-objc'
 Plug 'bogado/file-line'                   " Open file in a given line (file:line)
 Plug 'castwide/solargraph'
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml',                 { 'branch': 'main' }
 Plug 'chiel92/vim-autoformat'
 Plug 'chr4/nginx.vim'
 Plug 'chrisbra/Colorizer'              " color colornames and codes
