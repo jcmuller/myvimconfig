@@ -78,7 +78,7 @@ nvim_lsp.efm.setup {
 		"make",
 		"markdown",
 		-- "terraform",
-		"ruby",
+		-- "ruby",
 		"python",
 		"rst",
 		"sh",
