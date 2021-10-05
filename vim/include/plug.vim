@@ -50,7 +50,7 @@ Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
 Plug 'eraserhd/vim-ios'
 Plug 'fatih/vim-go'
-Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
+"Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
 Plug 'hashivim/vim-terraform'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
