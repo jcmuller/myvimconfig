@@ -19,8 +19,8 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 " }}}
-" lsp {{{
 lua << EOF
+--- lsp {{{
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -58,11 +58,27 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "gopls", "solargraph", "terraformls", "tflint" }
+local servers = { "solargraph", "terraformls", "tflint" }
 
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+nvim_lsp.gopls.setup {
+	on_attach = on_attach,
+	cmd = {"gopls", "serve"},
+	settings = {
+		gopls = {
+			analyses = {
+				fieldalignment = true,
+				unusedparams = true,
+				unusedwrite = true,
+				nilness = true,
+			},
+			staticcheck = true,
+		},
+	},
+}
 
 nvim_lsp.efm.setup {
 	on_attach = on_attach,
@@ -176,6 +192,7 @@ https://github.com/juliosueiras/terraform-lsp
 nvim_lsp.terraformlsp.setup{
   on_attach = on_attach,
 }
+-- }}}
 
 EOF
 " }}}
