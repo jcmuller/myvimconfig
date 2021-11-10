@@ -194,8 +194,73 @@ nvim_lsp.terraformlsp.setup{
 }
 -- }}}
 
+-- {{{ tree-sitter
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    additional_vim_regex_highlighting = false,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  indent = {
+    enable = true
+  }
+}
+
+-- }}}
+
+-- {{{ telescope
+require('telescope').load_extension('fzf')
+-- }}}
 EOF
+
+" {{{ telescope
+nnoremap <space><space> <cmd>lua require('telescope.builtin').file_browser()<cr>
+nnoremap <space>f <cmd>lua require('telescope.builtin').file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
+
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>pp <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
+nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
+
+nnoremap <leader>flr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <leader>fla <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>fld <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
+nnoremap <leader>flt <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
+nnoremap <leader>fli <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
+nnoremap <leader>fls <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>flw <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
+nnoremap <leader>flW <cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>
+
+nnoremap <leader>fGc <cmd>lua require('telescope.builtin').git_commits()<cr>
+nnoremap <leader>fGB <cmd>lua require('telescope.builtin').git_bcommits()<cr>
+nnoremap <leader>fGb <cmd>lua require('telescope.builtin').git_branches()<cr>
+nnoremap <leader>fGs <cmd>lua require('telescope.builtin').git_status()<cr>
+nnoremap <leader>fGS <cmd>lua require('telescope.builtin').git_stash()<cr>
 " }}}
+"
+" {{{ tree-sitter
+set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker

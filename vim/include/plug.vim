@@ -41,7 +41,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'derekwyatt/vim-scala'
 Plug 'dhruvasagar/vim-dotoo'              " org-mode for vim
 Plug 'docunext/closetag.vim'              " Close open HTML/XML tags (Crtl-_)
-Plug 'dyng/ctrlsf.vim'
+"Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'          " Crazy motions
 Plug 'editorconfig/editorconfig-vim'      " EditorConfig plugin for vim
 Plug 'ekalinin/Dockerfile.vim'
@@ -88,7 +88,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/nerdcommenter'
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 Plug 'shime/vim-livedown'
 Plug 'sjl/gundo.vim'
 Plug 'sirtaj/vim-openscad'
@@ -137,6 +137,27 @@ if has('nvim')
   Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
+
+  " Treesitter
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+  Plug 'tree-sitter/tree-sitter-bash'
+  Plug 'camdencheek/tree-sitter-dockerfile'
+  Plug 'tree-sitter/tree-sitter-dot'
+  Plug 'tree-sitter/tree-sitter-go'
+  Plug 'camdencheek/tree-sitter-go-mod'
+  Plug 'tree-sitter/tree-sitter-json'
+  Plug 'tree-sitter/tree-sitter-ruby'
+  Plug 'vigoux/tree-sitter-viml'
+  Plug 'ikatyang/tree-sitter-yaml'
+
+  " Telescope dependencies
+  Plug 'BurntSushi/ripgrep'
+  Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  Plug 'kyazdani42/nvim-web-devicons'
+
+  " Telescope
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
