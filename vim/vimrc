@@ -378,6 +378,11 @@ nnoremap <F5> :call ToggleTheme()<cr>
 "{{{ Commands
 command! Scratch call ScratchBuffer()
 command! MakeScratch call MakeScratchBuffer()
+command! CDC cd %:p:h
+command! CDCLocal lcd %:p:h
+
+nnoremap <leader>cd :CDC<cr>:pwd<cr>
+nnoremap <leader>lcd :CDCLocal<cr>:pwd<cr>
 "}}}
 " {{{ Custom Functions
 func! StripTrailingWhitespace()
