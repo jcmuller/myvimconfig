@@ -9,7 +9,8 @@ let g:python_host_prog  = "~/.asdf/installs/python/2.7.18/bin/python"
 let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
 
-" Plugins {{{
+au TextYankPost * silent! lua vim.highlight.on_yank {timeout=250}
+
 " compe {{{
 set completeopt=menu,menuone,preview,noselect,noinsert
 inoremap <silent><expr> <C-Space> compe#complete()
