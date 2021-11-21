@@ -121,13 +121,17 @@ require'compe'.setup {
   documentation = true;
 
   source = {
-    path = true;
+	treesitter = true;
     buffer = true;
+    path = true;
     calc = true;
     nvim_lsp = true;
     nvim_lua = true;
     --vsnip = true;
     ultisnips = true;
+	emoji = true;
+	-- tags = true;
+	-- spell = true;
   };
 }
 
