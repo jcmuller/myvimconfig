@@ -1,3 +1,4 @@
-ab HiringPLan HiringPlan
-ab HiringPLans HiringPlans
-ab edication education
+iabbrev HiringPLan HiringPlan
+iabbrev HiringPLans HiringPlans
+iabbrev edication education
+iabbrev tempalte template
