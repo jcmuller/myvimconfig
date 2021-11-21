@@ -228,6 +228,7 @@ nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
 
 nnoremap <leader>flr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>fla <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>flA <cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>
 nnoremap <leader>fld <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
 nnoremap <leader>flt <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
 nnoremap <leader>fli <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
@@ -236,6 +237,7 @@ nnoremap <leader>flw <cmd>lua require('telescope.builtin').lsp_workspace_symbols
 nnoremap <leader>flW <cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>
 
 nnoremap <leader>fGc <cmd>lua require('telescope.builtin').git_commits()<cr>
+nnoremap <leader>fGf <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>fGB <cmd>lua require('telescope.builtin').git_bcommits()<cr>
 nnoremap <leader>fGb <cmd>lua require('telescope.builtin').git_branches()<cr>
 nnoremap <leader>fGs <cmd>lua require('telescope.builtin').git_status()<cr>
