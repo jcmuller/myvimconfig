@@ -239,6 +239,7 @@ nnoremap <leader>fGS <cmd>lua require('telescope.builtin').git_stash()<cr>
 " }}}
 "
 " {{{ tree-sitter
+"set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 
