@@ -210,11 +210,10 @@ require('telescope').load_extension('fzf')
 EOF
 
 " {{{ telescope
-nnoremap <space><space> <cmd>lua require('telescope.builtin').file_browser()<cr>
-nnoremap <space>f <cmd>lua require('telescope.builtin').file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
+nnoremap <space><space> <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
+nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>pp <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').grep_string()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
