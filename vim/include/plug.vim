@@ -142,7 +142,7 @@ if has('nvim')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
   Plug 'tree-sitter/tree-sitter-bash'
   Plug 'camdencheek/tree-sitter-dockerfile'
-  Plug 'tree-sitter/tree-sitter-dot'
+  Plug 'rydesun/tree-sitter-dot'
   Plug 'tree-sitter/tree-sitter-go'
   Plug 'camdencheek/tree-sitter-go-mod'
   Plug 'tree-sitter/tree-sitter-json'
