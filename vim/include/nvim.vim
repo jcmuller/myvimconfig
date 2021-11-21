@@ -58,7 +58,7 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "solargraph", "terraformls", "tflint" }
+local servers = { "solargraph", "terraformls", "terraform_lsp", "tflint" }
 
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup { on_attach = on_attach }
@@ -172,26 +172,6 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 local lsp_configs = require "lspconfig/configs"
 local lsp_utils = require "lspconfig/util"
-
-lsp_configs.terraformlsp = {
-  default_config = {
-    cmd = {"terraform-lsp"},
-    filetypes = {"terraform"},
-	root_dir = lsp_utils.root_pattern(".terraform", ".git")
-  },
-  docs = {
-    description = [[
-https://github.com/juliosueiras/terraform-lsp
-]],
-    default_config = {
-      root_dir = [[root_pattern(".terraform", ".git")]]
-    }
-  }
-}
-
-nvim_lsp.terraformlsp.setup{
-  on_attach = on_attach,
-}
 -- }}}
 
 -- {{{ tree-sitter
