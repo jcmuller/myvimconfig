@@ -151,7 +151,6 @@ if has('nvim')
   Plug 'ikatyang/tree-sitter-yaml'
 
   " Telescope dependencies
-  Plug 'BurntSushi/ripgrep'
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'kyazdani42/nvim-web-devicons'
 
