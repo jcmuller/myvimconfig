@@ -217,31 +217,35 @@ EOF
 nnoremap <space><space> <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
 nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
 
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fr <cmd>lua require('telescope.builtin').grep_string()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
-nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
-nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
+nnoremap <leader>tfB <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
+nnoremap <leader>tfb <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
+nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>tlg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>tgr <cmd>lua require('telescope.builtin').grep_string()<cr>
+nnoremap <leader>tb  <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>th  <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>to  <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <leader>tq  <cmd>lua require('telescope.builtin').quickfix()<cr>
+nnoremap <leader>tT  <cmd>lua require('telescope.builtin').tags()<cr>
+nnoremap <leader>tt  <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <leader>tFF <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
 
-nnoremap <leader>flr <cmd>lua require('telescope.builtin').lsp_references({includeDeclaration=false})<cr>
-nnoremap <leader>fla <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
-nnoremap <leader>flA <cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>
-nnoremap <leader>fld <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
-nnoremap <leader>flt <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
-nnoremap <leader>fli <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
-nnoremap <leader>fls <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
-nnoremap <leader>flw <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
-nnoremap <leader>flW <cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>
+nnoremap <leader>tlr <cmd>lua require('telescope.builtin').lsp_references({includeDeclaration=false})<cr>
+nnoremap <leader>tla <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>tlA <cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>
+nnoremap <leader>tld <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
+nnoremap <leader>tlt <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
+nnoremap <leader>tli <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
+nnoremap <leader>tls <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>tlw <cmd>lua require('telescope.builtin').lsp_workspace_symbols()<cr>
+nnoremap <leader>tlW <cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>
 
-nnoremap <leader>fGc <cmd>lua require('telescope.builtin').git_commits()<cr>
-nnoremap <leader>fGf <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <leader>fGB <cmd>lua require('telescope.builtin').git_bcommits()<cr>
-nnoremap <leader>fGb <cmd>lua require('telescope.builtin').git_branches()<cr>
-nnoremap <leader>fGs <cmd>lua require('telescope.builtin').git_status()<cr>
-nnoremap <leader>fGS <cmd>lua require('telescope.builtin').git_stash()<cr>
+nnoremap <leader>tgc <cmd>lua require('telescope.builtin').git_commits()<cr>
+nnoremap <leader>tgf <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <leader>tgB <cmd>lua require('telescope.builtin').git_bcommits()<cr>
+nnoremap <leader>tgb <cmd>lua require('telescope.builtin').git_branches()<cr>
+nnoremap <leader>tgs <cmd>lua require('telescope.builtin').git_status()<cr>
+nnoremap <leader>tgS <cmd>lua require('telescope.builtin').git_stash()<cr>
 " }}}
 "
 " {{{ tree-sitter
