@@ -53,7 +53,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -100,7 +100,7 @@ nvim_lsp.efm.setup {
 		"rst",
 		"sh",
 		"vim",
-		"yaml"
+		--"yaml"
 	}
 }
 
@@ -226,7 +226,7 @@ nnoremap <leader>fo <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
 
-nnoremap <leader>flr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <leader>flr <cmd>lua require('telescope.builtin').lsp_references({includeDeclaration=false})<cr>
 nnoremap <leader>fla <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 nnoremap <leader>flA <cmd>lua require('telescope.builtin').lsp_range_code_actions()<cr>
 nnoremap <leader>fld <cmd>lua require('telescope.builtin').lsp_definitions()<cr>

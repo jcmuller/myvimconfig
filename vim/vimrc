@@ -70,6 +70,7 @@ set tagbsearch "Binary tag search
 set textwidth=95
 set colorcolumn=80,95,120
 set wrapmargin=0
+set nowrap
 set diffopt=context:3,iwhite,filler "diff options
 " }}}
 " {{{ Mapleader
