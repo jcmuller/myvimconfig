@@ -223,10 +223,10 @@ EOF
 
 " {{{ telescope
 nnoremap <space><space> <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
-nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
+nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({path = require 'telescope.utils'.buffer_dir()})<cr>
 
 nnoremap <leader>tfB <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
-nnoremap <leader>tfb <cmd>lua require('telescope').extensions.file_browser.file_browser({cwd = require('telescope.utils').buffer_dir()})<cr>
+nnoremap <leader>tfb <cmd>lua require('telescope').extensions.file_browser.file_browser({path = require('telescope.utils').buffer_dir()})<cr>
 nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>tlg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>tgr <cmd>lua require('telescope.builtin').grep_string()<cr>
