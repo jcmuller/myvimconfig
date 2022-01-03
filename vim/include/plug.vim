@@ -113,7 +113,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-python/python-syntax'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/Align'
+"Plug 'vim-scripts/Align'
 Plug 'vim-scripts/argtextobj.vim'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/dbext.vim'
@@ -134,7 +134,7 @@ if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
   Plug 'hrsh7th/nvim-compe'
-  Plug 'kassio/neoterm'                 " Use the same terminal for everything
+  "Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
 
