@@ -264,5 +264,14 @@ nnoremap <leader>tgS <cmd>lua require('telescope.builtin').git_stash()<cr>
 "set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 " }}}
+" Document Highlight {{{
+autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+
+highlight LspReferenceText guifg=#f0c674 ctermfg=73
+highlight LspReferenceRead guifg=#de935f ctermfg=53
+highlight LspReferenceWrite guifg=#cc6666 ctermfg=53
+"}}}
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
