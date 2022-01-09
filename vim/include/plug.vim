@@ -22,7 +22,6 @@ Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neomru.vim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'aklt/plantuml-syntax'
 Plug 'austintaylor/vim-choosecolor'
@@ -129,8 +128,9 @@ Plug 'zimbatm/haproxy.vim'
 
 " UI Plugins
 Plug 'rhysd/nyaovim-popup-tooltip'
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-neo-tree/neo-tree.nvim'
+
+Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v1.x' }
+      \| Plug 'MunifTanjim/nui.nvim'
 
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
