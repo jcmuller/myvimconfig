@@ -225,8 +225,6 @@ tt.load_extension('file_browser')
 EOF
 
 " {{{ telescope
-nnoremap <space><space> <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
-nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({path = require 'telescope.utils'.buffer_dir()})<cr>
 
 nnoremap <leader>tfB <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
 nnoremap <leader>tfb <cmd>lua require('telescope').extensions.file_browser.file_browser({path = require('telescope.utils').buffer_dir()})<cr>
@@ -274,4 +272,39 @@ highlight LspReferenceRead guifg=#de935f ctermfg=53
 highlight LspReferenceWrite guifg=#cc6666 ctermfg=53
 "}}}
 
+
+" {{{ nvim-tree
+lua << EOF
+require("neo-tree").setup({
+	popup_border_style = "rounded",
+	filesystem = {
+		window = {
+			mappings = {
+				["<cr>"] = "open",
+				["S"] = "open_split",
+				["s"] = "open_vsplit",
+				["C"] = "close_node",
+				["u"] = "navigate_up",
+				["."] = "set_root",
+				["H"] = "toggle_hidden",
+				["I"] = "toggle_gitignore",
+				["R"] = "refresh",
+				["/"] = "filter_as_you_type",
+				["f"] = "filter_on_submit",
+				["<c-x>"] = "clear_filter",
+				["a"] = "add",
+				["d"] = "delete",
+				["r"] = "rename",
+				["c"] = "copy_to_clipboard",
+				["x"] = "cut_to_clipboard",
+				["p"] = "paste_from_clipboard",
+			}
+		}
+	}
+})
+EOF
+
+nnoremap <space><space> :NeoTreeFocusToggle<CR>
+nnoremap <space>f :NeoTreeReveal<CR>
+" }}}
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker

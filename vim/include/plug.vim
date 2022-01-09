@@ -129,6 +129,8 @@ Plug 'zimbatm/haproxy.vim'
 
 " UI Plugins
 Plug 'rhysd/nyaovim-popup-tooltip'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
 
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
