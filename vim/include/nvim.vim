@@ -419,4 +419,11 @@ augroup neotree " {{{
 	autocmd BufRead,BufNewFile neo-tree setlocal nospell
 augroup END " }}}
 " }}}
+
+" Neovide {{{
+let g:neovide_cursor_antialiasing=v:true
+let g:neovide_cursor_animation_length=0
+set guifont=Iosevka\ Term\ Light:h12
+" }}}
+"
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
