@@ -272,13 +272,16 @@ highlight LspReferenceRead guifg=#de935f ctermfg=53
 highlight LspReferenceWrite guifg=#cc6666 ctermfg=53
 "}}}
 
-" {{{ nvim-tree
+" {{{ neo-tree
 lua << EOF
 require("neo-tree").setup({
   -- The default_source is the one used when calling require('neo-tree').show()
   -- without a source argument.
   default_source = "filesystem",
   popup_border_style = "rounded", -- "double", "none", "rounded", "shadow", "single" or "solid"
+  enable_git_status = true,
+  enable_diagnostics = true,
+  open_files_in_last_window = true,
   -- "NC" is a special style that works well with NormalNC set
   filesystem = {
     window = {
