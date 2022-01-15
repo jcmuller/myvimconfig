@@ -248,11 +248,12 @@ nnoremap <leader>tgb <cmd>lua require('telescope.builtin').git_branches()<cr>
 nnoremap <leader>tgs <cmd>lua require('telescope.builtin').git_status()<cr>
 nnoremap <leader>tgS <cmd>lua require('telescope.builtin').git_stash()<cr>
 " }}}
-"
+
 " {{{ tree-sitter
 "set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 " }}}
+
 " Document Highlight {{{
 autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
 autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
@@ -379,7 +380,7 @@ require("neo-tree").setup({
       file = {
         {
           "icon",
-          default = "*",
+          default = "-",
           padding = " ",
         },
         --{ "hello_node", highlight = "Normal" }, -- For example, don't actually
@@ -396,7 +397,7 @@ require("neo-tree").setup({
         }
       },
     }
-  }
+  },
 })
 
 vim.fn.sign_define("LspDiagnosticsSignError", {text = " ", texthl = "LspDiagnosticsSignError"})
@@ -408,10 +409,10 @@ EOF
 nnoremap <space><space> :NeoTreeFocusToggle<CR>
 nnoremap <space>f :NeoTreeReveal<CR>
 
-augroup neotree " {{{
+augroup neotree
 	autocmd!
 	autocmd BufRead,BufNewFile neo-tree setlocal nospell
-augroup END " }}}
+augroup END
 " }}}
 
 " Neovide {{{
