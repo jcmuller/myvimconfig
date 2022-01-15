@@ -211,15 +211,6 @@ require'nvim-treesitter.configs'.setup {
 -- {{{ telescope
 local tt = require('telescope')
 tt.load_extension('fzf')
-
-tt.setup {
-	extensions = {
-		file_browser = {
-			theme = "dropdown"
-		}
-	}
-}
-
 tt.load_extension('file_browser')
 -- }}}
 EOF
