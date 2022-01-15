@@ -421,4 +421,14 @@ let g:neovide_cursor_animation_length=0
 set guifont=Iosevka\ Term\ Light:h12
 " }}}
 "
+" indent-blankline {{{ 
+lua << EOF
+require('indent_blankline').setup {
+	space_char_blankline = " ",
+	show_current_context = true,
+	show_current_context_start = true,
+}
+EOF
+" }}}
+
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker

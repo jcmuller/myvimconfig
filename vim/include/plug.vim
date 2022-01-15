@@ -135,6 +135,7 @@ Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v1.x' }
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
+  Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'hrsh7th/nvim-compe'
   "Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
