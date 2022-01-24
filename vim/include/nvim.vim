@@ -453,6 +453,10 @@ highlight IndentBlanklineChar         guifg=#555555 gui=nocombine
 highlight IndentBlanklineContextChar  guifg=#999999 gui=nocombine
 highlight IndentBlanklineContextStart guisp=#777777 gui=underline
 " }}}
+
+" NeoZoom {{{
+nnoremap <Leader>z :NeoZoomToggle<cr>
+" }}}
 " tabout {{{
 lua << EOF
 require('tabout').setup {
