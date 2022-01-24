@@ -152,6 +152,9 @@ if has('nvim')
   Plug 'vigoux/tree-sitter-viml'
   Plug 'ikatyang/tree-sitter-yaml'
 
+  " Depend on Treesitter
+  Plug 'abecodes/tabout.nvim'
+
   " Telescope dependencies
   Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   Plug 'kyazdani42/nvim-web-devicons'
