@@ -437,14 +437,22 @@ let g:neovide_cursor_antialiasing=v:true
 let g:neovide_cursor_animation_length=0
 set guifont=Iosevka\ Term\ Light:h12
 " }}}
-"
+
 " indent-blankline {{{ 
 lua << EOF
 require('indent_blankline').setup {
-	space_char_blankline = " ",
 	show_current_context = true,
 	show_current_context_start = true,
+	show_current_context_start_on_current_line = false,
+	space_char_blankline = " ",
+	use_treesitter = true,
 }
+EOF
+
+highlight IndentBlanklineChar         guifg=#555555 gui=nocombine
+highlight IndentBlanklineContextChar  guifg=#999999 gui=nocombine
+highlight IndentBlanklineContextStart guisp=#777777 gui=underline
+" }}}
 EOF
 " }}}
 
