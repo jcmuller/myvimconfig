@@ -586,7 +586,7 @@ nnoremap <leader>gb  :Git blame<cr>
 nnoremap <leader>gc  :Git commit -v<cr>
 nnoremap <leader>gd  :Git diff<cr>
 nnoremap <leader>gl  :Git log<cr>
-nnoremap <leader>gm  :GMove<space>
+nnoremap <leader>gm  :Gmove<space>
 nnoremap <leader>gpu :Git push<CR>
 nnoremap <leader>gpr :Git pull --rebase<CR>
 nnoremap <leader>gr  :GDelete<CR>
