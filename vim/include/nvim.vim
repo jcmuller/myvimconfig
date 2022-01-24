@@ -104,6 +104,15 @@ nvim_lsp.efm.setup {
 	}
 }
 
+nvim_lsp.yamlls.setup {
+	on_attach = on_attach,
+	settings = {
+		yaml = {
+			schemas = { kubernetes = "/*.yaml" },
+		},
+	},
+}
+
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 
 require'compe'.setup {
