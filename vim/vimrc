@@ -94,8 +94,6 @@ endif
 " "}}}
 " {{{ List and tabline
 if v:version >= 700
-	set list
-	set listchars=tab:\|\-,trail:•,extends:>,precedes:<,nbsp:@
 	set showtabline=2 "always show tab line.
 endif
 " }}}
