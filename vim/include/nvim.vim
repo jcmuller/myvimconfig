@@ -50,10 +50,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', '[d',          '<cmd>lua vim.diagnostic.show()<CR>', opts)
   buf_set_keymap('n', ']d',          '<cmd>lua vim.diagnostic.show()<CR>', opts)
-  buf_set_keymap('n', 'gD',          '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd',          '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi',          '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'gr',          '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
+  buf_set_keymap('n', '<leader>gD',          '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', '<leader>gd',          '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', '<leader>gi',          '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<leader>gr',          '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
