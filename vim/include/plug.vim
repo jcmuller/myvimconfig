@@ -87,7 +87,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/nerdcommenter'
-"Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'shime/vim-livedown'
 Plug 'sjl/gundo.vim'
 Plug 'sirtaj/vim-openscad'
@@ -129,8 +129,6 @@ Plug 'zimbatm/haproxy.vim'
 " UI Plugins
 Plug 'rhysd/nyaovim-popup-tooltip'
 
-Plug 'nvim-neo-tree/neo-tree.nvim', { 'branch': 'v1.x' }
-      \| Plug 'MunifTanjim/nui.nvim'
 
 if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make

@@ -611,31 +611,31 @@ let g:localvimrc_blacklist = $HOME . "/Development/OSS/.*"
 "let g:localvimrc_debug = 1
 " }}}
 " {{{ NERDTree
-"""   nnoremap <space><space> :NERDTreeToggle<cr>
-"""   nnoremap <space>f :NERDTreeFind<cr>
-"""   nnoremap <space>F :NERDTreeFocus<cr>
-"""   " Don't show temp files, swap files
-"""   let NERDTreeIgnore = ['\~$', '\..*\.sw\w$']
-"""   let g:NERDTreeDirArrowCollapsible = "-"
-"""   let g:NERDTreeDirArrowExpandable = ""
-"""   "let NERDTreeMinimalUI = 1
-"""   let g:NERDTreeQuitOnOpen = 1
-"""   let g:NERDTreeAutoDeleteBuffer = 1
-"""   let g:NERDTreeShowHidden = 1
-"""   " Open NERDtree when no file was specified
-"""   "autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
-"""   let g:NERDTreeGitStatusIndicatorMapCustom = {
-"""       \ "Modified"  : "*",
-"""       \ "Staged"    : "+",
-"""       \ "Untracked" : "?",
-"""       \ "Renamed"   : "~",
-"""       \ "Unmerged"  : "═",
-"""       \ "Deleted"   : "d",
-"""       \ "Dirty"     : "Y",
-"""       \ "Clean"     : "✔︎",
-"""       \ 'Ignored'   : '☒',
-"""       \ "Unknown"   : "?"
-"""       \ }
+nnoremap <space><space> :NERDTreeToggle<cr>
+nnoremap <space>f :NERDTreeFind<cr>
+nnoremap <space>F :NERDTreeFocus<cr>
+" Don't show temp files, swap files
+let NERDTreeIgnore = ['\~$', '\..*\.sw\w$']
+let g:NERDTreeDirArrowCollapsible = "-"
+let g:NERDTreeDirArrowExpandable = ""
+"let NERDTreeMinimalUI = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeShowHidden = 1
+" Open NERDtree when no file was specified
+"autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "*",
+    \ "Staged"    : "+",
+    \ "Untracked" : "?",
+    \ "Renamed"   : "~",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "d",
+    \ "Dirty"     : "Y",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 " }}}
 " {{{ Netrw
 "  command! ExploreFind let @/=expand("%:t") | execute 'Explore' expand("%:h") | normal n
