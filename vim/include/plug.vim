@@ -20,8 +20,8 @@ Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neomru.vim'
+Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'             " Show git diff in the gutter
 Plug 'aklt/plantuml-syntax'
 Plug 'austintaylor/vim-choosecolor'
@@ -134,11 +134,21 @@ if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
   Plug 'nyngwang/NeoZoom.lua'
-  Plug 'hrsh7th/nvim-compe'
-  "Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
   Plug 'ray-x/lsp_signature.nvim'
+
+  " nvim-cmp
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-calc'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/cmp-emoji'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'petertriho/cmp-git'
+  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  Plug 'ray-x/cmp-treesitter'
 
   " Treesitter
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update

@@ -13,13 +13,8 @@ au TextYankPost * silent! lua vim.highlight.on_yank {timeout=250}
 
 lua require("config")
 
-" compe {{{
-set completeopt=menu,menuone,preview,noselect,noinsert
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" nvim-cmp {{{
+set completeopt=menu,menuone,noselect
 " }}}
 " {{{ telescope
 nnoremap <leader>tfB <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>

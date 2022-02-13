@@ -848,6 +848,7 @@ let g:turbux_command_prefix = 'ze' " default: (empty)
 " }}}
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
+let g:UltiSnipsSnippetDirectories=['~/.vim/my-snippets','~/.vim/plugged/neosnippet-snippets/neosnippets']
 " }}}
 " {{{ YouCompleteMe
 let g:ycm_register_as_syntastic_checker = 0
@@ -1130,11 +1131,6 @@ augroup lexical
 augroup END
 " }}}
 " neosnippet{{{
-imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-j>     <Plug>(neosnippet_expand_target)
-
-let g:neosnippet#snippets_directory='~/.vim/my-snippets,~/.vim/plugged/neosnippet-snippets/neosnippets'
 " }}}
 " fzf-preview {{{
 let g:fzf_preview_command = 'bat --color=always --style=grid {-1}'
