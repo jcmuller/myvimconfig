@@ -295,8 +295,6 @@ let g:neovide_cursor_animation_length=0
 set guifont=Iosevka\ Term\ Light:h12
 " }}}
 
-" indent-blankline {{{ 
-" }}}
 
 " NeoZoom {{{
 nnoremap <Leader>z :NeoZoomToggle<cr>
