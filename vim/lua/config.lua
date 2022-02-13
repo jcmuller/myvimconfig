@@ -102,6 +102,33 @@ nvim_lsp.gopls.setup {
   },
 }
 
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+
+nvim_lsp.sumneko_lua.setup {
+  cmd = { "/opt/lua-language-server/bin/lua-language-server" },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+        path = runtime_path
+      },
+      telemetry = {
+        enable = false
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      diagnostics = {
+        globals = {'vim'},
+      }
+    }
+  }
+}
+
 nvim_lsp.efm.setup {
   on_attach = on_attach,
   init_options = { documentFormatting = true },
