@@ -22,6 +22,7 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 lua << EOF
 --- lsp {{{
 local nvim_lsp = require('lspconfig')
+local lsp_signature = require("lsp_signature")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -54,6 +55,12 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>gd',          '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', '<leader>gi',          '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<leader>gr',          '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
+
+  lsp_signature.on_attach({
+    hint_prefix = "",
+    floating_window = false, -- only show arguments
+    toggle_key = '<C-s>',
+  }, bufnr)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
