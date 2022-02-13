@@ -62,7 +62,7 @@ Plug 'jreybert/vimagit'                   " Magit comes to vim
 Plug 'junegunn/fzf',                      { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'                   " Fuzzy finder
 Plug 'junegunn/goyo.vim'                  " Distraction-free writing
-Plug 'jvirtanen/vim-hcl'
+Plug 'jvirtanen/vim-hcl',                 { 'branch': 'main' }
 Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
