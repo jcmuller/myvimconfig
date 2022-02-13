@@ -284,7 +284,7 @@ augroup END
 
 augroup types_that_dont_support_highlight
 	autocmd!
-	autocmd FileType yaml setlocal eventignore=CursorHold,CursorHoldI,CursorMoved
+	autocmd FileType yaml,json setlocal eventignore=CursorHold,CursorHoldI,CursorMoved
 augroup END
 "}}}
 
