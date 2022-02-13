@@ -1285,7 +1285,7 @@ augroup gopass " {{{
 augroup END "}}}
 augroup golang " {{{
 	autocmd!
-	autocmd FileType go,gomod setlocal shiftwidth=4 tabstop=4 nospell
+	autocmd BufRead *.go,go.mod setlocal shiftwidth=4 tabstop=4 nospell
 	autocmd BufRead go.mod setlocal filetype=gomod
 augroup END " }}}
 augroup gotemplates " {{{
