@@ -158,7 +158,6 @@ if has('nvim')
   Plug 'tree-sitter/tree-sitter-go'
   Plug 'camdencheek/tree-sitter-go-mod'
   Plug 'tree-sitter/tree-sitter-json'
-  Plug 'tjdevries/tree-sitter-lua'
   Plug 'vigoux/tree-sitter-viml'
   Plug 'ikatyang/tree-sitter-yaml'
 
