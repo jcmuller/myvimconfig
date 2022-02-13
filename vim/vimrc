@@ -244,6 +244,10 @@ augroup perl " {{{
 	autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 augroup END " }}}
 autocmd FileType vo_base setl nolist
+augroup yamllint " {{{ 
+	autocmd!
+	autocmd BufRead .yamllint set ft=yaml
+" }}}
 augroup IOS " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile,BufWinEnter apple-app-site-association setlocal ft=json
