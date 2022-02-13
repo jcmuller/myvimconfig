@@ -134,7 +134,6 @@ if has('nvim')
   "Plug 'neomake/neomake'            " Asynchronous make
   Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
   Plug 'nyngwang/NeoZoom.lua'
-  Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'hrsh7th/nvim-compe'
   "Plug 'kassio/neoterm'                 " Use the same terminal for everything
   Plug 'neovim/nvim-lspconfig'
