@@ -49,10 +49,11 @@ local on_attach = function(client, bufnr)
       highlight LspReferenceWrite guifg=#cc6666 ctermfg=53
 
       augroup lsp_document_highlight
-      autocmd! * <buffer>
-      autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-      autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+        autocmd! * <buffer>
+        " noremap * <buffer> :lua vim.lsp.buf.document_highlight()<CR>
+        autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]], false)
   end
