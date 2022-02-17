@@ -84,10 +84,10 @@ end
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  cmd = {"gopls", "serve"},
   settings = {
     gopls = {
       experimentalPostfixCompletions = true,
+      staticcheck = true,
       analyses = {
         fieldalignment = true,
         unusedparams = true,
@@ -95,7 +95,6 @@ nvim_lsp.gopls.setup {
         nilness = true,
         shadow = true,
       },
-      staticcheck = true,
     },
   },
 }
@@ -129,7 +128,6 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.efm.setup {
   on_attach = on_attach,
   init_options = { documentFormatting = true },
-  command = "efm-langserver",
   filetypes = {
     "css",
     "csv",
@@ -155,7 +153,10 @@ nvim_lsp.yamlls.setup {
   on_attach = on_attach,
   settings = {
     yaml = {
-      schemas = { kubernetes = "/*.yaml" },
+      schemas = {
+        kubernetes = "/*.yaml",
+        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+      },
     },
   },
 }
