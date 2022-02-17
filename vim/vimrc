@@ -350,6 +350,7 @@ inoremap {<cr> {<cr>}<ESC>O
 " Saving quicker
 " Normal mode
 nnoremap ;w :w<cr>
+nnoremap ;s :w<cr>
 " Insert mode: Ctrl-S
 inoremap <C-S> <Esc>:w<cr>a
 

@@ -28,6 +28,7 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'derekwyatt/vim-scala'
 Plug 'dhruvasagar/vim-dotoo'              " org-mode for vim
 Plug 'docunext/closetag.vim'              " Close open HTML/XML tags (Crtl-_)
+Plug 'dstein64/vim-startuptime'
 Plug 'easymotion/vim-easymotion'          " Crazy motions
 Plug 'editorconfig/editorconfig-vim'      " EditorConfig plugin for vim
 Plug 'ekalinin/Dockerfile.vim'
