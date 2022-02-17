@@ -2,17 +2,6 @@ let g:plug_timeout = 120
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --gocode-completer --racer-completer' }  " Code completion engine
-"Plug 'bkad/CamelCaseMotion'           " CamelCase motion through words BUGGY
-"Plug 'chaoren/vim-wordmotion'             " word motions
-"Plug 'gerw/vim-latex-suite'
-"Plug 'haya14busa/incsearch-easymotion.vim'
-"Plug 'haya14busa/incsearch.vim'           " Incremental search
-"Plug 'mileszs/ack.vim'                    " Ack plugin
-"Plug 'ngmy/vim-rubocop'
-"Plug 'ryanoasis/vim-devicons'
-"Plug 'scrooloose/syntastic'
-"Plug 'vim-scripts/YankRing.vim'    " Disabled cause random nvim crashes
 Plug 'Konfekt/vim-mutt-aliases'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
@@ -36,11 +25,9 @@ Plug 'chrisbra/csv.vim'                   " Filetype plugin for CSV
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cyphactor/vim-open-alternate'       " Open spec files
 Plug 'dart-lang/dart-vim-plugin'
-" Plug 'dense-analysis/ale' " Async syntax highlighting.
 Plug 'derekwyatt/vim-scala'
 Plug 'dhruvasagar/vim-dotoo'              " org-mode for vim
 Plug 'docunext/closetag.vim'              " Close open HTML/XML tags (Crtl-_)
-"Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'          " Crazy motions
 Plug 'editorconfig/editorconfig-vim'      " EditorConfig plugin for vim
 Plug 'ekalinin/Dockerfile.vim'
@@ -49,7 +36,6 @@ Plug 'elzr/vim-json'
 Plug 'embear/vim-localvimrc'              " Search local vimrc files (.lvimrc)
 Plug 'eraserhd/vim-ios'
 Plug 'fatih/vim-go'
-"Plug 'fszymanski/fzf-quickfix',           { 'on': '<Plug>(fzf-quickfix)' }
 Plug 'google/vim-jsonnet'
 Plug 'hashivim/vim-terraform'
 Plug 'herringtondarkholme/yats.vim'       " Yet Another TypeScript Syntax
@@ -66,7 +52,6 @@ Plug 'jvirtanen/vim-hcl',                 { 'branch': 'main' }
 Plug 'kana/vim-textobj-user'              " Create your own text objects
 Plug 'kchmck/vim-coffee-script'           " CoffeeScript support
 Plug 'kien/ctrlp.vim'                     " Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-"Plug 'leafgarland/typescript-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 Plug 'maralla/vim-toml-enhance',          { 'depends': 'cespare/vim-toml' }
@@ -76,7 +61,6 @@ Plug 'mhinz/vim-grepper'
 Plug 'msanders/cocoa.vim'                 " Cocoa/Objective C
 Plug 'mxw/vim-jsx'
 Plug 'nelstrom/vim-textobj-rubyblock'     " A custom text object for selecting ruby blocks (ir, ar)
-"Plug 'neoclide/coc.nvim',                 { 'branch': 'release', 'do': ':call coc#util#install()' }
 Plug 'nono/vim-handlebars'
 Plug 'pangloss/vim-javascript'
 Plug 'phb1/gtd.vim'                       " Getting Things Done
@@ -131,8 +115,6 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 
 
 if has('nvim')
-  "Plug 'neomake/neomake'            " Asynchronous make
-  Plug 'Shougo/deoplete.nvim',    { 'do': ':UpdateRemotePlugins' }
   Plug 'nyngwang/NeoZoom.lua'
   Plug 'neovim/nvim-lspconfig'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
@@ -174,10 +156,8 @@ if has('nvim')
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'nvim-telescope/telescope-file-browser.nvim'
 else
-  Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'Shougo/deoplete.nvim'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc' }
 endif
 

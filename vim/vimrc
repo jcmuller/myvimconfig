@@ -239,8 +239,8 @@ autocmd FileType man setl nobackup nowritebackup noswapfile
 autocmd Filetype make setl noet
 augroup perl " {{{
 	autocmd!
-	autocmd FileType perl,javascript,json,ruby inoremap <buffer>  {<CR>  {<CR>}<Esc>O
-	autocmd FileType perl,javascript,json,ruby vnoremap <buffer>  {<CR> s{<CR>}<Esc>kp=iB
+	autocmd FileType perl,javascript,json,ruby inoremap <buffer> {<CR> {<CR>}<Esc>O
+	autocmd FileType perl,javascript,json,ruby vnoremap <buffer> {<CR> s{<CR>}<Esc>kp=iB
 	autocmd FileType perl setl makeprg=perl\ -c\ % noet sw=4 ts=4
 augroup END " }}}
 autocmd FileType vo_base setl nolist
@@ -312,14 +312,6 @@ augroup Global " {{{
 				\   unlet b:doopenfold |
 				\   exe "normal zv" |
 				\ endif
-
-" Set omnicomplete to a general thing if plugin doesn't implement it already
-"  if has("autocmd") && exists("+omnifunc")
-"  	autocmd Filetype *
-"  				\	if &omnifunc == "" |
-"  				\		setlocal omnifunc=syntaxcomplete#Complete |
-"  				\	endif
-"  endif
 augroup END
 " }}}
 " }}}
@@ -335,12 +327,6 @@ noremap <leader>y "+y
 " next search
 " nnoremap <C-L> :nohl<CR><C-L>
 nnoremap <space>l :nohl<cr>:redraw!<cr>
-
-"" Don't use arrow keys
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
 
 " Search visually selected text
 vmap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
@@ -369,9 +355,6 @@ inoremap <C-S> <Esc>:w<cr>a
 
 " Remove trailing white space, dup empty lines, etc
 nnoremap <Leader>w :call StripTrailingWhitespace()<cr>
-
-" OMG! How did I not know about this earlier?
-"noremap : q:I
 
 " Find merge diffs
 "nnoremap <Leader>fd /[<=>]\{3\}<cr>
@@ -432,10 +415,6 @@ func! MakeScratchBuffer()
 	setl bufhidden=hide
 	setl noswapfile
 endf
-
-"func! GetCurrentPath()
-"endf
-
 " }}}
 " {{{ Plugin configuration
 " {{{ Airline
@@ -461,67 +440,13 @@ let g:airline_detect_spell = 0
 "let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#neomake#enabled = 1
 let g:airline_extensions = []
-
-"if !has('gui_running')
-"unicode symbols
-"let g:airline#extensions#branch#symbol = '⎇ '
-"let g:airline#extensions#whitespace#symbol = 'Ξ'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '◀'
-"let g:airline_linecolumn_prefix = '␊ '
-"let g:airline_paste_symbol = 'ρ'
-
-"powerline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline#extensions#branch#symbol = ' '
-"let g:airline#extensions#readonly#symbol = ''
-"let g:airline_linecolumn_prefix = ' '
-"endif
-"let g:airline_section_a       (the mode/paste indicator)
-"let g:airline_section_b       (the fugitive/lawrencium branch indicator)
-"let g:airline_section_c       (bufferline or filename)
-"let g:airline_section_gutter  (readonly, csv)
-"let g:airline_section_x       (tagbar, filetype)
-"let g:airline_section_y       (fileencoding, fileformat)
-"let g:airline_section_z       (percentage, line number, column number)
-"let g:airline_section_warning (syntastic, whitespace)
-"let g:airline_section_z = ""
-
 " }}}
 " {{{ Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>L'
 " }}}
-" " {{{ Clang
-" " Disable auto completion, always <c-x> <c-o> to complete
-" " let g:clang_complete_auto = 0
-" let g:clang_use_library = 1
-" let g:clang_periodic_quickfix = 0
-" let g:clang_close_preview = 1
-"
-" " For Objective-C, this needs to be active, otherwise multi-parameter methods won't be completed correctly
-" let g:clang_snippets = 1
-"
-" " Snipmate does not work anymore, ultisnips is the recommended plugin
-" let g:clang_snippets_engine = 'ultisnips'
-"
-" " This might change depending on your installation
-" let g:clang_exec = '/usr/local/Cellar/llvm33/3.3/bin/clang-3.3'
-" let g:clang_library_path = '/usr/local/Cellar/llvm33/3.3/lib/llvm-3.3/lib/libclang.dylib'
-"
-" " }}}
 " {{{ Closetag
 autocmd FileType html,eruby let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,eruby,eelixir source ~/.vim/plugged/closetag.vim/plugin/closetag.vim
-" }}}
-" {{{ Command-T mappings
-"nnoremap <silent> <Leader>t :CommandT<CR>
-"nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-"nnoremap <silent> <Leader>j :CommandTJump<CR>
-"nnoremap <silent> <Leader>T :CommandTTag<CR>
-"nnoremap <silent> <Leader>f :CommandTFlush<CR>
 " }}}
 " {{{ CTRLP
 "noremap <Leader>P :CtrlPLine<cr>
@@ -534,57 +459,9 @@ let g:ctrlp_match_window = "bottom,order:ttb,min:1,max:30"
 let g:ctrlp_show_hidden = 1
 
 let g:ctrlp_switch_buffer = 'e'
-  "e - jump when <cr> is pressed, but only to windows in the current tab.
-  "t - jump when <c-t> is pressed, but only to windows in another tab.
-  "v - like "e", but jump when <c-v> is pressed.
-  "h - like "e", but jump when <c-x> is pressed.
-  "E, T, V, H - like "e", "t", "v", and "h", but jump to windows anywhere.
-  "0 or <empty> - disable this feature.
-
-"nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
-"nnoremap <silent> <Leader>j :CtrlPJump<CR>
-"nnoremap <silent> <Leader>t :CtrlPTag<CR>
-"nnoremap <silent> <Leader>f :CtrlPClearAllCaches<CR>
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|npm\|vendor'
-
-"let g:ctrlp_prompt_mappings = {
-"\ 'PrtBS()':              ['<bs>', '<c-]>'],
-"\ 'PrtDelete()':          ['<del>'],
-"\ 'PrtDeleteWord()':      ['<c-w>'],
-"\ 'PrtClear()':           ['<c-u>'],
-"\ 'PrtSelectMove("j")':   ['<c-j>', '<down>'],
-"\ 'PrtSelectMove("k")':   ['<c-k>', '<up>'],
-"\ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
-"\ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
-"\ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
-"\ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
-"\ 'PrtHistory(-1)':       ['<c-n>'],
-"\ 'PrtHistory(1)':        ['<c-p>'],
-"\ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
-"\ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
-"\ 'AcceptSelection("t")': ['<c-t>'],
-"\ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
-"\ 'ToggleFocus()':        ['<s-tab>'],
-"\ 'ToggleRegex()':        ['<c-r>'],
-"\ 'ToggleByFname()':      ['<c-d>'],
-"\ 'ToggleType(1)':        ['<c-f>', '<c-up>'],
-"\ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
-"\ 'PrtExpandDir()':       ['<tab>'],
-"\ 'PrtInsert("c")':       ['<MiddleMouse>', '<insert>'],
-"\ 'PrtInsert()':          ['<c-\>'],
-"\ 'PrtCurStart()':        ['<c-a>'],
-"\ 'PrtCurEnd()':          ['<c-e>'],
-"\ 'PrtCurLeft()':         ['<c-h>', '<left>', '<c-^>'],
-"\ 'PrtCurRight()':        ['<c-l>', '<right>'],
-"\ 'PrtClearCache()':      ['<F5>'],
-"\ 'PrtDeleteEnt()':       ['<F7>'],
-"\ 'CreateNewFile()':      ['<c-y>'],
-"\ 'MarkToOpen()':         ['<c-z>'],
-"\ 'OpenMulti()':          ['<c-o>'],
-"\ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
-"\ }
 " }}}
 " {{{ Fugitive
 nnoremap <leader>ga  :Git add -p<cr>
@@ -629,114 +506,19 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeShowHidden = 1
 " Open NERDtree when no file was specified
-"autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
+autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
 let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "?",
-    \ "Renamed"   : "~",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "d",
-    \ "Dirty"     : "Y",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
-" }}}
-" {{{ Netrw
-"  command! ExploreFind let @/=expand("%:t") | execute 'Explore' expand("%:h") | normal n
-"
-"  let g:netrw_http_cmd  = "wget -q -O"
-"  let g:netrw_liststyle = 3
-"  let g:netrw_list_hide = '.*\.swp$'
-"  "let g:netrw_list_hide = netrw_gitignore#Hide().'.*\.swp$'
-"  let g:netrw_banner    = 0
-"
-"  nnoremap <space><space> :Rexplore<cr>
-"  nnoremap <space>f :ExploreFind<cr>
-" }}}
-" {{{ vim-dirvish
-" augroup VimStartup
-" 	au!
-" 	au VimEnter * if expand("%") == "" | e . | endif
-" augroup END
-" }}}
-" {{{ lua-tree
-"  "let g:lua_tree_side = 'right' | 'left' "left by default
-"  let g:lua_tree_width = 40                                    " 30 by default
-"  let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ] " empty by default
-"  let g:lua_tree_auto_open = 1                                 " 0 by default, opens the tree when typing `vim $DIR` or `vim`
-"  "let g:lua_tree_auto_close = 1                                " 0 by default, closes the tree when it's the last window
-"  let g:lua_tree_quit_on_open = 1                              " 0 by default, closes the tree when you open a file
-"  let g:lua_tree_follow = 1                                    " 0 by default, this option allows the cursor to be updated when entering a buffer
-"  let g:lua_tree_indent_markers = 1                            " 0 by default, this option shows indent markers when folders are open
-"  let g:lua_tree_hide_dotfiles = 1                             " 0 by default, this option hides files and folders starting with a dot `.`
-"  let g:lua_tree_git_hl = 1                                    " 0 by default, will enable file highlight for git attributes (can be used without the icons).
-"  let g:lua_tree_root_folder_modifier = ':~'                   " This is the default. See :help filename-modifiers for more options
-"  let g:lua_tree_tab_open = 1                                  " 0 by default, will open the tree when entering a new tab and the tree was previously open
-"  let g:lua_tree_allow_resize = 1                              " 0 by default, will not resize the tree when opening a file
-"  let g:lua_tree_show_icons = {
-"      \ 'git': 1,
-"      \ 'folders': 0,
-"      \ 'files': 0,
-"      \ }
-"  "If 0, do not show the icons for one of 'git' 'folder' and 'files'
-"  "1 by default, notice that if 'files' is 1, it will only display
-"  "if nvim-web-devicons is installed and on your runtimepath
-"
-"  " You can edit keybindings be defining this variable
-"  " You don't have to define all keys.
-"  " NOTE: the 'edit' key will wrap/unwrap a folder and open a file
-"  let g:lua_tree_bindings = {
-"      \ 'edit':            ['<CR>', 'o'],
-"      \ 'edit_vsplit':     '<C-v>',
-"      \ 'edit_split':      '<C-x>',
-"      \ 'edit_tab':        '<C-t>',
-"      \ 'toggle_ignored':  'I',
-"      \ 'toggle_dotfiles': 'H',
-"      \ 'refresh':         'R',
-"      \ 'preview':         '<Tab>',
-"      \ 'cd':              '<C-]>',
-"      \ 'create':          'a',
-"      \ 'remove':          'd',
-"      \ 'rename':          'r',
-"      \ 'cut':             'x',
-"      \ 'copy':            'c',
-"      \ 'paste':           'p',
-"      \ 'prev_git_item':   '[c',
-"      \ 'next_git_item':   ']c',
-"      \ }
-"
-"  " Disable default mappings by plugin
-"  " Bindings are enable by default, disabled on any non-zero value
-"  " let lua_tree_disable_keybindings=1
-"
-"  " default will show icon by default if no icon is provided
-"  " default shows no icon by default
-"  let g:lua_tree_icons = {
-"      \ 'default': '',
-"      \ 'symlink': '',
-"      \ 'git': {
-"      \   'unstaged': "✗",
-"      \   'staged': "✓",
-"      \   'unmerged': "",
-"      \   'renamed': "➜",
-"      \   'untracked': "★"
-"      \   },
-"      \ 'folder': {
-"      \   'default': "",
-"      \   'open': ""
-"      \   }
-"      \ }
-"
-"  set termguicolors " this variable must be enabled for colors to be applied properly
-"
-"  " a list of groups can be found at `:help lua_tree_highlight`
-"  highlight LuaTreeFolderIcon guibg=blue
-"
-"  nnoremap <space>r :LuaTreeRefresh<CR>
-"  nnoremap <space><space> :LuaTreeToggle<cr>
-"  nnoremap <space>f       :LuaTreeFindFile<cr>
+			\ "Modified"  : "*",
+			\ "Staged"    : "+",
+			\ "Untracked" : "?",
+			\ "Renamed"   : "~",
+			\ "Unmerged"  : "═",
+			\ "Deleted"   : "d",
+			\ "Dirty"     : "Y",
+			\ "Clean"     : "✔︎",
+			\ 'Ignored'   : '☒',
+			\ "Unknown"   : "?"
+			\ }
 " }}}
 " {{{ Perl stuff
 let perl_include_pod = 1
@@ -745,71 +527,15 @@ let perl_want_scope_in_variables = 1
 "let perl_fold = 1
 "let perl_fold_blocks = 1
 " }}}
-" {{{ Syntastic
-:sign define SyntasticError text=> linehl=Error texthl=SpecialKey
-let g:syntastic_aggregate_errors = 1 " Combine errors form different checkers
-let g:syntastic_auto_jump = 0 " SO important
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_enable_balloons = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_always_populate_loc_list = 1
-
-let g:syntastic_error_symbol = 'x>'
-let g:syntastic_warning_symbol = '!>'
-
-let g:syntastic_disabled_filetypes = ['eruby']
-let g:syntastic_eruby_checker = ''
-let g:syntastic_rust_checker = ['rustc']
-
-"let g:syntastic_objc_config_file = '.clang_complete'
-"let g:syntastic_objc_checker = 'clang'
-
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = 'eslint_d'
-
-let g:syntastic_ruby_rubocop_exec = 'rubocop'
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-
-noremap [l :lprevious<CR>
-noremap ]l :lnext<CR>
-" }}}
 " {{{ Tagbar
 " Tagbar mappings
 map <F2> :TagbarToggle<CR>
 let g:tagbar_autoclose = 0
 let g:tagbar_autofocus = 1
-"let g:tagbar_foldlevel = 3
-"let g:tagbar_autoshowtag = 0
-
 " let g:tagbar_iconchars = ['▶', '▼']  "(default on Linux and Mac OS X)
 let g:tagbar_iconchars = ['▸', '▾']
 " let g:tagbar_iconchars = ['▷', '◢']
 " let g:tagbar_iconchars = ['+', '-']  "(default on Windows)
-
-" autocmd VimEnter * nested :call tagbar#autoopen(1)
-" autocmd FileType * nested :call tagbar#autoopen(0)
-" autocmd BufEnter * nested :call tagbar#autoopen(0)
-" "
-" let g:tagbar_type_coffee = {
-" 	\ 'ctagstype' : 'coffee',
-" 	\ 'kinds'     : [
-" 		\ 'c:classes',
-" 		\ 'm:methods',
-" 		\ 'f:functions',
-" 		\ 'v:variables',
-" 		\ 'f:fields',
-" 	\ ]
-" \ }
-"
-" let g:tagbar_type_markdown = {
-" 	\ 'ctagstype' : 'markdown',
-" 	\ 'kinds' : [
-" 		\ 'h:Heading_L1',
-" 		\ 'i:Heading_L2',
-" 		\ 'k:Heading_L3'
-" 	\ ]
-" \ }
-"
 " }}}
 " {{{ tmux-navigator
 let g:tmux_navigator_no_mappings = 1
@@ -819,7 +545,6 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
-
 " }}}
 " {{{ tslime
 vmap <C-c><C-c> <Plug>SendSelectionToTmux
@@ -833,25 +558,14 @@ func! TurbuxRunWithNeoTerm(command)
 endf
 
 let g:no_turbux_mappings = 1
-"map <Enter> <Plug>SendTestToTmux
-"map <Leader>t <Plug>SendTestToTmux
 map <Leader>T <Plug>SendFocusedTestToTmux
 
 let g:turbux_custom_runner = 'TurbuxRunWithNeoTerm'
-"let g:turbux_runner  = 'dispatch'      " default: vimux OR tslime OR vim OR dispatch
-"let g:turbux_runner  = 'vim'      " default: vimux OR tslime OR vim OR dispatch
 let g:turbux_command_prefix = 'ze' " default: (empty)
-"let g:turbux_command_rspec  = 'rspec'        " default: rspec
-"let g:turbux_command_test_unit = 'ruby'     " default: ruby -Itest
-"let g:turbux_command_cucumber = 'cucumber'  " default: cucumber
-"let g:turbux_command_turnip = 'rspec'       " default: rspec -rturnip
 " }}}
 " {{{ Ultisnips config
 let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsSnippetDirectories=['~/.vim/my-snippets','~/.vim/plugged/neosnippet-snippets/neosnippets']
-" }}}
-" {{{ YouCompleteMe
-let g:ycm_register_as_syntastic_checker = 0
 " }}}
 " {{{ vim-notes
 let g:notes_directories = ['~/Documents/Notes']
@@ -862,35 +576,14 @@ let g:notes_smart_quotes = 0
 set t_Co=256
 colo Tomorrow-Night
 " }}}
-" {{{ Highlight text that overflows
-" highlight OverLength ctermbg=red ctermfg=white guibg=#d6d6d6
-" match OverLength /\%81v.\+/
-" }}}
 " {{{ Pick.vim
 nnoremap <Leader>e :call PickFile()<cr>
 " }}}
 " {{{ vim-test
 let test#strategy = "neoterm"
-"let test#strategy = "dispatch"
-"let test#strategy = "tslime"
 " }}}
-"""    " {{{ CtrlSF
-"""    nmap     <Leader>ff <Plug>CtrlSFPrompt
-"""    vmap     <Leader>ff <Plug>CtrlSFVwordPath
-"""    vmap     <Leader>fF <Plug>CtrlSFVwordExec
-"""    nmap     <Leader>fn <Plug>CtrlSFCwordPath
-"""    nmap     <Leader>fp <Plug>CtrlSFPwordPath
-"""    nnoremap <leader>fo :CtrlSFOpen<CR>
-"""    nnoremap <leader>ft :CtrlSFToggle<CR>
-"""    inoremap <leader>ft <Esc>:CtrlSFToggle<CR>
-"""    nmap     <leader>fl <Plug>CtrlSFQuickfixPrompt
-"""    vmap     <leader>fl <Plug>CtrlSFQuickfixVwordPath
-"""    vmap     <leader>fL <Plug>CtrlSFQuickfixVwordExec
-"""    " }}}
 " {{{ Grepper
 nnoremap <Leader>G :Grepper -tool git<cr>
-"nnoremap <Leader>g :Grepper -tool rg<cr>
-
 nmap gs <Plug>(GrepperOperator)
 xmap gs <Plug>(GrepperOperator)
 
@@ -937,7 +630,6 @@ let g:magit_discard_untracked_do_delete=1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 0
 let g:go_rename_command = 'gopls'
-"autocmd FileType go let omnifunc=go#complete#Complete
 " }}}
 " {{{ Colorizer
 let g:colorizer_auto_filetype = 'html,css,i3,config'
@@ -947,151 +639,9 @@ let g:jsx_ext_required = 0
 let g:jsx_pragma_required = 0
 let g:xml_syntax_folding = 0
 " }}}
-" Neomake {{{
-" When writing a buffer (no delay), and on normal mode changes (after 750ms).
-"  call neomake#configure#automake('nrwi', 750, 500)
-"  let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
-" Default: let g:neomake_ruby_enabled_makers = ['flog', 'reek', 'rubocop', 'mri', 'rubylint']
-" }}}
-" ALE {{{
-"  let g:ale_completion_enabled = 0
-"  let g:ale_fix_on_save = 1
-"  let g:ale_lint_on_enter = 1
-"  let g:ale_lint_on_save = 1
-"  let g:ale_linters = {
-"  			\   'ruby': ['solargraph', 'rubocop', 'sorbet'],
-"  			\   'javascript.jsx': ['eslint'],
-"  			\   'go': ['bingo', 'golangci-lint', 'staticcheck', 'govet', 'golint'],
-"  			\   'diff': [],
-"  			\ }
-"  let g:ale_fixers = {
-"  			\   'eruby.yaml': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'prettier',
-"  			\   ],
-"  			\   'go': [
-"  			\     'goimports',
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\   ],
-"  			\   'javascript': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'eslint',
-"  			\     'prettier',
-"  			\     'standard',
-"  			\   ],
-"  			\   'javascript.tsx': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'eslint',
-"  			\     'prettier',
-"  			\     'standard',
-"  			\   ],
-"  			\   'typescript': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'eslint',
-"  			\     'prettier',
-"  			\     'standard',
-"  			\   ],
-"  			\   'typescriptreact': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'eslint',
-"  			\     'prettier',
-"  			\     'standard',
-"  			\   ],
-"  			\   'make': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\   ],
-"  			\   'ruby': [
-"  			\     'rubocop',
-"  			\   ],
-"  			\   'yaml': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'prettier',
-"  			\   ],
-"  			\   'diff': [],
-"  			\   'sh': [
-"  			\     'remove_trailing_lines',
-"  			\     'trim_whitespace',
-"  			\     'shfmt',
-"  			\   ],
-"  			\   'python': [
-"  			\     'add_blank_lines_for_python_control_statements',
-"  			\     'add_blank_lines_for_python_control_statements',
-"  			\     'autopep8',
-"  			\     'isort',
-"  			\     'remove_trailing_lines',
-"  			\     'reorder-python-imports',
-"  			\     'trim_whitespace',
-"  			\   ],
-"  			\   'terraform': [
-"  			\      'remove_trailing_lines',
-"  			\      'terraform',
-"  			\      'trim_whitespace',
-"  			\   ],
-"  			\   'json': [
-"  			\     'prettier'
-"  			\   ],
-"  			\ }
-"
-"  set completeopt=menu,menuone,preview,noselect,noinsert
-"  let g:ale_ruby_solargraph_executable = 'bundle'
-"  "let g:ale_ruby_rubocop_executable = 'bundle'
-"  let g:ale_go_bingo_executable = 'gopls'
-"  let g:ale_sh_shfmt_options = "-i 2 -ci -bn"
-"  let g:ale_completion_tsserver_autoimport = 1
-"  let g:ale_go_golangci_lint_options = ''
-"
-"  augroup ale
-"  	autocmd!
-"  	autocmd BufEnter diff let ale_fix_on_save=0
-"  	autocmd BufEnter python let ale_fix_on_save=0
-"  augroup END
-"
-"  augroup typescript
-"  	autocmd!
-"  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-]> :ALEGoToDefinition<cr>
-"  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w><C-]> :ALEGoToDefinitionInSplit<cr>
-"  	autocmd BufNewFile,BufRead *.tsx,*.ts  noremap <C-w>] :ALEGoToDefinitionInSplit<cr>
-"  augroup END
-"
-"  set omnifunc=ale#completion#OmniFunc
-" }}}
-" deoplete{{{
-" Enable deoplete when InsertEnter.
-"  let g:deoplete#enable_at_startup = 0
-"  augroup deoplete
-"  	autocmd!
-"  	autocmd InsertEnter * call deoplete#enable()
-"  augroup END
-"
-"  " call deoplete#custom#source('ale', 'rank', 999)
-"  call deoplete#custom#option({
-"  			\ 'auto_complete_delay': 200,
-"  			\ 'smart_case': v:true,
-"  			\ })
-"  " call deoplete#custom#option('sources', {'_': ['ale','buffer','around']})
-"
-"  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-" }}}
 " FZF {{{
-"   " Global line completion (not just open buffers. ripgrep required.)
-"   inoremap <expr> <c-x><c-l> fzf#vim#complete(fzf#wrap({
-"     \ 'prefix': '^.*$',
-"     \ 'source': 'rg -n ^ --color always',
-"     \ 'options': '--ansi --delimiter : --nth 3..',
-"     \ 'reducer': { lines -> join(split(lines[0], ':\zs')[2:], '') }}))
-"nmap <Leader>p :Files<cr>
 " Default fzf layout
 " - down / up / left / right
-"let g:fzf_layout = { 'down': '~40%' }
 nnoremap <silent> <Leader>pb :FzfPreviewBuffersRpc<CR>
 nnoremap <silent> <Leader>pP :FzfPreviewGitStatusRpc<cr>
 nnoremap <silent> <Leader>pm :FzfPreviewMruFilesRpc<CR>
@@ -1105,7 +655,6 @@ nmap <Leader>q <Plug>(fzf-quickfix)
 " }}}
 " echodoc {{{
 let g:echodoc_enable_at_startup = 1
-"let g:echodoc#type = 'virtual'
 let g:echodoc#type = 'floating'
 " }}}
 " Gutentags {{{
@@ -1123,11 +672,10 @@ augroup END
 let g:lexical#thesaurus = ['~/.vim/thesaurus/mthesaur.txt',]
 
 augroup lexical
-  autocmd!
-  autocmd FileType markdown,mkd call lexical#init()
-  autocmd FileType textile call lexical#init()
-  autocmd FileType text call lexical#init({ 'spell': 0 })
-  "autocmd FileType mail call lexical#init()
+	autocmd!
+	autocmd FileType markdown,mkd call lexical#init()
+	autocmd FileType textile call lexical#init()
+	autocmd FileType text call lexical#init({ 'spell': 0 })
 augroup END
 " }}}
 " fzf-preview {{{
@@ -1155,11 +703,6 @@ augroup gotemplates " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile *.tmpl,*.gohtml setlocal ft=gotexttmpl
 augroup END " }}}
-" solargraph {{{
-" }}}
-" }}}
-" Format before write {{{
-"autocmd BufWritePre *.go,*.js,*.ts,*.tsx,*.jsx,*.tf Format
 " }}}
 source ~/.vim/include/abbr.vim
 
