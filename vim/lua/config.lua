@@ -386,4 +386,20 @@ local tt = require('telescope')
 tt.load_extension('fzf')
 tt.load_extension('file_browser')
 -- }}}
+-- indent-blankline {{{
+vim.opt.termguicolors = true
+
+vim.api.nvim_exec([[
+  highlight IndentBlanklineChar         guifg=#555555 gui=nocombine
+  highlight IndentBlanklineContextChar  guifg=#999999 gui=nocombine
+  highlight IndentBlanklineContextStart guisp=#777777 gui=underline
+]], false)
+
+require('indent_blankline').setup {
+  show_current_context = true,
+  show_current_context_start = true,
+  show_current_context_start_on_current_line = false,
+  space_char_blankline = " ",
+  use_treesitter = true,
+}
 -- vim:foldmethod=marker

@@ -137,6 +137,7 @@ if has('nvim')
   Plug 'neovim/nvim-lspconfig'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
   Plug 'ray-x/lsp_signature.nvim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
 
   " nvim-cmp
   Plug 'hrsh7th/cmp-buffer'
