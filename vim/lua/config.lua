@@ -207,6 +207,7 @@ nvim_lsp.yamlls.setup {
 --   }
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+-- }}}
 -- nvim-cmp {{{
 local cmp = require'cmp'
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
