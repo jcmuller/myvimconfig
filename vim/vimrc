@@ -1130,8 +1130,6 @@ augroup lexical
   "autocmd FileType mail call lexical#init()
 augroup END
 " }}}
-" neosnippet{{{
-" }}}
 " fzf-preview {{{
 let g:fzf_preview_command = 'bat --color=always --style=grid {-1}'
 let g:fzf_preview_lines_command = 'bat --color=always --style=grid --plain'

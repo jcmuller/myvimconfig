@@ -209,6 +209,9 @@ vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 local cmp = require'cmp'
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
+local function t(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
 
 cmp.setup({
   snippet = {
@@ -226,18 +229,70 @@ cmp.setup({
       c = cmp.mapping.close(),
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping(
-      function(fallback)
-        cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+    --["<Tab>"] = cmp.mapping(
+    --   function(fallback)
+    --     cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
+    --   end,
+    --   { "i", "s", "c" }
+    -- ),
+    -- ["<S-Tab>"] = cmp.mapping(
+    --   function(fallback)
+    --     cmp_ultisnips_mappings.jump_backwards(fallback)
+    --   end,
+    --   { "i", "s", "c" }
+    -- ),
+
+    -- Work with UltiSnips
+    ["<Tab>"] = cmp.mapping({
+      c = function()
+        if cmp.visible() then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+        else
+          cmp.complete()
+        end
       end,
-      { "i", "s", "c" }
-    ),
-    ["<S-Tab>"] = cmp.mapping(
-      function(fallback)
-        cmp_ultisnips_mappings.jump_backwards(fallback)
+      i = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
+        elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+          vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+        else
+          fallback()
+        end
       end,
-      { "i", "s", "c" }
-    ),
+      s = function(fallback)
+        if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then
+          vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_forward)"), 'm', true)
+        else
+          fallback()
+        end
+      end
+    }),
+    ["<S-Tab>"] = cmp.mapping({
+      c = function()
+        if cmp.visible() then
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+        else
+          cmp.complete()
+        end
+      end,
+      i = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
+        elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+          return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+        else
+          fallback()
+        end
+      end,
+      s = function(fallback)
+        if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
+          return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+        else
+          fallback()
+        end
+      end
+    }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -277,8 +332,8 @@ cmp.setup.cmdline(':', {
 -- }}}
 -- tabout {{{
 require('tabout').setup {
-  -- tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
-  -- backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+  tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+  backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
   act_as_tab = true, -- shift content if tab out is not possible
   act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
   enable_backwards = true, -- well ...
