@@ -1,3 +1,7 @@
+-- nvim-notify {{{
+local notify = require('notify')
+vim.notify = notify
+-- }}}
 -- lsp {{{
 local nvim_lsp = require('lspconfig')
 local lsp_signature = require("lsp_signature")
@@ -385,6 +389,7 @@ require'nvim-treesitter.configs'.setup {
 local tt = require('telescope')
 tt.load_extension('fzf')
 tt.load_extension('file_browser')
+tt.load_extension('notify')
 -- }}}
 -- indent-blankline {{{
 vim.opt.termguicolors = true
@@ -402,4 +407,6 @@ require('indent_blankline').setup {
   space_char_blankline = " ",
   use_treesitter = true,
 }
+-- }}}
+
 -- vim:foldmethod=marker
