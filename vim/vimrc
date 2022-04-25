@@ -709,4 +709,6 @@ source ~/.vim/include/abbr.vim
 
 let g:go_version_warning=0
 
+command! ReplaceErrorsWrap :%s/errors.Wrapf\?(\([^,]\+\), \("[^"]\+\)\([^)]\+\))/fmt.Errorf(\2: %w\3, \1)/gc
+
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker

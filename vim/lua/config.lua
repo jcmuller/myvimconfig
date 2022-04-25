@@ -3,7 +3,8 @@ local notify = require('notify')
 vim.notify = notify
 -- }}}
 -- lsp {{{
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require("lspconfig")
+local configs = require("lspconfig.configs")
 local lsp_signature = require("lsp_signature")
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -77,7 +78,18 @@ local servers = {
   "terraformls",
   "tflint",
   "tsserver",
+  "regols",
 }
+
+if not configs.regols then
+  configs.regols = {
+    default_config = {
+      cmd = {'regols'};
+      filetypes = {'rego'};
+      root_dir = require("lspconfig.util").root_pattern(".git");
+    }
+  }
+end
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
