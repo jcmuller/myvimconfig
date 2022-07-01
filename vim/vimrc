@@ -512,7 +512,7 @@ let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeShowHidden = 1
 " Open NERDtree when no file was specified
-autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
+" autocmd vimenter * if !argc() | NERDTree | endif  " This also opens when -t TAG :/
 let g:NERDTreeGitStatusIndicatorMapCustom = {
 			\ "Modified"  : "*",
 			\ "Staged"    : "+",
