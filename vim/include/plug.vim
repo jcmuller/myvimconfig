@@ -119,6 +119,7 @@ Plug 'rhysd/nyaovim-popup-tooltip'
 if has('nvim')
   Plug 'nyngwang/NeoZoom.lua'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'yuki-ycino/fzf-preview.vim',               { 'branch': 'release/rpc', 'do': ':UpdateRemotePlugins' }
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'

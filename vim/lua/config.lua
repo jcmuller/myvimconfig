@@ -3,6 +3,8 @@ local notify = require('notify')
 vim.notify = notify
 -- }}}
 -- lsp {{{
+require("nvim-lsp-installer").setup {}
+
 local nvim_lsp = require("lspconfig")
 local configs = require("lspconfig.configs")
 local lsp_signature = require("lsp_signature")
