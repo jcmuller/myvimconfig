@@ -73,12 +73,13 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
+  "regols",
   "solargraph",
+  "sourcekit",
   "terraform_lsp",
   "terraformls",
   "tflint",
   "tsserver",
-  "regols",
 }
 
 if not configs.regols then
