@@ -82,6 +82,7 @@ local servers = {
   "terraformls",
   "tflint",
   "tsserver",
+  "vala_ls",
 }
 
 if not configs.regols then
