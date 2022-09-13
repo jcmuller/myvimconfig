@@ -50,6 +50,7 @@ local on_attach = function(client, bufnr)
   end
 
   if client.resolved_capabilities.document_highlight then
+    vim.opt.updatetime = 400
     vim.api.nvim_exec([[
       highlight LspReferenceText guifg=#f0c674 ctermfg=73
       highlight LspReferenceRead guifg=#de935f ctermfg=53
