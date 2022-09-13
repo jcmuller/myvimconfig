@@ -337,6 +337,8 @@ nnoremap <space>l :nohl<cr>:redraw!<cr>
 vmap * :<C-u>call <SID>VSetSearch()<CR>/<CR>
 vmap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
+nnoremap q; q:
+
 " Search
 noremap ;; :%s:::g<Left><Left><Left>
 noremap ;' :%s:::gc<Left><Left><Left><Left>
