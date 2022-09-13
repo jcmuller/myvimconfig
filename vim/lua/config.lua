@@ -451,6 +451,7 @@ require('indent_blankline').setup {
   use_treesitter = true,
 }
 -- }}}
+
 -- neorg {{{
 require('neorg').setup {
   load = {
@@ -482,6 +483,23 @@ require('neorg').setup {
   }
 }
 
+-- treesitter-context {{{
+require'treesitter-context'.setup {
+  enable = true,
+  max_lines = 0,
+  patterns = {
+    default = {
+      'class',
+      'function',
+      'method',
+      'for',
+      'while',
+      'if',
+      'switch',
+      'case',
+    }
+  },
+}
 -- }}}
 
 -- vim:foldmethod=marker
