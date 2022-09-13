@@ -147,6 +147,8 @@ if has('nvim')
   Plug 'tree-sitter/tree-sitter-json'
   Plug 'vigoux/tree-sitter-viml'
   Plug 'ikatyang/tree-sitter-yaml'
+  Plug 'nvim-treesitter/nvim-treesitter-context'
+  Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
   " Depend on Treesitter
   Plug 'abecodes/tabout.nvim'
