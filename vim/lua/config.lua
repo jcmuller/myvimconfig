@@ -148,6 +148,7 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 nvim_lsp.efm.setup {
+  capabilities = capabilities,
   on_attach = on_attach,
   init_options = { documentFormatting = true },
   filetypes = {
@@ -331,7 +332,7 @@ cmp.setup({
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
+    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
   }, {
     { name = 'buffer' },
   })
@@ -373,7 +374,7 @@ require('tabout').setup {
   exclude = {} -- tabout will ignore these filetypes
 }
 -- }}}
--- {{{ tree-sitter
+-- {{{ treesitter
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -398,9 +399,34 @@ require'nvim-treesitter.configs'.setup {
     --},
     --indent = {
     --enable = true
-  }
-}
+  },
 
+  refactor = {
+  --   highlight_definitions = {
+  --     enable = false,
+  --     clear_on_cursor_move = false,
+  --   },
+  --   highlight_current_scope = {
+  --     enable = false,
+  --   },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        list_definitions_toc = "gO",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = 'grr',
+      },
+    },
+  },
+}
 -- }}}
 -- {{{ telescope
 local tt = require('telescope')
