@@ -45,13 +45,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>gi',  '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<leader>gr',  '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
 
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     buf_set_keymap('n', '<leader>lf',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  elseif client.resolved_capabilities.document_range_formatting then
+  elseif client.server_capabilities.document_range_formatting then
     buf_set_keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
   end
 
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.opt.updatetime = 400
     vim.api.nvim_exec([[
       highlight LspReferenceText  guifg=#f0c674 gui=bold ctermfg=73 cterm=bold ctermbg=red
