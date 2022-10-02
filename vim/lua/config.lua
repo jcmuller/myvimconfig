@@ -16,6 +16,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('tagfunc', 'v:lua.vim.lsp.tagfunc')
@@ -24,31 +25,33 @@ local on_attach = function(client, bufnr)
   buf_set_option('formatexpr', 'v:lua.vim.lsp.formatexpr')
 
   -- Mappings.
-  local opts = { noremap=true, silent=true }
+  local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', '<leader>lk',  '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<c-space>',   '<cmd>lua vim.lsp.buf.omnifunc()<CR>', opts)
-  buf_set_keymap('n', '<leader>ld',  '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>la',  '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', '<leader>le',  '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  buf_set_keymap('n', '<leader>lq',  '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap('n', '<leader>lr',  '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<c-space>', '<cmd>lua vim.lsp.buf.omnifunc()<CR>', opts)
+  buf_set_keymap('n', '<leader>ld', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<leader>le', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+  buf_set_keymap('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>lwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<leader>lwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
   buf_set_keymap('n', '<leader>lwr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', 'K',           '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '[d',          '<cmd>lua vim.diagnostic.show()<CR>', opts)
-  buf_set_keymap('n', ']d',          '<cmd>lua vim.diagnostic.show()<CR>', opts)
-  buf_set_keymap('n', '<leader>gD',  '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', '<leader>gd',  '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<leader>gi',  '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<leader>gr',  '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.show()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.show()<CR>', opts)
+  buf_set_keymap('n', '<leader>gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', '<leader>gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<leader>gr', '<cmd>lua vim.lsp.buf.references({includeDeclaration = false})<CR>', opts)
 
   if client.server_capabilities.document_formatting then
-    buf_set_keymap('n', '<leader>lf',  '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   elseif client.server_capabilities.document_range_formatting then
     buf_set_keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
+  else
+    buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
   end
 
   if client.server_capabilities.document_highlight then
@@ -92,8 +95,8 @@ local servers = {
 if not configs.regols then
   configs.regols = {
     default_config = {
-      cmd = {'regols'};
-      filetypes = {'rego'};
+      cmd = { 'regols' };
+      filetypes = { 'rego' };
       root_dir = require("lspconfig.util").root_pattern(".git");
     }
   }
@@ -111,22 +114,22 @@ nvim_lsp.solargraph.setup {
   on_attach = on_attach,
   settings = {
     solargraph = {
-        autoformat = true,
-        -- bundlerPath = "bundle",
-        -- checkGemVersion = true,
-        -- commandPath = "solargraph",
-        -- completion = true,
-        -- definitions = true,
-        diagnostics = true,
-        -- folding = true,
-        formatting = true,
-        -- hover = true,
-        -- logLevel = "warn",
-        -- references = true,
-        -- rename = true,
-        -- symbols = true,
-        -- transport = "socket",
-        -- useBundler = false,
+      autoformat = true,
+      -- bundlerPath = "bundle",
+      -- checkGemVersion = true,
+      -- commandPath = "solargraph",
+      -- completion = true,
+      -- definitions = true,
+      diagnostics = true,
+      -- folding = true,
+      formatting = true,
+      -- hover = true,
+      -- logLevel = "warn",
+      -- references = true,
+      -- rename = true,
+      -- symbols = true,
+      -- transport = "socket",
+      -- useBundler = false,
     },
   },
 }
@@ -169,7 +172,7 @@ nvim_lsp.sumneko_lua.setup {
         library = vim.api.nvim_get_runtime_file("", true),
       },
       diagnostics = {
-        globals = {'vim'},
+        globals = { 'vim' },
       }
     }
   }
@@ -258,7 +261,7 @@ nvim_lsp.yamlls.setup {
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
 -- }}}
 -- nvim-cmp {{{
-local cmp = require'cmp'
+local cmp = require 'cmp'
 local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
 
 local function t(str)
@@ -332,14 +335,14 @@ cmp.setup({
         if cmp.visible() then
           cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
         elseif vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-          return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+          return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
         else
           fallback()
         end
       end,
       s = function(fallback)
         if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
-          return vim.api.nvim_feedkeys( t("<Plug>(ultisnips_jump_backward)"), 'm', true)
+          return vim.api.nvim_feedkeys(t("<Plug>(ultisnips_jump_backward)"), 'm', true)
         else
           fallback()
         end
@@ -391,19 +394,19 @@ require('tabout').setup {
   enable_backwards = true, -- well ...
   -- completion = true, -- if the tabkey is used in a completion pum
   tabouts = {
-    {open = "'", close = "'"},
-    {open = '"', close = '"'},
-    {open = '`', close = '`'},
-    {open = '(', close = ')'},
-    {open = '[', close = ']'},
-    {open = '{', close = '}'}
+    { open = "'", close = "'" },
+    { open = '"', close = '"' },
+    { open = '`', close = '`' },
+    { open = '(', close = ')' },
+    { open = '[', close = ']' },
+    { open = '{', close = '}' }
   },
   ignore_beginning = true, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
   exclude = {} -- tabout will ignore these filetypes
 }
 -- }}}
 -- {{{ treesitter
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     custom_captures = {
@@ -430,13 +433,13 @@ require'nvim-treesitter.configs'.setup {
   },
 
   refactor = {
-  --   highlight_definitions = {
-  --     enable = false,
-  --     clear_on_cursor_move = false,
-  --   },
-  --   highlight_current_scope = {
-  --     enable = false,
-  --   },
+    --   highlight_definitions = {
+    --     enable = false,
+    --     clear_on_cursor_move = false,
+    --   },
+    --   highlight_current_scope = {
+    --     enable = false,
+    --   },
     navigation = {
       enable = true,
       keymaps = {
@@ -492,7 +495,7 @@ require('indent_blankline').setup {
 --         },
 --       },
 --     },
--- 
+--
 --     ["core.defaults"] = {},
 --     ["core.export"] = {},
 --     ["core.export.markdown"] = {},
@@ -512,7 +515,7 @@ require('indent_blankline').setup {
 -- }
 -- -- }}}
 -- treesitter-context {{{
-require'treesitter-context'.setup {
+require 'treesitter-context'.setup {
   enable = true,
   max_lines = 0,
   patterns = {
@@ -531,7 +534,7 @@ require'treesitter-context'.setup {
 -- }}}
 
 -- windows {{{
-require'windows'.setup {
+require 'windows'.setup {
   autowidth = {
     enable = true,
   },
