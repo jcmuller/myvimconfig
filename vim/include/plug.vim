@@ -2,6 +2,7 @@ let g:plug_timeout = 120
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'Fymyte/rasi.vim'
 Plug 'Konfekt/vim-mutt-aliases'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'Raimondi/delimitMate'               " Insert mode auto-completion for quotes, parens, brackets, etc
