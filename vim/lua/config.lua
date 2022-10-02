@@ -79,7 +79,7 @@ end
 -- map buffer local keybindings when the language server attaches
 local servers = {
   "regols",
-  "solargraph",
+  "sorbet",
   "sourcekit",
   "terraform_lsp",
   "terraformls",
@@ -104,6 +104,31 @@ for _, lsp in ipairs(servers) do
     on_attach = on_attach
   }
 end
+
+nvim_lsp.solargraph.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    solargraph = {
+        autoformat = true,
+        -- bundlerPath = "bundle",
+        -- checkGemVersion = true,
+        -- commandPath = "solargraph",
+        -- completion = true,
+        -- definitions = true,
+        diagnostics = true,
+        -- folding = true,
+        formatting = true,
+        -- hover = true,
+        -- logLevel = "warn",
+        -- references = true,
+        -- rename = true,
+        -- symbols = true,
+        -- transport = "socket",
+        -- useBundler = false,
+    },
+  },
+}
 
 nvim_lsp.gopls.setup {
   on_attach = on_attach,
