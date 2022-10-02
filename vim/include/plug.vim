@@ -167,12 +167,12 @@ if has('nvim')
   Plug 'nvim-telescope/telescope-file-browser.nvim'
 
   " Neorg -- depends on plenary
-  Plug 'nvim-neorg/neorg'
-  Plug 'folke/zen-mode.nvim'
-  Plug 'nvim-neorg/neorg-telescope'
-  Plug 'esquires/neorg-gtd-project-tags'
-  Plug 'max397574/neorg-contexts'
-  Plug 'max397574/neorg-kanban'
+ "" Plug 'nvim-neorg/neorg'
+ "" Plug 'folke/zen-mode.nvim'
+ "" Plug 'nvim-neorg/neorg-telescope'
+ "" Plug 'esquires/neorg-gtd-project-tags'
+ "" Plug 'max397574/neorg-contexts'
+ "" Plug 'max397574/neorg-kanban'
 else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
