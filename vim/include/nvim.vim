@@ -4,8 +4,7 @@ set termguicolors         " Understand gui color configuration
 set nottimeout            " No terminal UI timeouts (ESC works right away)
 tnoremap <Esc> <C-\><C-n> " Use ESC in terminal to go to normal mode
 
-let g:python3_host_prog = "~/.asdf/installs/python/3.8.6/bin/python3"
-let g:python_host_prog  = "~/.asdf/installs/python/2.7.18/bin/python"
+let g:python3_host_prog = "/usr/sbin/python"
 let g:loaded_perl_provider = 0
 let g:loaded_ruby_provider = 0
 
