@@ -481,16 +481,16 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|npm\|vendor'
 " }}}
 " {{{ Fugitive
-nnoremap <leader>ga  :Git add -p<cr>
-nnoremap <leader>gb  :Git blame<cr>
-nnoremap <leader>gc  :Git commit -v<cr>
-nnoremap <leader>gd  :Git diff<cr>
-nnoremap <leader>gl  :Git log<cr>
-nnoremap <leader>gm  :Gmove<space>
-nnoremap <leader>gpu :Git push<CR>
-nnoremap <leader>gpr :Git pull --rebase<CR>
-nnoremap <leader>gr  :GDelete<CR>
-nnoremap <leader>gs  :Git<CR>
+nnoremap <leader>fga  :Git add -p<cr>
+nnoremap <leader>fgb  :Git blame<cr>
+nnoremap <leader>fgc  :Git commit -v<cr>
+nnoremap <leader>fgd  :Git diff<cr>
+nnoremap <leader>fgl  :Git log<cr>
+nnoremap <leader>fgm  :Gmove<space>
+nnoremap <leader>fgpu :Git push<CR>
+nnoremap <leader>fgpr :Git pull --rebase<CR>
+nnoremap <leader>fgr  :GDelete<CR>
+nnoremap <leader>fgs  :Git<CR>
 " :Gshow shows what files a commit changes
 command! -nargs=? -bar Gshow call setqflist(map(systemlist("git show --pretty='' --name-only <args>"), '{"filename": v:val, "lnum": 1}'))
 " :Gdifffiles shows the files changes since SHA
