@@ -148,7 +148,9 @@ set wildignore=*.swp,*.bak,*~,*.pyc,*.class,.git/,build/**
 set showcmd
 " }}}
 " {{{ Windows
-set equalalways
+set noequalalways
+set winwidth=10
+set winminwidth=10
 " }}}
 " {{{ Case in search
 " Use case insensitive search, except when using capital letters

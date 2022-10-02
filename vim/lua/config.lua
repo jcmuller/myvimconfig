@@ -502,4 +502,17 @@ require'treesitter-context'.setup {
 }
 -- }}}
 
+-- windows {{{
+require'windows'.setup {
+  autowidth = {
+    enable = true,
+  },
+  animation = {
+    enable = true,
+    duration = 100,
+    fps = 30,
+    easing = "in_out_sine",
+  },
+}
+-- }}}
 -- vim:foldmethod=marker

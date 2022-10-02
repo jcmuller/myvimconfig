@@ -125,6 +125,9 @@ if has('nvim')
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'rcarriga/nvim-notify'
+  Plug 'anuvyklack/middleclass'
+  Plug 'anuvyklack/animation.nvim'
+  Plug 'anuvyklack/windows.nvim'
 
   " nvim-cmp
   Plug 'hrsh7th/cmp-buffer'
