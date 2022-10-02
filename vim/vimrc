@@ -200,9 +200,16 @@ augroup arduino " {{{
 	autocmd BufRead,BufNewFile *.ino setlocal ft=arduino
 	autocmd BufRead,BufNewFile *.pde setlocal ft=arduino
 augroup END "}}}
+augroup alacritty " {{{
+       autocmd!
+       autocmd BufRead,BufNewFile ~/.config/alacritty/* setlocal ft=yaml
+augroup END " }}}
 augroup i3 " {{{
 	autocmd!
 	autocmd BufRead,BufNewFile ~/.config/regolith2/i3/config.d/* setlocal ft=i3
+	autocmd BufRead,BufNewFile ~/.config/i3/config.d/* setlocal ft=i3
+	autocmd BufRead,BufNewFile ~/.config/sway/config.d/* setlocal ft=i3
+	autocmd BufRead,BufNewFile ~/.config/sway/config setlocal ft=i3
 	autocmd BufRead,BufNewFile /usr/share/regolith/i3/config.d/* setlocal ft=i3
 augroup END " }}}
 augroup tmux " {{{
