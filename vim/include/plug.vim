@@ -116,7 +116,6 @@ Plug 'zimbatm/haproxy.vim'
 " UI Plugins
 Plug 'rhysd/nyaovim-popup-tooltip'
 
-
 if has('nvim')
   Plug 'nyngwang/NeoZoom.lua'
   Plug 'neovim/nvim-lspconfig'
