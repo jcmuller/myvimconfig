@@ -17,6 +17,11 @@ lua require("config")
 set completeopt=menu,menuone,noselect
 " }}}
 " {{{ telescope
+nnoremap <space>f <cmd>lua require('telescope').extensions.file_browser.file_browser({path=require('telescope.utils').buffer_dir(), select_buffer=true})<cr>
+"nnoremap <space>f <Plug>VinegarUp
+nnoremap <space><space> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <space>b  <cmd>lua require('telescope.builtin').buffers()<cr>
+
 nnoremap <leader>tfB <cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>
 nnoremap <leader>tfb <cmd>lua require('telescope').extensions.file_browser.file_browser({path = require('telescope.utils').buffer_dir()})<cr>
 nnoremap <leader>tff <cmd>lua require('telescope.builtin').find_files()<cr>
