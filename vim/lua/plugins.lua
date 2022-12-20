@@ -280,7 +280,6 @@ return require('packer').startup(function(use)
   use 'junegunn/goyo.vim' -- Distraction-free writing
   use 'kana/vim-textobj-user' -- Create your own text objects
   use 'kien/ctrlp.vim' -- Fuzzy file, buffer, mru, tag, etc finder (try c-j, c-y + c-o)
-  use 'ludovicchabant/vim-gutentags'
   use 'majutsushi/tagbar'
   use 'merlinrebrovic/focus.vim'
   use 'mhinz/vim-grepper'
