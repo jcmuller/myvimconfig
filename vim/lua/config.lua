@@ -1,7 +1,6 @@
 --
 require('plugins')
 require('lsp-setup')
-require('bindings')
 --
 -- -- neorg {{{
 -- require('neorg').setup {
