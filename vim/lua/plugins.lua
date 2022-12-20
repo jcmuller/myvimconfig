@@ -477,6 +477,25 @@ return require('packer').startup(function(use)
 
   -- nvim-cmp {{{
   use {
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require("luasnip.loaders.from_vscode").lazy_load()
+      require("luasnip.loaders.from_snipmate").lazy_load()
+      vim.cmd([[
+        imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+        " -1 for jumping backwards.
+        inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+        snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+        snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+      ]])
+    end
+  }
+  use "rafamadriz/friendly-snippets"
+  use 'Shougo/neosnippet-snippets'
+  use "saadparwaiz1/cmp_luasnip"
+
+  use {
     'hrsh7th/nvim-cmp',
     config = function()
       local cmp = require("cmp")
@@ -489,11 +508,13 @@ return require('packer').startup(function(use)
       cmp.setup({
         snippet = {
           expand = function(args)
+            require('luasnip').lsp_expand(args.body)
           end,
         },
         sources = {
           { name = 'nvim_lsp' },
           { name = 'treesitter' },
+          { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'emoji' },
           { name = 'calc' },
