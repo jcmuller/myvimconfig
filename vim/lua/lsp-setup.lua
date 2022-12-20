@@ -47,9 +47,10 @@ local on_attach = function(client, bufnr)
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', '<leader>lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('i', '<c-space>', '<cmd>lua vim.lsp.buf.omnifunc()<CR>', opts)
+  -- buf_set_keymap('i', '<c-space>', '<cmd>lua vim.lsp.omnifunc()<CR>', opts)
   buf_set_keymap('n', '<leader>ld', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('i', '<C-A>', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('x', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<leader>le', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
   buf_set_keymap('n', '<leader>lq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
@@ -234,18 +235,6 @@ nvim_lsp.efm.setup {
   }
 }
 
-nvim_lsp.yamlls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  settings = {
-    yaml = {
-      schemas = {
-        kubernetes = "/*.yaml",
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
-      },
-    },
-  },
-}
 
 --   -- diagnosticls
 --   local filetypes = {
