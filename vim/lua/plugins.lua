@@ -300,7 +300,6 @@ return require('packer').startup(function(use)
   use 'thoughtbot/pick.vim'
   use 'tpope/vim-abolish'
   use 'tpope/vim-bundler'
-  use 'tpope/vim-dispatch'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-ragtag'
