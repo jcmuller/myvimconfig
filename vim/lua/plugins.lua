@@ -254,7 +254,7 @@ return require('packer').startup(function(use)
   use 'Shougo/neomru.vim'
   use 'airblade/vim-gitgutter' -- Show git diff in the gutter
   use 'austintaylor/vim-choosecolor'
-  use 'bogado/file-line' -- Open file in a given line (file:line)
+  use { 'bogado/file-line', branch = 'main' } -- Open file in a given line (file:line)
   use 'castwide/solargraph'
   use { 'cespare/vim-toml', branch = 'main' }
   use 'chiel92/vim-autoformat'
