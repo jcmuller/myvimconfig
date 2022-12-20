@@ -581,8 +581,6 @@ let g:turbux_custom_runner = 'TurbuxRunWithNeoTerm'
 let g:turbux_command_prefix = 'ze' " default: (empty)
 " }}}
 " {{{ Ultisnips config
-let g:UltiSnipsExpandTrigger='<C-j>'
-let g:UltiSnipsSnippetDirectories=['~/.vim/my-snippets','~/.vim/plugged/neosnippet-snippets/neosnippets']
 " }}}
 " {{{ vim-notes
 let g:notes_directories = ['~/Documents/Notes']

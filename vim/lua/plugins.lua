@@ -473,7 +473,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-path'
   use 'petertriho/cmp-git'
-  use 'SirVer/ultisnips'
   use 'ray-x/cmp-treesitter'
 
   -- nvim-cmp {{{
@@ -481,7 +480,6 @@ return require('packer').startup(function(use)
     'hrsh7th/nvim-cmp',
     config = function()
       local cmp = require("cmp")
-      local cmp_ultisnips_mappings = require("cmp_nvim_ultisnips.mappings")
       local cmp_buffer = require("cmp_buffer")
 
       local function t(str)
@@ -491,14 +489,12 @@ return require('packer').startup(function(use)
       cmp.setup({
         snippet = {
           expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
         sources = {
           { name = 'nvim_lsp' },
           { name = 'treesitter' },
           { name = 'buffer' },
-          { name = 'ultisnips' },
           { name = 'emoji' },
           { name = 'calc' },
         },
@@ -600,12 +596,6 @@ return require('packer').startup(function(use)
         })
       })
     end,
-    requires = {
-      'quangnguyen30192/cmp-nvim-ultisnips',
-      config = function()
-        require('cmp_nvim_ultisnips').setup {}
-      end,
-    },
   }
   -- }}}
 
