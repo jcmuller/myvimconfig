@@ -242,6 +242,9 @@ return require('packer').startup(function(use)
   use { 'jvirtanen/vim-hcl', branch = 'main' }
   use { 'maralla/vim-toml-enhance', requires = 'cespare/vim-toml' }
 
+  -- improvements on netrw
+  use 'tpope/vim-vinegar'
+
   use 'Konfekt/vim-mutt-aliases'
   use 'Raimondi/delimitMate' -- Insert mode auto-completion for quotes, parens, brackets, etc
   use 'Shougo/context_filetype.vim'
@@ -291,7 +294,6 @@ return require('packer').startup(function(use)
   use 'rhysd/vim-grammarous'
   use 'robertbasic/vim-hugo-helper'
   use 'preservim/nerdcommenter'
-  use 'preservim/nerdtree'
   use 'shime/vim-livedown'
   use 'sjl/gundo.vim'
   use 'slim-template/vim-slim'
