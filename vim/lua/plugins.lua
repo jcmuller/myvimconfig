@@ -248,7 +248,6 @@ return require('packer').startup(function(use)
   use 'Shougo/context_filetype.vim'
   use 'Shougo/denite.nvim'
   use 'Shougo/echodoc.vim'
-  use 'Shougo/neosnippet-snippets'
   use 'Shougo/neomru.vim'
   use 'airblade/vim-gitgutter' -- Show git diff in the gutter
   use 'austintaylor/vim-choosecolor'
