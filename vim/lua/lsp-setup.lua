@@ -4,6 +4,7 @@ local servers = {
   "bashls",
   "ccls",
   "clangd",
+  "golangci_lint_ls",
   "graphql",
   "jsonnet_ls",
   "regols",
