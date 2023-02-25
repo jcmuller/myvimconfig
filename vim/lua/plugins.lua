@@ -233,8 +233,6 @@ return require('packer').startup(function(use)
   use 'rust-lang/rust.vim'
   use 'sirtaj/vim-openscad'
   use 'towolf/vim-helm'
-  use 'tpope/vim-cucumber'
-  use 'tpope/vim-haml'
   use 'vim-python/python-syntax'
   use 'vim-ruby/vim-ruby'
   use 'zaiste/tmux.vim'
