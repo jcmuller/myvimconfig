@@ -382,7 +382,7 @@ return require('packer').startup(function(use)
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "sumneko_lua",
+          "lua_ls",
           "gopls",
           "golangci_lint_ls",
         }
