@@ -15,6 +15,7 @@ local servers = {
   "tflint",
   "tsserver",
   "vala_ls",
+  "yamlls",
 }
 
 local nvim_lsp = require("lspconfig")
