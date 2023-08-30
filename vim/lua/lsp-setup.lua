@@ -134,9 +134,9 @@ end
 if not configs.regols then
   configs.regols = {
     default_config = {
-      cmd = { 'regols' };
-      filetypes = { 'rego' };
-      root_dir = require("lspconfig.util").root_pattern(".git");
+      cmd = { 'regols' },
+      filetypes = { 'rego' },
+      root_dir = require("lspconfig.util").root_pattern(".git"),
     }
   }
 end
