@@ -348,9 +348,8 @@ vmap # :<C-u>call <SID>VSetSearch()<CR>?<CR>
 
 nnoremap q; q:
 
-" Search
-noremap ;; :%s:::g<Left><Left><Left>
-noremap ;' :%s:::gc<Left><Left><Left><Left>
+" Save
+noremap ;; :w<cr>
 
 " Select previously pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
