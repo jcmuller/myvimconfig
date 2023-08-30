@@ -387,6 +387,7 @@ return require('packer').startup(function(use)
     end,
   }
   use { 'neovim/nvim-lspconfig', }
+  use { 'nvim-lua/lsp-status.nvim' }
   -- }}}
 
   use { 'yuki-ycino/fzf-preview.vim', branch = 'release/rpc', run = ':UpdateRemotePlugins' }
@@ -641,6 +642,13 @@ return require('packer').startup(function(use)
 
   -- theme
   use 'jsit/vim-tomorrow-theme'
+  use {'arcticicestudio/nord-vim',
+    config = function ()
+      vim.api.nvim_exec([[
+        colorscheme nord
+      ]], false)
+    end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

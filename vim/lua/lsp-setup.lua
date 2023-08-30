@@ -5,8 +5,10 @@ local servers = {
   "ccls",
   "clangd",
   "golangci_lint_ls",
+  "dotls",
   "graphql",
   "jsonnet_ls",
+  "pylsp",
   "regols",
   "sorbet",
   "sourcekit",
@@ -22,10 +24,13 @@ local nvim_lsp = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local configs = require("lspconfig.configs")
 local lsp_signature = require("lsp_signature")
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -122,6 +127,8 @@ local on_attach = function(client, bufnr)
     floating_window = false, -- only show arguments
     toggle_key = '<C-s>',
   }, bufnr)
+
+  lsp_status.on_attach(client)
 end
 
 if not configs.regols then

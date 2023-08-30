@@ -592,7 +592,6 @@ let g:notes_smart_quotes = 0
 " }}}
 " {{{ Color settings
 set t_Co=256
-colo Tomorrow-Night
 " }}}
 " {{{ Pick.vim
 nnoremap <Leader>e :call PickFile()<cr>
@@ -727,5 +726,13 @@ source ~/.vim/include/abbr.vim
 let g:go_version_warning=0
 
 command! ReplaceErrorsWrap :%s/errors.Wrapf\?(\([^,]\+\), \("[^"]\+\)\([^)]\+\))/fmt.Errorf(\2: %w\3, \1)/gc
+
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return ''
+endfunction
 
 " vim:tw=0:ts=4:sw=4:noet:nolist:foldmethod=marker
