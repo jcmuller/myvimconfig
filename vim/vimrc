@@ -456,7 +456,10 @@ let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
 "let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#neomake#enabled = 1
-let g:airline_extensions = []
+let g:airline#extensions#nvimlsp#enabled = 1
+let g:airline#extensions#fugitiveline#enabled = 1
+let g:airline#extensions#fzf#enabled = 1
+"let g:airline_extensions = ["lsp"]
 " }}}
 " {{{ Block Toggle (blockle)
 let g:blockle_mapping = '<Leader>L'
