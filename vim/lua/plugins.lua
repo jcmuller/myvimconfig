@@ -637,10 +637,11 @@ return require('packer').startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     config = function()
-      local tt = require('telescope')
-      tt.load_extension('fzf')
-      tt.load_extension('file_browser')
-      tt.load_extension('notify')
+      local t = require('telescope')
+
+      t.load_extension('fzf')
+      t.load_extension('file_browser')
+      t.load_extension('notify')
     end,
   }
   -- }}}
