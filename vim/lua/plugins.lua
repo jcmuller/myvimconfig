@@ -460,17 +460,22 @@ return require('packer').startup(function(use)
   }
   -- }}}
 
-  --" nvim-cmp
+  -- nvim-cmp {{{
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-calc'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-emoji'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-path'
-  use 'petertriho/cmp-git'
   use 'ray-x/cmp-treesitter'
 
-  -- nvim-cmp {{{
+  use {
+    'petertriho/cmp-git',
+    config = function()
+      require("cmp_git").setup()
+    end,
+  }
+
   use {
     'L3MON4D3/LuaSnip',
     config = function()
@@ -506,14 +511,17 @@ return require('packer').startup(function(use)
             require('luasnip').lsp_expand(args.body)
           end,
         },
-        sources = {
+        sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'treesitter' },
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'emoji' },
           { name = 'calc' },
-        },
+          { name = 'git' },
+        }, {
+          { name = 'buffer' },
+        }),
         sorting = {
           comparators = {
             function(...) return cmp_buffer:compare_locality(...) end,
