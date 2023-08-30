@@ -354,6 +354,7 @@ noremap ;; :w<cr>
 " Select previously pasted text
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" emacs keybindings
 noremap! <C-A> <Home>
 noremap! <C-E> <End>
 cnoremap <C-K> <C-U>
